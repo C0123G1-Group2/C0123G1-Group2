@@ -40,10 +40,9 @@
             </li>
         </ul>
         <div style="display: flex; align-items: center;margin-right: 10px;">
-            <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px" method="post" >
+            <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px"  method="post" >
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" name="inputName">
-
-                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit" style="padding: 0px 12px;" onclick="window.location.href='/customer?action=find'">Search</button>
+                <button class="btn btn-outline-primary  my-2 my-sm-0"  style="padding: 0px 12px;" onclick="window.location.href='/customer?action=find'">Search</button>
             </form>
             <span id="no-auth"><i style="margin-left: 5px;" class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>
             <div id="auth">

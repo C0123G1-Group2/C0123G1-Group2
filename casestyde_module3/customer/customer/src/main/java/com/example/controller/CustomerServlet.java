@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Customer;
+
 import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
 
