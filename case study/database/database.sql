@@ -23,6 +23,9 @@ ten_loai_dich_vu VARCHAR(20) NOT NULL UNIQUE
  so_dien_thoai INT NOT NULL UNIQUE,
  email VARCHAR(50) NOT NULL
 );
+INSERT INTO nhan_vien(ten_nhan_vien,ngay_sinh,so_dien_thoai,email) values("nhan","1995-05-05","0905130596","nhan@gmail.com"),
+("An","1997-06-05","0903130596","an@gmail.com");
+SELECT * FROM nhan_vien;
  CREATE TABLE hoa_don(
  ma_hoa_don INT PRIMARY KEY,
  ma_khach_hang INT, FOREIGN KEY(ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),

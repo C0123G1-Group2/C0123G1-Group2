@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be43a468-a474-4e97-bb63-e81160648dea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/home/home/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/home/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/home/src/main/java/com/example/home/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/home/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/home/build/tmp/war/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/home/home/build/tmp/war/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2POzvxEM0dS8uXKjzv5ioZPTC9n" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,7 +49,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "F:/codegym/module3/case/nhom2/case study/javaweb"
+    "last_opened_file_path": "/Users/hotruongan/Desktop/C0123G1-Group2/case study/javaweb",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -150,6 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683343149395</updated>
       <workItem from="1683343150829" duration="88000" />
+      <workItem from="1683347857632" duration="272000" />
     </task>
     <servers />
   </component>
