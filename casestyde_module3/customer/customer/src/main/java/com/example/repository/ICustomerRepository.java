@@ -8,8 +8,10 @@ public interface ICustomerRepository{
     List<Customer> getAll();
 
     boolean save(Customer customer);
-//
+
     boolean delete(int id);
-//
-//    void edit(Customer customer);
+
+    boolean edit(Customer customer);
+
+    List<Customer> findCustomer(String name) ;
 }

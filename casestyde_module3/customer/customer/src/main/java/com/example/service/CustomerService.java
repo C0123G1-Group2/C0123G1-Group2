@@ -30,16 +30,24 @@ private ICustomerRepository customerRepository = new CustomerRepository();
             return false;
         }
 
-//
-//    @Override
-//    public void edit(Customer customer) {
-//        customerRepository.edit(customer);
-//    }
 
     }
 
     @Override
-    public void delete(int id) {
-        customerRepository.delete(id);
+    public boolean delete(int id) {
+      boolean  check =  customerRepository.delete(id);
+        return check;
+    }
+
+    @Override
+    public boolean edit(Customer customer) {
+        boolean  check = customerRepository.edit(customer);
+        return check;
+    }
+
+    @Override
+    public List<Customer> find(String name) {
+        List<Customer> customerList = customerRepository.findCustomer(name);
+        return customerList;
     }
 }

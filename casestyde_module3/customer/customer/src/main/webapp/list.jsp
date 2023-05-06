@@ -40,10 +40,10 @@
             </li>
         </ul>
         <div style="display: flex; align-items: center;margin-right: 10px;">
-            <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px" >
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px" method="post" >
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="inputName">
 
-                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit" style="padding: 0px 12px;">Search</button>
+                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit" style="padding: 0px 12px;" onclick="window.location.href='/customer?action=find'">Search</button>
             </form>
             <span id="no-auth"><i style="margin-left: 5px;" class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>
             <div id="auth">
@@ -54,7 +54,7 @@
     </div>
 </nav>
 
-<h1>List Of Customer</h1>
+<h1 style="text-align: center">List Of Customer</h1>
 
 <table class="table table-striped">
     <thread>
@@ -101,16 +101,16 @@
                                 <button type="button" class="btn btn-primary"
                                         onclick="window.location.href='/customer?action=delete&id=${customer.getCustomerId()}'">
                                     Yes
+
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </td>
 
             <td>
-                <button type="submit" class="btn btn-outline-success"
+                <button type="submit" class="btn btn-outline-primary"
                         onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">Edit
                 </button>
             </td>
@@ -123,12 +123,12 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-outline-info" onclick="window.location.href='/customer?action=create'">Create
+<button type="button" class="btn btn-outline-primary" onclick="window.location.href='/customer?action=create'">Create
 </button>
 
 <footer class="bg-light text-center text-lg-start">
     <div class="text-center p-3" style="background-color: hsl(216, 25%, 95.1%);">
-        © 2020 Copyright:
+        © 2023 Copyright:
         <a class="text-dark" target="_blank"  href="https://toanthaydinh.com/wp-content/uploads/2020/05/hinh-anh-mat-cuoi.jpg20.jpg">Đức Thắng</a>
     </div>
 

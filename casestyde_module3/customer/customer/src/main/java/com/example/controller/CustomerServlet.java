@@ -30,6 +30,7 @@ public class CustomerServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         int id ;
+        List<Customer> customerList;
         if(action==null){
             action="";
         }
@@ -39,19 +40,17 @@ public class CustomerServlet extends HttpServlet {
                 break;
 
             case "delete" :
-                id = Integer.parseInt(request.getParameter("id"));
-                customerService.delete(id);
-                response.sendRedirect("/customer");
+                      id = Integer.parseInt(request.getParameter("id"));
+                       customerService.delete(id);
+                     response.sendRedirect("/customer");
                 break;
-//
-//            case "edit":
-//                    id = Integer.parseInt(request.getParameter("idEdit"));
-//                    request.setAttribute("idEdit",id);
-//                    request.getRequestDispatcher("/edit.jsp").forward(request,response);
-//                break;
-//
+            case "edit":
+                    id = Integer.parseInt(request.getParameter("idEdit"));
+                    request.setAttribute("idEdit",id);
+                    request.getRequestDispatcher("/edit.jsp").forward(request,response);
+                break;
             default:
-                List<Customer> customerList = customerService.getAll();
+                            customerList = customerService.getAll();
                 if(customerList==null){
                     request.getRequestDispatcher("/error.jsp").forward(request,response);
                 }else {
@@ -75,6 +74,7 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+
         int id;
         if(action==null){
             action = "";
@@ -84,14 +84,20 @@ public class CustomerServlet extends HttpServlet {
                 create(request, response);
                 break;
             case "edit":
-//                 id = Integer.parseInt(request.getParameter("idEdit"));
-//                String name = request.getParameter("name");
-//                String phoneNumber = request.getParameter("phoneNumber");
-//                String address = request.getParameter("address");
-//                String email = request.getParameter("email");
-//                Customer customer = new Customer(id,name,phoneNumber,address,email);
-//                customerService.edit(customer);
-//                response.sendRedirect("/customer");
+                 id = Integer.parseInt(request.getParameter("idEdit"));
+                String name = request.getParameter("name");
+                String phoneNumber = request.getParameter("phoneNumber");
+                String address = request.getParameter("address");
+                String email = request.getParameter("email");
+                Customer customer = new Customer(id,name,phoneNumber,address,email);
+                customerService.edit(customer);
+                response.sendRedirect("/customer");
+                break;
+            case "find":
+                String names = request.getParameter("inputName");
+                List<Customer> customerList    =   customerService.find(names);
+                request.setAttribute("customerList",customerList);
+                request.getRequestDispatcher("search_by_name_customer.jsp").forward(request,response);
                 break;
 
         }

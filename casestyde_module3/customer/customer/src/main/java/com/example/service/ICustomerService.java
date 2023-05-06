@@ -14,7 +14,9 @@ public interface ICustomerService {
 
     public  boolean checkLogin(User user) ;
 //
-    void delete(int id);
+    boolean delete(int id);
 //
-//    void edit(Customer customer);
+    boolean edit(Customer customer);
+
+    List<Customer> find(String name);
 }
