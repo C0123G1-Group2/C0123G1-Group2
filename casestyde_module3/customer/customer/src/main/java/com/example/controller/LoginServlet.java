@@ -6,9 +6,7 @@ import com.example.service.ICustomerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
@@ -31,6 +29,10 @@ public class LoginServlet extends HttpServlet {
         System.out.println(username + " --- " + password);
 
         if(customerService.checkLogin(user)){
+//            Cookie cookie = new Cookie("login", "true");
+//            response.addCookie(cookie);
+            HttpSession session = request.getSession();
+            session.setAttribute("login", "true");
             response.sendRedirect("home.jsp");
         }else {
             request.setAttribute("message","Login Fail");

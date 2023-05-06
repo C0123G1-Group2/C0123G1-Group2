@@ -22,13 +22,19 @@ private ICustomerRepository customerRepository = new CustomerRepository();
         customerRepository.save(customer);
     }
 
-
-    public  boolean checkLogin(User user){
-        if("admin".equals(user.getUsername())&& "12345".equals(user.getPassword()) ){
-            return true ;
-        }else {
+//
+    public  boolean checkLogin(User user) {
+        if ("admin".equals(user.getUsername()) && "12345".equals(user.getPassword())) {
+            return true;
+        } else {
             return false;
         }
+
+//
+//    @Override
+//    public void edit(Customer customer) {
+//        customerRepository.edit(customer);
+//    }
 
     }
 
@@ -36,10 +42,4 @@ private ICustomerRepository customerRepository = new CustomerRepository();
     public void delete(int id) {
         customerRepository.delete(id);
     }
-
-    @Override
-    public void edit(Customer customer) {
-        customerRepository.edit(customer);
-    }
-
 }

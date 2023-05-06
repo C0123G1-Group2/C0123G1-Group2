@@ -14,11 +14,20 @@ import java.util.List;
 public class CustomerServlet extends HttpServlet {
     private ICustomerService customerService = new CustomerService();
 
-
-
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        Boolean isLogin = false;
+//        Cookie[] cookies = request.getCookies();
+//        if (cookies != null) {
+//            for (Cookie cookie : cookies) {
+//                if (cookie.getName().equals("login") && cookie.getValue().equals("true")) {
+//                    isLogin = true;
+//                }
+//            }
+//        }
+        HttpSession session = request.getSession();
+        Boolean isLogin = session.getAttribute("login") == "true";
+
         String action = request.getParameter("action");
         int id ;
         if(action==null){
@@ -34,21 +43,25 @@ public class CustomerServlet extends HttpServlet {
                 customerService.delete(id);
                 response.sendRedirect("/customer");
                 break;
-
-            case "edit":
-                    id = Integer.parseInt(request.getParameter("idEdit"));
-                    request.setAttribute("idEdit",id);
-                    request.getRequestDispatcher("/edit.jsp").forward(request,response);
-                break;
-
+//
+//            case "edit":
+//                    id = Integer.parseInt(request.getParameter("idEdit"));
+//                    request.setAttribute("idEdit",id);
+//                    request.getRequestDispatcher("/edit.jsp").forward(request,response);
+//                break;
+//
             default:
                 List<Customer> customerList = customerService.getAll();
                 if(customerList==null){
                     request.getRequestDispatcher("/error.jsp").forward(request,response);
                 }else {
-
-                    request.setAttribute("customerList",customerList);
-                    request.getRequestDispatcher("/list.jsp").forward(request,response);
+                    if(isLogin){
+                        request.setAttribute("customerList",customerList);
+                        request.getRequestDispatcher("/list.jsp").forward(request,response);
+                    }
+                    else {
+                        request.getRequestDispatcher("/login.jsp").forward(request,response);
+                    }
                 }
 
 
@@ -71,14 +84,14 @@ public class CustomerServlet extends HttpServlet {
                 create(request, response);
                 break;
             case "edit":
-                 id = Integer.parseInt(request.getParameter("idEdit"));
-                String name = request.getParameter("name");
-                String phoneNumber = request.getParameter("phoneNumber");
-                String address = request.getParameter("address");
-                String email = request.getParameter("email");
-                Customer customer = new Customer(id,name,phoneNumber,address,email);
-                customerService.edit(customer);
-                response.sendRedirect("/customer");
+//                 id = Integer.parseInt(request.getParameter("idEdit"));
+//                String name = request.getParameter("name");
+//                String phoneNumber = request.getParameter("phoneNumber");
+//                String address = request.getParameter("address");
+//                String email = request.getParameter("email");
+//                Customer customer = new Customer(id,name,phoneNumber,address,email);
+//                customerService.edit(customer);
+//                response.sendRedirect("/customer");
                 break;
 
         }

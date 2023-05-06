@@ -13,8 +13,8 @@ public interface ICustomerService {
 
 
     public  boolean checkLogin(User user) ;
-
+//
     void delete(int id);
-
-    void edit(Customer customer);
+//
+//    void edit(Customer customer);
 }

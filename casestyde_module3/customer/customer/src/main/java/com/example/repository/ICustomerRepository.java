@@ -7,9 +7,9 @@ import java.util.List;
 public interface ICustomerRepository{
     List<Customer> getAll();
 
-    void save(Customer customer);
-
-    void delete(int id);
-
-    void edit(Customer customer);
+    boolean save(Customer customer);
+//
+    boolean delete(int id);
+//
+//    void edit(Customer customer);
 }
