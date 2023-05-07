@@ -14,24 +14,34 @@
     <title>Create Employee</title>
 </head>
 <body>
-<div align="center">
-
-    <button class="btn btn-primary" onclick="window.location.href='/employee?action=displayList'">Xem danh sach</button>
+<div>
+    <h1 class="font-monospace" style="color: darkgoldenrod">THÊM MỚI NHÂN VIÊN</h1>
 </div>
-<div align="center">
-    <form action="/employee?action=create" method="post">
-        <label>Name Employee</label>
-        <input  class="form-control" type="text" name="name" required>
-        <label>Phone Number</label>
-        <input   class="form-control" type="number" name="phoneNumber"  required>
-        <label>Day of Birth</label>
-        <input  class="form-control"  type="text" name="dayOfBirth" required>
-        <label>Email</label>
-        <input  class="form-control" type="text" name="email" required>
-        <button class="btn btn-primary" type="submit">Create</button>
+<div align="center" style="background: darkgray;padding: 20px;width: 40%;border-radius: 5% ">
+    <form action="/employee?action=create" method="post" >
+        <div class="mb-3" >
+            <label  class="form-label font-monospace">Tên Nhân Viên</label>
+            <input type="text" class="form-control"  name="name" placeholder="Nguyen Van A">
+        </div>
+        <div class="mb-3">
+            <label  class="form-label font-monospace">Số Điện Thoại</label>
+            <input type="text" class="form-control"  name="phoneNumber">
+        </div>
+        <div class="mb-3" >
+            <label  class="form-label font-monospace">Ngày tháng năm sinh</label>
+            <input type="text" class="form-control"  name="dayOfBirth" placeholder="YYYY-MM-DD">
+        </div>
+        <div class="mb-3" >
+            <label  class="form-label font-monospace">Email</label>
+            <input type="text" class="form-control"   name="email" placeholder="nguyenvana@gmail.com">
+        </div>
+        <button type="submit" class="btn btn-outline-dark font-monospace">Create</button>
     </form>
 </div>
-<small>${mess}</small>
+<div>
+    <button class="btn btn-outline-dark font-monospace" onclick="window.location.href='/employee?action=displayList'">Quay trở lại danh sách</button>
+</div>
+<small class="font-monospace">${mess}</small>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

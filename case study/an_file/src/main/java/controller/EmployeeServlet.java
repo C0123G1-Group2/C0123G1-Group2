@@ -59,7 +59,7 @@ public class EmployeeServlet extends HttpServlet {
                 if(checkCreate){
                     mess = "Thêm mới thành công";
                 }else {
-                    mess = " Thêm mới thất bại";
+                    mess = " Thêm mới thất bại ! Số điện thoại bị trùng lặp";
                 }
                 request.setAttribute("mess",mess);
                 request.getRequestDispatcher("/EmployeeJSP/createEmployee.jsp").forward(request,response);

@@ -50,37 +50,37 @@
     </div>
 </nav>
 
-<h1>List Of Employee</h1>
+<h1 style="text-align: center" class="font-monospace">List Of Employee</h1>
 
 <table class="table table-striped">
     <thread>
         <tr>
-            <th>Employee ID</th>
-            <th>Name</th>
-            <th>Day of Birth</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Delete</th>
-            <th>Edit</th>
+            <th class="font-monospace" style="text-align: center">Employee ID</th>
+            <th class="font-monospace">Name</th>
+            <th class="font-monospace">Day of Birth</th>
+            <th class="font-monospace">Phone Number</th>
+            <th class="font-monospace">Email</th>
+            <th class="font-monospace">Delete</th>
+            <th class="font-monospace">Edit</th>
         </tr>
     </thread>
     <tbody>
     <c:forEach var="employee" items="${employeeList}">
         <tr>
-            <td>${employee.getEmployeeID()}</td>
+            <td style="text-align:center">DN-${employee.getEmployeeID()}</td>
             <td>${employee.getEmployeeName()}</td>
             <td>${employee.getDayOfBirth()}</td>
             <td>${employee.getPhoneNumber()}</td>
             <td>${employee.getEmail()}</td>
             <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                <button type="button" class="btn btn-outline-primary font-monospace" data-bs-toggle="modal"
                         data-bs-target="#exampleModal${employee.getEmployeeID()}">
                     Delete
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal${employee.getEmployeeID()}" tabindex="-1"
+                <div class="modal fade font-monospace" id="exampleModal${employee.getEmployeeID()}" tabindex="-1"
                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -106,7 +106,7 @@
             </td>
 
             <td>
-                <button type="submit" class="btn btn-outline-success"
+                <button type="submit" class="btn btn-outline-success font-monospace"
                         onclick="window.location.href='/customer?action=edit&idEdit=${employee.getEmployeeID()}' ">Edit
                 </button>
             </td>
@@ -119,7 +119,7 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-outline-info" onclick="window.location.href='/EmployeeJSP/createEmployee.jsp'">Create
+<button type="button" class="btn btn-outline-info font-monospace" onclick="window.location.href='/EmployeeJSP/createEmployee.jsp'">Create
 </button>
 
 <footer class="bg-light text-center text-lg-start">
