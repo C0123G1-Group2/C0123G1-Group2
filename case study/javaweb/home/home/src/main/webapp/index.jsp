@@ -6,14 +6,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
+        h5, p {
+            color: #FFD700;
+        }
+
         .left {
             padding-right: 0px;
-            background:linear-gradient(35deg,#99FF99,white) ;
+            background: linear-gradient(35deg, black, white, black);
         }
 
         .card {
             margin: 25px;
             height: 820px;
+            background: linear-gradient(35deg, grey, black, white);
+        }
+
+        card:hover {
+            transform: rotate(45deg);
         }
 
         .css-center {
@@ -32,8 +41,8 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: white;
-            border: 1px solid blue;
+            background-color: black;
+            border: 1px solid #FFD700;
             border-radius: 5px;
         }
 
@@ -45,12 +54,11 @@
             text-align: center;
             border-radius: 5px;
         }
-        .border-info{
+
+        .border-warning, img {
             border-radius: 5%;
         }
-        img{
-            border-radius: 5%;
-        }
+
 
         .height-card {
             height: 900px;
@@ -61,120 +69,134 @@
             position: relative;
             transition: 0.5s;
         }
-        .height-card .css-center:hover{
+
+        .height-card .css-center:hover {
             transform: translateY(-20px);
             /*background: linear-gradient(45deg,#99FF99,white);*/
         }
-        .height-card .css-center::before{
+
+        .height-card .css-center::before {
             position: absolute;
             /*background: linear-gradient(45deg,#99FF99,white);*/
 
         }
-        .height-card .css-center::after{
+
+        .height-card .css-center::after {
             position: absolute;
             filter: blur(50px);
             /*background: linear-gradient(45deg,#99FF99,white);*/
-
         }
+
+        .content {
+            background-color: lightgrey;
+        }
+
+
     </style>
 </head>
 <body>
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light " style="position: sticky;top: 0;left: 0;right: 0;z-index: +1;background:linear-gradient(45deg,white,#99CCFF,white); height: 100px;font-size: 20px">
-        <a class="navbar-brand" href="#" style="margin-right: 20px"><img
-                src="https://www.threelions.nl/wp-content/uploads/2020/09/logo-three-lions-rgb.png"
-                style="width: 80px;height: 50px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light "
+         style="position: sticky;top: 0;left: 0;right: 0;z-index: +1;background:linear-gradient(45deg,black,black,white,black,black); height: 100px;font-size: 20px">
+        <a class="navbar-brand card-r" href="#" style="margin-right: 20px">
+            <img
+                    src="https://www.shutterstock.com/shutterstock/photos/1111432652/display_1500/stock-vector-three-head-lion-mascot-1111432652.jpg"
+                    style="width: 100px;height: 100%;margin-left: 0px">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active" style="font-weight: 700;margin-right: 20px" >
-                    <a class="nav-link" href="/index.jsp">Home</a>
+                <li class="nav-item active" style="font-weight: 700;margin-right: 20px;">
+                    <a class="nav-link " href="/index.jsp" style="height: 100%;color: #FFD700;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/home?action=dvdk" style="font-weight: 500;margin-right: 20px">Dịch vụ đi kèm</a>
+                    <a class="nav-link" href="/home?action=dvdk"
+                       style="font-weight: 500;margin-right: 20px;width: 105%;height: 100%;color: #FFD700">Dịch vụ đi
+                        kèm</a>
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Disabled</a>
+                    <a class="nav-link " href="/product" style="width: 115%;height: 100%;color: #FFD700">Manager
+                        Product</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0 d-flex" style="margin-left: 56%;margin-right: 4%">
+            <form class="form-inline my-2 my-lg-0 d-flex" style="margin-left: 50%;margin-right: 4%">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       style="border-color: red; margin-right: 5%">
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                       style="border-color: #FFD700; margin-right: 5%">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <button type="button" class="btn btn-outline-danger">Login</button>
+            <button type="button" class="btn btn-outline-warning">Login</button>
         </div>
     </nav>
     <div class="content ">
         <div class="row ">
             <div class="col-sm-1 left">
                 <div class="left-content">
-                    <button class="roll drop-left btn btn-outline-primary">Sân bóng 5 người</button>
-                    <button class="roll drop-left btn btn-outline-primary">Sân bóng 7 người</button>
-                    <button class="roll drop-left btn btn-outline-primary">Sân bóng futsal</button>
-                    <button class="roll drop-left btn btn-outline-primary">Vị trí sân</button>
-                    <button class="roll drop-left btn btn-outline-primary">Liên hệ</button>
-                    <button class="roll drop-left btn btn-outline-primary">Đánh giá</button>
-                    <button class="roll drop-left btn btn-outline-primary">Sân đang trống</button>
-                    <button class="roll drop-left btn btn-outline-primary">gdsgds</button>
-                    <button class="roll drop-left btn btn-outline-primary">Sgdgds</button>
+                    <button class="roll drop-left btn btn-outline-warning">Sân bóng 5 người</button>
+                    <button class="roll drop-left btn btn-outline-warning">Sân bóng 7 người</button>
+                    <button class="roll drop-left btn btn-outline-warning">Sân bóng futsal</button>
+                    <button class="roll drop-left btn btn-outline-warning">Vị trí sân</button>
+                    <button class="roll drop-left btn btn-outline-warning">Liên hệ</button>
+                    <button class="roll drop-left btn btn-outline-warning">Đánh giá</button>
+                    <button class="roll drop-left btn btn-outline-warning">Sân đang trống</button>
+                    <button class="roll drop-left btn btn-outline-warning">gdsgds</button>
+                    <button class="roll drop-left btn btn-outline-warning">Sgdgds</button>
                 </div>
             </div>
             <div class="col-sm-11">
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://aobongda24h.com/pic/news/images/images/6369336271236010271.jpg"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 1(Sân 5 người)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">
+                                    Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/12/13/san-bong-da-ho-chi-minh-1.jpg"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 2(Sân 5 người)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
@@ -182,57 +204,57 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/11/6/tim-hieu-thong-tin-san-bong-da-5-nguoi-2.jpg"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 3(Sân 5 người)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 3(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://yousport.vn/Media/Blog/Nh%E1%BB%AFng%20m%E1%BA%B7t%20s%C3%A2n%20b%C3%B3ng%20%C4%91%C3%A1%20ph%E1%BB%95%20bi%E1%BA%BFn%20hi%E1%BB%87n%20nay/nhung-mat-san-bong-da-pho-bien-nhat-hien-nay-2G.jpg"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 4(Sân 5 người)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 4(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
@@ -240,57 +262,57 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 1(Sân 7 người)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 2(Sân 7 người)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
@@ -298,57 +320,58 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://trungtambongro.vn/wp-content/uploads/2018/09/ngoisao_san-Q-PN-2.jpg"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 1(Sân Futsal)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân Futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
+
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-info" style="width: 90%;">
+                        <div class="card border-warning" style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://static-images.vnncdn.net/files/publish/2022/8/30/u9-toan-quoc-113.jpg"
-                                  alt="...">
+                                 alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #dd4b39">Sân sô 2(Sân 5 futsal)</h5>
+                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-primary" style="font-size: xx-large">Xem
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
                                     chi tiết sân bóng
                                 </button>
                             </div>
                             <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #dd4b39">Giờ đặt sân</a>
+                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
                                 <div>
-                                    <button type="button" class="btn btn-outline-primary">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-secondary">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-success">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-danger">18h-19h</button>
+                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
+                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
+                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
+                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
                                     <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-info">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-info">21-22h</button>
-                                    <button type="button" class="btn btn-outline-dark">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-primary">23h-24h</button>
+                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
+                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
+                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
+                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
                         </div>
