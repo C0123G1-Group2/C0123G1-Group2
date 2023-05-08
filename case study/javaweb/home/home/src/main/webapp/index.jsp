@@ -27,7 +27,11 @@
 
         .css-center {
             text-align: center;
+<<<<<<< Updated upstream
             padding: 10px;
+=======
+            padding: 40px;
+>>>>>>> Stashed changes
         }
 
         .left-content {
@@ -171,6 +175,7 @@
                                     <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
+<<<<<<< Updated upstream
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
@@ -199,6 +204,45 @@
                                     <button type="button" class="btn btn-outline-warning">23h-24h</button>
                                 </div>
                             </div>
+=======
+                            <ul class="list-group list-group-flush">
+                                <a href="#" style="font-size: xx-large">Xem chi tiet</a>
+                                <li class="d-flex">
+                                    <button class="d-inline">15h-16h</button>
+                                    <button class="d-inline">16h-17h</button>
+                                    <button class="d-inline">17h-18h</button>
+                                    <button class="d-inline">18h-19h</button>
+                                    <button class="d-inline">19h-20h</button>
+                                    <button class="d-inline">20h-21h</button>
+                                    <button class="d-inline">21h-22h</button>
+                                    <button class="d-inline">22h-23h</button>
+                                    <button class="d-inline">23h-24h</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 css-center">
+                        <div class="card" style="width: 90%;">
+                            <img src="https://aobongda24h.com/pic/news/images/images/6369336271236010271.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: #dd4b39">Sân sô 2(Sân 5 người)</h5>
+                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <a href="#" style="font-size: xx-large">Xem chi tiet</a>
+                                <li class="d-flex">
+                                    <button>15h-16h</button>
+                                    <button>16h-17h</button>
+                                    <button>17h-18h</button>
+                                    <button>18h-19h</button>
+                                    <button>19h-20h</button>
+                                    <button>20h-21h</button>
+                                    <button>21h-22h</button>
+                                    <button>22h-23h</button>
+                                    <button>23h-24h</button>
+                                </li>
+                            </ul>
+>>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>
