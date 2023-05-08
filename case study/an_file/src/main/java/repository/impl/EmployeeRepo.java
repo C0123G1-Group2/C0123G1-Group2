@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepo implements IEmployeeRepo {
+    private  final String DELETE_EMPLOYEE = "DELETE FROM nhan_vien WHERE ma_nhan_vien = ?;";
     private final String SELECT_ALL = "SELECT * FROM nhan_vien;";
     private final String INSERT_INTO = "INSERT INTO nhan_vien(ten_nhan_vien,ngay_sinh,so_dien_thoai,email) values(?,?,?,?);";
     @Override
@@ -46,6 +47,19 @@ public class EmployeeRepo implements IEmployeeRepo {
             preparedStatement.setString(2,employee.getDayOfBirth());
             preparedStatement.setString(3,employee.getPhoneNumber());
             preparedStatement.setString(4,employee.getEmail());
+            return preparedStatement.executeUpdate()>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deteleEmployee(int id) {
+        Connection connection = BaseRepositoryEmployee.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_EMPLOYEE);
+            preparedStatement.setInt(1,id);
             return preparedStatement.executeUpdate()>0;
         } catch (SQLException e) {
             e.printStackTrace();

@@ -95,7 +95,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                                 <button type="button" class="btn btn-primary"
-                                        onclick="window.location.href='/customer?action=delete&id=${employee.getEmployeeID()}'">
+                                        onclick="window.location.href='/employee?action=delete&id=${employee.getEmployeeID()}'">
                                     Yes
                                 </button>
                             </div>
@@ -119,7 +119,7 @@
     </tbody>
 </table>
 
-<button type="button" class="btn btn-outline-info font-monospace" onclick="window.location.href='/EmployeeJSP/createEmployee.jsp'">Create
+<button type="button" class="btn btn-outline-info font-monospace" onclick="window.location.href='/view/EmployeeJSP/createEmployee.jsp'">Create
 </button>
 
 <footer class="bg-light text-center text-lg-start">

@@ -24,6 +24,9 @@ public class EmployeeServlet extends HttpServlet {
         }
         switch (action){
             case "delete":
+                id = Integer.parseInt(request.getParameter("id"));
+                employeeService.deleteEmployee(id);
+                request.getRequestDispatcher("/employee?action=display").forward(request,response);
                 break;
             default:
                 showEmployeeList(request,response);
@@ -35,7 +38,7 @@ public class EmployeeServlet extends HttpServlet {
         List<Employee> employeeList ;
         employeeList = employeeService.getAll();
         request.setAttribute("employeeList",employeeList);
-        request.getRequestDispatcher("/EmployeeJSP/employeeList.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/EmployeeJSP/employeeList.jsp").forward(request,response);
     }
 
     @Override
@@ -62,7 +65,7 @@ public class EmployeeServlet extends HttpServlet {
                     mess = " Thêm mới thất bại ! Số điện thoại bị trùng lặp";
                 }
                 request.setAttribute("mess",mess);
-                request.getRequestDispatcher("/EmployeeJSP/createEmployee.jsp").forward(request,response);
+                request.getRequestDispatcher("/view/EmployeeJSP/createEmployee.jsp").forward(request,response);
                 break;
         }
 

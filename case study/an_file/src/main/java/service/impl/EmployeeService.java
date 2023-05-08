@@ -19,4 +19,9 @@ public class EmployeeService implements IEmployeeService {
     public boolean createEmployee(Employee employee) {
         return employeeRepo.createEmployee(employee);
     }
+
+    @Override
+    public boolean deleteEmployee(int id) {
+        return employeeRepo.deteleEmployee(id);
+    }
 }

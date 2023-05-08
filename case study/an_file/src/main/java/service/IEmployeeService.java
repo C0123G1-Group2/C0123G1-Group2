@@ -8,4 +8,6 @@ public interface IEmployeeService {
     List<Employee> getAll();
 
     boolean createEmployee( Employee employee);
+
+    boolean deleteEmployee(int id);
 }
