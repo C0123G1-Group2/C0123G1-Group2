@@ -103,3 +103,5 @@ password_customer VARCHAR(50) NOT NULL UNIQUE
 INSERT INTO user_customer VALUES(?,?);
 SELECT * FROM user_customer;
 SELECT * FROM customer ;
+SELECT * FROM customer ORDER BY `name` ; 
+SELECT * FROM customer ORDER BY `name` ;
