@@ -51,37 +51,13 @@ CREATE TABLE detailed_bill (
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_login VARCHAR(50) NOT NULL UNIQUE,
-    password_login VARCHAR(50) NOT NULL
+    password_login VARCHAR(50) NOT NULL,
+    isSell INT NOT NULL,
+    isAdmin INT NOT NULL
 );
 INSERT INTO users (user_login , password_login) VALUES('admin','12345');
 INSERT INTO users (user_login , password_login) VALUES('thang','12345');
-SELECT 
-    *
-FROM
-    users;
-CREATE TABLE user_customer (
-    user_customer VARCHAR(50) PRIMARY KEY,
-    password_customer VARCHAR(50) NOT NULL UNIQUE
-);
 
-SELECT 
-    *
-FROM
-    user_customer;
-SELECT 
-    *
-FROM
-    customer;
-SELECT 
-    *
-FROM
-    customer
-ORDER BY `name`;
-SELECT 
-    *
-FROM
-    customer
-ORDER BY `name`;
 INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
 ("Sân số 3","sân 5",300000),
