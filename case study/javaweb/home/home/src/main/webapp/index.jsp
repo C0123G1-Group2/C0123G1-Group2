@@ -109,7 +109,7 @@
                     <a class="nav-link " href="/index.jsp" style="height: 100%;color: #FFD700;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/home?action=dvdk"
+                    <a class="nav-link" href="product/home.jsp"
                        style="font-weight: 500;margin-right: 20px;width: 105%;height: 100%;color: #FFD700">Dịch vụ đi
                         kèm</a>
                 </li>
