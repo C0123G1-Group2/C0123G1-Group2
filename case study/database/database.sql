@@ -21,8 +21,8 @@ CREATE TABLE soccer_field (
     phone INT NOT NULL UNIQUE,
     email VARCHAR(50) NOT NULL
 );
-CREATE TABLE oder (
-    oder_id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT,
     FOREIGN KEY (customer_id)
         REFERENCES customer (customer_id),
@@ -34,11 +34,10 @@ CREATE TABLE oder (
 );
  CREATE TABLE bill (
     bill_id INT PRIMARY KEY AUTO_INCREMENT,
-    oder_id INT,
-    FOREIGN KEY (oder_id)
-        REFERENCES oder (oder_id)
+    order_id INT,
+    FOREIGN KEY (order_id)
+        REFERENCES orders (order_id)
 );
-
  CREATE TABLE detailed_bill (
     detailed_bill_id INT PRIMARY KEY AUTO_INCREMENT,
     bill_id INT,
@@ -46,6 +45,24 @@ CREATE TABLE oder (
         REFERENCES bill (bill_id),
     total_price INT
 );
+
+CREATE TABLE users(
+id INT PRIMARY KEY AUTO_INCREMENT ,
+user_login VARCHAR(50) NOT NULL UNIQUE,
+password_login VARCHAR(50) NOT NULL
+);
+INSERT INTO users (user_login , password_login) VALUES('admin','12345');
+INSERT INTO users (user_login , password_login) VALUES('thang','12345');
+SELECT * FROM users ;
+CREATE TABLE user_customer(
+user_customer VARCHAR(50) PRIMARY KEY ,
+password_customer VARCHAR(50) NOT NULL UNIQUE
+);
+
+SELECT * FROM user_customer;
+SELECT * FROM customer ;
+SELECT * FROM customer ORDER BY `name` ;
+SELECT * FROM customer ORDER BY `name` ;
 INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
 ("Sân số 3","sân 5",300000),
@@ -55,8 +72,6 @@ INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("S�
 ("Sân số 7","sân futlsan",300000),
 ("Sân số 8","sân futlsan",300000);
 
-
-SELECT * FROM customer;
 INSERT INTO customer VALUES
 (1, 'Nguyễn Đức Thắng', '0782391943', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'nguyenthangfa2001@gmail.com'),
 (2, 'Nguyễn Đức Thành', '078232345', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'ducthanh@gmail.com'),
@@ -76,3 +91,98 @@ INSERT INTO customer VALUES
 ;
 INSERT INTO customer VALUES (16,'nga','0914000056','My','nganguyen@gmail.com');
 INSERT INTO bill (customer_id,soccer_field_id,begin_time,price) VALUES (1,1,'0914000056','My','nganguyen@gmail.com');
+
+-- trigger uppdate soccer_field
+CREATE TABLE trigger_soccer_field_update (
+   soccer_field_id INT PRIMARY KEY AUTO_INCREMENT,
+    soccer_field_name VARCHAR(20) NOT NULL UNIQUE,
+    soccer_field_type VARCHAR(20) NOT NULL,
+    price DOUBLE NOT NULL,
+    date DATETIME
+);
+DELIMITER $$
+ CREATE TRIGGER before_soccer_field_update
+ BEFORE UPDATE ON soccer_field
+ FOR EACH ROW
+BEGIN
+ INSERT INTO trigger_soccer_field_update
+SET
+ soccer_field_name = OLD.soccer_field_name,
+ soccer_field_type = OLD.soccer_field_type,
+ price = OLD.price,
+ date = NOW();
+END$$
+ DELIMITER ;
+ 
+ -- trigger create
+CREATE TABLE before_soccer_field_create (
+   soccer_field_id INT PRIMARY KEY AUTO_INCREMENT,
+    soccer_field_name VARCHAR(20) NOT NULL UNIQUE,
+    soccer_field_type VARCHAR(20) NOT NULL,
+    price DOUBLE NOT NULL,
+    date DATETIME
+);
+
+DELIMITER $$
+ CREATE TRIGGER before_soccer_field_create
+ BEFORE INSERT ON soccer_field
+ FOR EACH ROW
+BEGIN
+ INSERT INTO before_soccer_field_create
+SET
+ soccer_field_name = NEW.soccer_field_name,
+ soccer_field_type = NEW.soccer_field_type,
+ price = NEW.price,
+ date = NOW();
+END$$
+ DELIMITER ;
+SELECT * FROM before_soccer_field_create;
+
+-- trigger uppdate CUSTOMER
+CREATE TABLE trigger_customer_update (
+   customer_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    phone_number VARCHAR(11) NOT NULL UNIQUE,
+    address VARCHAR(50),
+    email VARCHAR(50) NOT NULL UNIQUE,
+    date DATETIME
+);
+DELIMITER $$
+ CREATE TRIGGER before_customer_update
+ BEFORE UPDATE ON customer
+ FOR EACH ROW
+BEGIN
+ INSERT INTO trigger_customer_update
+SET
+ name = OLD.name,
+ phone_number = OLD.phone_number,
+ address = OLD.address,
+ email=OLD.email,
+ date = NOW();
+END$$
+ DELIMITER ;
+ 
+  -- trigger create
+CREATE TABLE before_customer_create (
+   customer_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    phone_number VARCHAR(11) NOT NULL UNIQUE,
+    address VARCHAR(50),
+    email VARCHAR(50) NOT NULL UNIQUE,
+    date DATETIME
+);
+DELIMITER $$
+ CREATE TRIGGER before_customer_create
+ BEFORE INSERT ON customer
+ FOR EACH ROW
+BEGIN
+ INSERT INTO before_customer_create
+SET
+ name = NEW.name,
+ phone_number = NEW.phone_number,
+ address = NEW.address,
+ email= NEW.email,
+ date = NOW();
+END$$
+ DELIMITER ;
+SELECT * FROM before_customer_create;

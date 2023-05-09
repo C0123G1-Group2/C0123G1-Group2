@@ -1,6 +1,6 @@
 package repository;
 
-import model.Oder;
+import model.Order;
 import model.Product;
 
 
@@ -16,7 +16,7 @@ public class ProductRepo implements IProductRepo{
     private final String DELETEPRODUCT="DELETE FROM soccer_field WHERE soccer_field_id=?;";
     private final String ADDPRODUCT="INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES (?,?,?);";
     private final String EDITPRODUCT="UPDATE soccer_field SET soccer_field_name=?,soccer_field_type=?,price=? WHERE soccer_field_id=?;";
-    private final String ODERPRODUCT="INSERT INTO oder(customer_id,soccer_field_id,begin_time,rental_time) VALUES(?,?,?,?)";
+    private final String ODERPRODUCT="INSERT INTO orders(customer_id,soccer_field_id,begin_time,rental_time) VALUES(?,?,?,?)";
 
 
     @Override
@@ -87,16 +87,15 @@ public class ProductRepo implements IProductRepo{
     }
 
     @Override
-    public boolean oderProduct(Oder oder) {
+    public boolean orderProduct(Order order) {
         Connection connection=DBContext.getConnection();
         try {
             PreparedStatement preparedStatement= connection.prepareStatement(ODERPRODUCT);
             preparedStatement.setInt(1,1);
-            preparedStatement.setInt(2,oder.getSoccerFieldId());
-            preparedStatement.setString(3,oder.getBeginTime());
-            preparedStatement.setInt(4,oder.getRentalTime());
-            boolean check= preparedStatement.executeUpdate()>0;
-            return check;
+            preparedStatement.setInt(2,order.getSoccerFieldId());
+            preparedStatement.setString(3,order.getBeginTime());
+            preparedStatement.setInt(4,order.getRentalTime());
+            return preparedStatement.executeUpdate()>0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

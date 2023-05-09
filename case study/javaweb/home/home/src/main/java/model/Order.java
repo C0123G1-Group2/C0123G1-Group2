@@ -1,14 +1,14 @@
 package model;
 
-public class Oder {
+public class Order {
     private int soccerFieldId;
     private String beginTime;
     private int rentalTime;
 
-    public Oder() {
+    public Order() {
     }
 
-    public Oder(int soccerFieldId, String beginTime, int rentalTime) {
+    public Order(int soccerFieldId, String beginTime, int rentalTime) {
         this.soccerFieldId = soccerFieldId;
         this.beginTime = beginTime;
         this.rentalTime = rentalTime;

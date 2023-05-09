@@ -1,6 +1,6 @@
 package service;
 
-import model.Oder;
+import model.Order;
 import model.Product;
 import repository.IProductRepo;
 import repository.ProductRepo;
@@ -34,7 +34,7 @@ public class ProductService implements IProductService{
     }
 
     @Override
-    public boolean oderProduct(Oder oder) {
-        return productRepo.oderProduct(oder);
+    public boolean orderProduct(Order order) {
+        return productRepo.orderProduct(order);
     }
 }
