@@ -91,7 +91,7 @@ section .noi-dung .form .input-form input {
     letter-spacing: 1px;
     color: black;
     background: transparent;
-    border-radius: 5px;
+
 }
 
 section .noi-dung .form .input-form input[type="submit"] {

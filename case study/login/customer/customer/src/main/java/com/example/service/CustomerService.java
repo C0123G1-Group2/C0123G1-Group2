@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.model.Customer;
 import com.example.model.User;
+import com.example.model.UserCustomer;
 import com.example.repository.CustomerRepository;
 import com.example.repository.ICustomerRepository;
 
@@ -45,6 +46,12 @@ public class CustomerService implements ICustomerService{
     public List<Customer> findCustomer(String nameFind, String phoneNumberFind) {
         customerList = customerRepository.findCustomer(nameFind,phoneNumberFind);
         return customerList;
+    }
+
+    @Override
+    public boolean saveUserCustomer(UserCustomer userCustomer) {
+        boolean check = customerRepository.saveUserCustomer(userCustomer);
+       return check;
     }
 
 

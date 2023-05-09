@@ -2,6 +2,7 @@ package com.example.repository;
 
 import com.example.model.Customer;
 import com.example.model.User;
+import com.example.model.UserCustomer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,11 +12,12 @@ public class CustomerRepository implements ICustomerRepository {
 
 
     private final String SELECT_ALL = "SELECT * FROM customer;";
-    private  final String INSERT_INTO = "INSERT INTO customer VALUES (?,?,?,?,?);";
+    private  final String INSERT_INTO = "INSERT INTO customer (`name`,phone_number,address,email ) VALUES (?,?,?,?);";
     private  final String DELETE_CUSTOMER = "Call delete_by_id(?);";
     private final  String UPDATE_CUSTOMER = "CALL update_customer(?,?,?,?,?);";
     private final  String FIND_CUSTOMER = "SELECT * FROM customer WHERE `name` Like ?  AND phone_number Like ? ;";
     private final  String CHECK_LOGIN = "SELECT * FROM users ;";
+    private final  String INSERT_USER_CUSTOMER = "INSERT INTO user_customer VALUES(?,?);";
 
 
 
@@ -48,11 +50,10 @@ public class CustomerRepository implements ICustomerRepository {
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO);
-            preparedStatement.setString(2, customer.getName());
-            preparedStatement.setString(3, customer.getPhoneNumber());
-            preparedStatement.setString(4, customer.getAddress());
-            preparedStatement.setString(5, customer.getEmail());
-            preparedStatement.setInt(1, customer.getCustomerId());
+            preparedStatement.setString(1, customer.getName());
+            preparedStatement.setString(2, customer.getPhoneNumber());
+            preparedStatement.setString(3, customer.getAddress());
+            preparedStatement.setString(4, customer.getEmail());
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,6 +135,21 @@ public class CustomerRepository implements ICustomerRepository {
             e.printStackTrace();
         }
         return userList;
+    }
+
+    @Override
+    public boolean saveUserCustomer(UserCustomer userCustomer) {
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER_CUSTOMER);
+            preparedStatement.setString(1,userCustomer.getUser());
+            preparedStatement.setString(2,userCustomer.getPassword());
+            return preparedStatement.executeUpdate() >0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 

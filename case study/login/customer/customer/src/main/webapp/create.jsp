@@ -51,8 +51,8 @@
 <h2>Create Customer</h2>
 <form action="/customer?action=create" method="post">
     <div class="form-input">
-        <label>Customer Id </label>
-        <input style="border: 1px solid; " class="form-control" type="number" name="id" required>
+        <label hidden>Customer Id </label>
+        <input hidden style="border: 1px solid; " class="form-control" type="number" name="id" required value="1">
     </div>
     <div class="form-input">
         <label>Name Customer</label>

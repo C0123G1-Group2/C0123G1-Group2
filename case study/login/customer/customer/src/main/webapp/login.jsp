@@ -45,7 +45,7 @@
               <input type="submit" value="Đăng Nhập">
             </div>
             <div class="input-form">
-              <p>Bạn Chưa Có Tài Khoản? <a href="#">Đăng Ký</a></p>
+              <p>Bạn Chưa Có Tài Khoản? <a href="/sign.jsp">Đăng Ký</a></p>
             </div>
           </form>
         </div>

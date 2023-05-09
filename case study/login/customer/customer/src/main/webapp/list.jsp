@@ -100,8 +100,6 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
 
                 <button class="btn btn-outline-primary" type="submit"  onclick="window.location.href='/customer?action=create'">Create</button>
-
-<%--                <button class="btn btn-outline-primary" type="submit" style="margin-left: 10px">Sort</button>--%>
                 <button type="button" class="btn btn-outline-primary" onclick="printDiv('contentTable')">
                     Print
                 </button>

@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.model.Customer;
 import com.example.model.User;
+import com.example.model.UserCustomer;
 
 import java.util.List;
 
@@ -21,4 +22,7 @@ public interface ICustomerService {
 
 
     List<Customer> findCustomer(String nameFind, String phoneNumberFind);
+
+    boolean saveUserCustomer(UserCustomer userCustomer);
+
 }

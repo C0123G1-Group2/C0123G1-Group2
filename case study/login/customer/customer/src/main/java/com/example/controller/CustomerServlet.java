@@ -51,6 +51,7 @@ public class CustomerServlet extends HttpServlet {
                     request.setAttribute("customer",customer);
                     request.getRequestDispatcher("/edit.jsp").forward(request,response);
                 break;
+
            
             default:
                   customerList = customerService.getAll();
@@ -108,6 +109,8 @@ public class CustomerServlet extends HttpServlet {
             case "find" :
                 find(request, response);
                 break;
+      
+
         }
 
     }
