@@ -52,12 +52,12 @@
       </select>
     </div>
     <div>
-      <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 5px ">Đặt sân</button>
+      <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px ">Đặt sân</button>
       <br>
       <h3>${mess}</h3>
     </div>
   </form>
-  <button  class="btn btn-warning" style="width: 32% ; margin-top: 15px ;background-color:#0a4275" onclick="window.location.href='/index.jsp'">Back</button>
+  <button  class="btn btn-warning" style="width: 32% ; margin-top: 15px " onclick="window.location.href='/index.jsp'">Back</button>
 
 </div>
 </body>
