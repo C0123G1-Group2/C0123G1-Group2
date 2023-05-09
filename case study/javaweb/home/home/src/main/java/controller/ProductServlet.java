@@ -1,5 +1,6 @@
 package controller;
 
+import model.Oder;
 import model.Product;
 import service.IProductService;
 import service.ProductService;
@@ -36,12 +37,18 @@ public class ProductServlet extends HttpServlet {
                 request.setAttribute("product",product);
                 request.getRequestDispatcher("product/edit.jsp").forward(request,response);
                 break;
+            case "oder":
+                int maDV= Integer.parseInt(request.getParameter("maDV"));
+                request.setAttribute("maDV",maDV);
+                request.getRequestDispatcher("product/oder.jsp").forward(request,response);
+                break;
             default:
                 showListProduct(request,response);
                 break;
         }
     }
 
+   
 
 
     @Override
@@ -60,11 +67,28 @@ public class ProductServlet extends HttpServlet {
             case "edit":
                 edit(request,response);
                 break;
+            case "oder":
+                oderProduct(request,response);
+                break;
             default:
                 showListProduct(request,response);
                 break;
         }
 
+    }
+
+    private void oderProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int maDV=request.getIntHeader("value");
+        String beginTime=request.getParameter("beginTime");
+        int rentalTime= Integer.parseInt(request.getParameter("rentalTime"));
+        Oder oder =new Oder(maDV,beginTime,rentalTime);
+        boolean check= productService.oderProduct(oder);
+        String mess="Oder success!";
+        if (!check){
+            mess="Oder fail!";
+        }
+        request.setAttribute("mess",mess);
+        request.getRequestDispatcher("product/oder.jsp").forward(request,response);
     }
 
     private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
