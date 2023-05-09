@@ -12,7 +12,7 @@ public interface ICustomerService {
 
 
 
-    public  boolean checkLogin(User user) ;
+    List<User>getUser() ;
 
     void delete(int id);
 

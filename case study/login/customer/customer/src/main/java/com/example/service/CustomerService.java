@@ -24,15 +24,10 @@ public class CustomerService implements ICustomerService{
     }
 
     //
-    public  boolean checkLogin(User user) {
-        if ("admin".equals(user.getUsername()) && "12345".equals(user.getPassword())) {
-            return true;
-        } else {
-            return false;
-        }
-
-
-
+    public  List<User> getUser() {
+//
+      List<User> userList = customerRepository.getUser();
+        return userList;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.model.Customer;
+import com.example.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class CustomerRepository implements ICustomerRepository {
     private  final String DELETE_CUSTOMER = "Call delete_by_id(?);";
     private final  String UPDATE_CUSTOMER = "CALL update_customer(?,?,?,?,?);";
     private final  String FIND_CUSTOMER = "SELECT * FROM customer WHERE `name` Like ?  AND phone_number Like ? ;";
+    private final  String CHECK_LOGIN = "SELECT * FROM users ;";
 
 
 
@@ -115,6 +117,24 @@ public class CustomerRepository implements ICustomerRepository {
         return customerList;
     }
 
+    @Override
+    public List<User> getUser() {
+        List<User> userList = new ArrayList<>();
+        Connection connection=BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement =connection.prepareStatement(CHECK_LOGIN);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String user_login=resultSet.getString("user_login");
+                String password_login = resultSet.getString("password_login");
+                User users = new User(user_login,password_login);
+                userList.add(users);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
 
 
 }
