@@ -37,10 +37,53 @@
             text-align: center !important;
             vertical-align: middle;
         }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            font-size: larger;
+            color: gold;
+            text-underline: gold;
+        }
     </style>
 </head>
 <body>
 <%--<jsp:include page="header-admin.jsp"/>--%>
+<nav class="navbar navbar-expand-lg navbar-light bg-black" style="height: 5vw">
+    <a class="navbar-brand" href="#" style="margin-right: 0">
+        <img style="width: 6vw ; height: 5vw ; margin-left: 5px"  src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg" >
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="display: flex; justify-content: space-between; padding: 0 10px;">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item ">
+                <a  href="#">Service  </a>
+            </li>
+            <li class="nav-item">
+                <a  href="#">Employee</a>
+            </li>
+            <li class="nav-item">
+                <a  href="#">Customer</a>
+            </li>
+        </ul>
+<%--        <div style="display: flex; align-items: center;margin-right: 10px;">--%>
+<%--            <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px" method="post"  action="/customer?action=find">--%>
+<%--                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="name">--%>
+
+<%--                <button class="btn btn-outline-primary  my-2 my-sm-0 btn btn-outline-warning" type="submit" style="padding: 0px 12px;" >Search</button>--%>
+<%--            </form>--%>
+<%--            <span id="no-auth"><i style="margin-left: 5px;" class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>--%>
+<%--&lt;%&ndash;            <div id="auth">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <span style="width: 25px; height: 25px; background: #2ea6da; border-radius: 50%; display: inline-block" class="btn btn-outline-warning"></span>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <span >Admin</span>&ndash;%&gt;--%>
+<%--&lt;%&ndash;            </div>&ndash;%&gt;--%>
+<%--        </div>--%>
+    </div>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid" style="padding: 0">
         <button
@@ -66,6 +109,7 @@
                 </button>
             </ul>
             <form class="d-flex input-group w-auto"  method="post"  action="/employee?action=find" style="margin-block-end: 0; gap: 10px;" >
+                <button type="submit"  class="btn btn-outline-warning btn-search" onclick="window.location.href='/employee?action='">Return List</button>
                 <input type="search" class="form-control" placeholder="Name" aria-label="Search" name="name" />
                 <input type="search"   class="form-control"  placeholder="Phone Number" name="phoneNumber"/>
                 <button class="btn btn-outline-primary btn-search" type="submit" data-mdb-ripple-color="dark">Search</button>

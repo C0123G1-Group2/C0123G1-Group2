@@ -52,46 +52,34 @@
     <form action="/employee?action=create" method="post">
         <div class="form-input">
             <label>Name Employee</label>
-            <input style="border: 1px solid; "  class="form-control" type="text" name="name" id="name" required>
+            <input oninput="checkName()" style="border: 1px solid; "  class="form-control" type="text" name="name" id="name" required>
+            <small style="color: red" id="checkName"></small>
         </div>
         <div class="form-input">
             <label>Phone Number</label>
-            <input style="border: 1px solid; " class="form-control" type="text" name="phoneNumber" required>
+            <input oninput="checkPhoneNumber()" style="border: 1px solid; " class="form-control" type="text" name="phoneNumber" id="phone" required>
+            <small style="color: red" id="checkPhone"></small>
         </div>
         <div class="form-input">
             <label>Day Of Birth</label>
-            <input style="border: 1px solid; " class="form-control" type="text" name="dayOfBirth" required>
+            <input oninput="checkDayOfBirth()" style="border: 1px solid; " class="form-control" type="text" name="dayOfBirth" id="dayOfBirth" required>
+            <small style="color: red" id="checkDayOfBirth"></small>
         </div>
         <div class="form-input">
             <label>Email</label>
-            <input style="border: 1px solid; " class="form-control" type="text" name="email" required>
+            <input  oninput="checkEmail()" style="border: 1px solid; " class="form-control" type="text" name="email" id ="email" required>
+            <small style="color: red" id="checkEmail"></small>
         </div>
 
         <div>
-            <button style=" width: 48% ; margin-top: 15px ;background-color:#0a4275 ; color: white" class="btn btn-outline-primary" type="submit">Create</button>
-            <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275 ;margin-left: 2%"  onclick="window.location.href='/employee?action='">Back</button>
+            <button style=" width: 48% ; margin-top: 15px ;background: black ; color: gold" class="btn btn-outline-dark" type="submit">Create</button>
+            <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ;color: white ;margin-left: 2%;background: black"  onclick="window.location.href='/employee?action='">Back</button>
             <br>
             <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
         </div>
 
     </form>
 </div>
-<%--<c:if test="${check}">Added successfully</c:if>--%>
-<%--//  oninput="checkName()
---%>
-<%--<script>--%>
-<%--  function checkName(){--%>
-<%--    let name = document.getElementById("name").value;--%>
-<%--    let regexName=//;--%>
-<%--    if(regexName.test(name)){--%>
-<%--      document.getElementById("nameError").innerText="";--%>
-<%--    }else {--%>
-<%--      document.getElementById("nameError").innerText="The name is not in the correct format";--%>
-<%--    }--%>
-
-<%--  }--%>
-
-<%--</script>--%>
-
+<script src="/validate/validate.js"></script>
 </body>
 </html>

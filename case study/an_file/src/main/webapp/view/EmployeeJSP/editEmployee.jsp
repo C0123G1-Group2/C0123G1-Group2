@@ -38,23 +38,27 @@
 
         <div class="form-input">
             <label>Name Employee</label>
-            <input value="${name}" class="form-control" type="text" name="name"  required>
+            <input value="${name}" class="form-control" type="text" name="name" id="name" oninput="checkName()"  style="border: 1px solid; "required>
+            <small style="color: red" id="checkName"></small>
         </div>
-        <div>
+        <div class="form-input">
             <label>Day Of Birth</label>
-            <input  value="${dayOfBirth}"   class="form-control" type="text" name="dayOfBirth"     required>
+            <input  value="${dayOfBirth}"   class="form-control" type="text" name="dayOfBirth" id="dayOfBirth" oninput="checkDayOfBirth()" style="border: 1px solid; " required>
+            <small style="color: red" id="checkDayOfBirth"></small>
         </div>
-        <div>
-            <label>`Phone Number`</label>
-            <input  value="${phoneNumber}" class="form-control"  type="text" name="phoneNumber"  required>
+        <div class="form-input">
+            <label>Phone Number</label>
+            <input  value="${phoneNumber}" class="form-control"  type="text" name="phoneNumber" oninput="checkPhoneNumber()" style="border: 1px solid; " required>
+            <small style="color: red" id="checkPhone"></small>
         </div>
-        <div>
+        <div class="form-input">
             <label>Email</label>
-            <input value="${email}"  class="form-control" type="text" name="email"   required>
+            <input value="${email}"  class="form-control" type="text" name="email" oninput="checkEmail()"  id ="email"  style="border: 1px solid; " required>
+            <small style="color: red" id="checkEmail"></small>
         </div>
         <div>
-            <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 2%">Save</button>
-            <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275" onclick="window.location.href='/employee?action='">Back</button>
+            <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ; margin-right: 2% ;background: black ; color: gold">Save</button>
+            <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ;background: black ; color: white"" onclick="window.location.href='/employee?action='">Back</button>
             <br>
             <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
         </div>
@@ -62,5 +66,6 @@
 
     </form>
 </div>
+<script src="/validate/validate.js"></script>
 </body>
 </html>
