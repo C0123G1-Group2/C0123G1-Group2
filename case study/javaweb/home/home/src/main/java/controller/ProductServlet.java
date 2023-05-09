@@ -1,6 +1,6 @@
 package controller;
 
-import model.Oder;
+import model.Order;
 import model.Product;
 import service.IProductService;
 import service.ProductService;
@@ -68,7 +68,7 @@ public class ProductServlet extends HttpServlet {
                 edit(request,response);
                 break;
             case "oder":
-                oderProduct(request,response);
+                orderProduct(request,response);
                 break;
             default:
                 showListProduct(request,response);
@@ -77,12 +77,12 @@ public class ProductServlet extends HttpServlet {
 
     }
 
-    private void oderProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int maDV=request.getIntHeader("value");
+    private void orderProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int maDV= Integer.parseInt(request.getParameter("value"));
         String beginTime=request.getParameter("beginTime");
         int rentalTime= Integer.parseInt(request.getParameter("rentalTime"));
-        Oder oder =new Oder(maDV,beginTime,rentalTime);
-        boolean check= productService.oderProduct(oder);
+        Order order =new Order(maDV,beginTime,rentalTime);
+        boolean check= productService.orderProduct(order);
         String mess="Oder success!";
         if (!check){
             mess="Oder fail!";

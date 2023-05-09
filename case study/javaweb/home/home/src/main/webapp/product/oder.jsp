@@ -28,7 +28,7 @@
 </head>
 <body>
 <div class="content">
-  <h2>Oder</h2>
+  <h2>Order</h2>
   <form method="post" action="/product?action=oder&value=${maDV}">
     <div>
       <label>Giờ đặt sân</label>
