@@ -1,49 +1,97 @@
 <%--
   Created by IntelliJ IDEA.
-  User: hotruongan
-  Date: 06/05/2023
-  Time: 10:41
+  User: DELL
+  Date: 4/30/2023
+  Time: 8:18 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create Employee</title>
+    <title>Create</title>
+    <style>
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .form-input{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            text-align: center;
+
+
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+
+        }
+    </style>
+
+
 </head>
 <body>
-<div>
-    <h1 class="font-monospace" style="color: darkgoldenrod">THÊM MỚI NHÂN VIÊN</h1>
-</div>
-<div align="center" style="background: darkgray;padding: 20px;width: 40%;border-radius: 5% ">
-    <form action="/employee?action=create" method="post" >
-        <div class="mb-3" >
-            <label  class="form-label font-monospace">Tên Nhân Viên</label>
-            <input type="text" class="form-control"  name="name" placeholder="Nguyen Van A">
+<%--<jsp:include page="header-admin.jsp"/>--%>
+
+<div class="content">
+    <h2>Create Employee</h2>
+    <form action="/employee?action=create" method="post">
+        <div class="form-input">
+            <label>Name Employee</label>
+            <input style="border: 1px solid; "  class="form-control" type="text" name="name" id="name" required>
         </div>
-        <div class="mb-3">
-            <label  class="form-label font-monospace">Số Điện Thoại</label>
-            <input type="text" class="form-control"  name="phoneNumber">
+        <div class="form-input">
+            <label>Phone Number</label>
+            <input style="border: 1px solid; " class="form-control" type="text" name="phoneNumber" required>
         </div>
-        <div class="mb-3" >
-            <label  class="form-label font-monospace">Ngày tháng năm sinh</label>
-            <input type="text" class="form-control"  name="dayOfBirth" placeholder="YYYY-MM-DD">
+        <div class="form-input">
+            <label>Day Of Birth</label>
+            <input style="border: 1px solid; " class="form-control" type="text" name="dayOfBirth" required>
         </div>
-        <div class="mb-3" >
-            <label  class="form-label font-monospace">Email</label>
-            <input type="text" class="form-control"   name="email" placeholder="nguyenvana@gmail.com">
+        <div class="form-input">
+            <label>Email</label>
+            <input style="border: 1px solid; " class="form-control" type="text" name="email" required>
         </div>
-        <button type="submit" class="btn btn-outline-dark font-monospace">Create</button>
+
+        <div>
+            <button style=" width: 48% ; margin-top: 15px ;background-color:#0a4275 ; color: white" class="btn btn-outline-primary" type="submit">Create</button>
+            <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275 ;margin-left: 2%"  onclick="window.location.href='/employee?action='">Back</button>
+            <br>
+            <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
+        </div>
+
     </form>
 </div>
-<div>
-    <button class="btn btn-outline-dark font-monospace" onclick="window.location.href='/employee?action=displayList'">Quay trở lại danh sách</button>
-</div>
-<small class="font-monospace">${mess}</small>
+<%--<c:if test="${check}">Added successfully</c:if>--%>
+<%--//  oninput="checkName()
+--%>
+<%--<script>--%>
+<%--  function checkName(){--%>
+<%--    let name = document.getElementById("name").value;--%>
+<%--    let regexName=//;--%>
+<%--    if(regexName.test(name)){--%>
+<%--      document.getElementById("nameError").innerText="";--%>
+<%--    }else {--%>
+<%--      document.getElementById("nameError").innerText="The name is not in the correct format";--%>
+<%--    }--%>
+
+<%--  }--%>
+
+<%--</script>--%>
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
 </html>

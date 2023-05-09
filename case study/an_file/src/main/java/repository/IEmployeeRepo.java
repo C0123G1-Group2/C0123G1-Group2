@@ -10,4 +10,8 @@ public interface IEmployeeRepo {
     boolean createEmployee(Employee employee);
 
     boolean deteleEmployee(int id);
+
+    boolean edit(Employee employee1);
+
+    List<Employee> findCustomer(String nameFind, String phoneNumberFind);
 }

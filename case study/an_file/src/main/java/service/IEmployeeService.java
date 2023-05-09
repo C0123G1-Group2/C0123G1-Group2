@@ -10,4 +10,8 @@ public interface IEmployeeService {
     boolean createEmployee( Employee employee);
 
     boolean deleteEmployee(int id);
+
+    boolean edit(Employee employee);
+
+    List<Employee> findCustomer(String nameFind, String phoneNumberFind);
 }

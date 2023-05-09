@@ -1,55 +1,66 @@
 CREATE DATABASE threelion_management;
 USE threelion_management;
-CREATE TABLE dich_vu(
-ma_dich_vu INT PRIMARY KEY AUTO_INCREMENT,
-ten_dich_vu VARCHAR(20) NOT NULL,
-gia DOUBLE NOT NULL);
-CREATE TABLE loai_dich_vu(
-ma_loai_dich_vu INT PRIMARY KEY AUTO_INCREMENT,
-ma_dich_vu INT, FOREIGN KEY(ma_dich_vu) REFERENCES dich_vu(ma_dich_vu),
-ten_loai_dich_vu VARCHAR(20) NOT NULL UNIQUE
+CREATE TABLE soccer_field(
+soccer_field_id INT PRIMARY KEY AUTO_INCREMENT,
+soccer_field_name VARCHAR(20) NOT NULL  UNIQUE,
+soccer_field_type VARCHAR(20) NOT NULL  ,
+price DOUBLE NOT NULL);
+
+ CREATE TABLE customer(
+ customer_id INT PRIMARY KEY,
+ name VARCHAR(20) NOT NULL,
+ phone_number  VARCHAR(11) NOT NULL UNIQUE,
+ address VARCHAR(50),
+ email VARCHAR(50) NOT NULL UNIQUE
  );
- CREATE TABLE khach_hang(
- ma_khach_hang INT PRIMARY KEY,
- ten_khach_hang VARCHAR(20) NOT NULL,
- so_dien_thoai INT NOT NULL UNIQUE,
- dia_chi VARCHAR(50),
- email VARCHAR(20) NOT NULL UNIQUE
- );
-  CREATE TABLE nhan_vien(
- ma_nhan_vien INT PRIMARY KEY AUTO_INCREMENT,
- ten_nhan_vien VARCHAR(50) NOT NULL,
- ngay_sinh DATE NOT NULL,
- so_dien_thoai INT NOT NULL UNIQUE,
+  CREATE TABLE employee(
+ employee_id INT PRIMARY KEY AUTO_INCREMENT,
+ employee_name VARCHAR(50) NOT NULL,
+ day_birth DATE NOT NULL,
+ phone VARCHAR(20) NOT NULL UNIQUE,
  email VARCHAR(50) NOT NULL
 );
-INSERT INTO nhan_vien(ten_nhan_vien,ngay_sinh,so_dien_thoai,email) values("nhan","1995-05-05","0905130596","nhan@gmail.com"),
-("An","1997-06-05","0903130596","an@gmail.com");
-SELECT * FROM nhan_vien;
- CREATE TABLE hoa_don(
- ma_hoa_don INT PRIMARY KEY,
- ma_khach_hang INT, FOREIGN KEY(ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),
- ma_loai_dich_vu INT, FOREIGN KEY(ma_loai_dich_vu) REFERENCES loai_dich_vu(ma_loai_dich_vu),
- ma_nhan_vien INT , FOREIGN KEY(ma_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
- gio_bat_dau DATETIME NOT NULL,
- so_gio_dat INT
+SELECT * FROM employee WHERE employee_name LIKE "%Anh%" AND phone LIKE 9011;
+ CREATE TABLE bill(
+ bill_id INT PRIMARY KEY,
+ customer_id INT, FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
+ soccer_field_id INT, FOREIGN KEY(soccer_field_id) REFERENCES soccer_field(soccer_field_id),
+  employee_id INT , FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
+ begin_time DATETIME NOT NULL,
+ rental_time INT
  );
+ 
+ CREATE TABLE detailed_bill (
+ detailed_bill_id INT PRIMARY KEY,
+ bill_id INT, FOREIGN KEY(bill_id) REFERENCES bill(bill_id),
+ total_price INT
+ );
+INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
+("Sân số 2","sân 5",300000),
+("Sân số 3","sân 5",300000),
+("Sân số 4","sân 5",300000),
+("Sân số 5","sân 7",300000),
+("Sân số 6","sân 7",300000),
+("Sân số 7","sân futlsan",300000),
+("Sân số 8","sân futlsan",300000);
 
- CREATE TABLE hoa_don_chi_tiet (
- ma_hoa_don_chi_tiet INT PRIMARY KEY,
- ma_hoa_don INT, FOREIGN KEY(ma_hoa_don) REFERENCES hoa_don(ma_hoa_don),
- tong_tien INT
- );
-INSERT INTO dich_vu (ten_dich_vu,gia) VALUES("Sân 5",400000),
-("Sân 7",590000),
-("Sân futsal",600000);
-INSERT INTO loai_dich_vu (ma_dich_vu,ten_loai_dich_vu) VALUES (1,"Sân số 1"),
-(1,"Sân số 2"),
-(1,"Sân số 4"),
-(2,"Sân số 5"),
-(2,"Sân số 6"),
-(3,"Sân số 7"),
-(3,"Sân số 8");
-SELECT * FROM dich_vu dv
-JOIN loai_dich_vu ldv ON ldv.ma_dich_vu = dv.ma_dich_vu;
-DROP DATABASE threelion_management;
+
+SELECT * FROM customer;
+INSERT INTO customer VALUES
+(1, 'Nguyễn Đức Thắng', '0782391943', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'nguyenthangfa2001@gmail.com'),
+(2, 'Nguyễn Đức Thành', '078232345', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'ducthanh@gmail.com'),
+(3, 'Nguyễn Đức Thống', '033987789', 'Khuê Trung,Cẩm Lệ,Đà Nẵng', 'ducthong@gmail.com'),
+(4, 'Nguyễn Đức Thịnh', '0905378291', 'Hòa Thọ Đông,Cẩm Lệ,Đà Nẵng', 'ducthinh@gmail.com'),
+(5, 'Nguyễn Đức Thanh', '0914090627', 'Hòa Thọ Tây,Cẩm Lệ,Đà Nẵng', 'khsts@gmail.com'),
+(6, 'Nguyễn Đức Thạnh', '0782391999', 'Hòa Khánh Bắc,Liên Chiểu,Đà Nẵng', 'thanhboi12@gmail.com'),
+(7, 'Nguyễn Đức Nhân', '0782391443', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'nhanduc@gmail.com'),
+(8, 'Nguyễn Đức Hoàng', '0905339911', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'hoangkhdz@gmail.com'),
+(9, 'Nguyễn Hoàng Tú', '0914000627', 'Hòa Nhơn,Hòa Vang,Đà Nẵng', 'tu621@gmail.com'),
+(10, 'Nguyễn Nhân Tú', '0905111923', 'Hòa An,Cẩm Lệ,Đà Nẵng', 'nhantu3489@gmail.com'),
+(11, 'Nguyễn Huy Đức', '033999761', 'Hòa Tiến,Hòa Vang,Đà Nẵng', 'duclahoa@gmail.com'),
+(12, 'Nguyễn Huỳnh Huy', '0914543891', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'huynhhuy123@gmail.com'),
+(13, 'Trương Tấn Thịnh', '0932979939', 'Hòa Thọ Tây,Cẩm Lệ,Đà Nẵng', 'thinhkhdz97@gmail.com'),
+(14, 'Nguyễn Văn Hùng', '0782990012', 'Hòa Thọ Tây,Cẩm Lệ,Đà Nẵng', 'hungvan123@gmail.com'),
+(15, 'Nguyễn Thanh Long', '0782143391', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'thanhlongzz@gmail.com')
+;
+INSERT INTO customer VALUES (16,'nga','0914000056','My','nganguyen@gmail.com');

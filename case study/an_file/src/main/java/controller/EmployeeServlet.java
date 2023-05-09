@@ -28,10 +28,30 @@ public class EmployeeServlet extends HttpServlet {
                 employeeService.deleteEmployee(id);
                 request.getRequestDispatcher("/employee?action=display").forward(request,response);
                 break;
+            case "edit":
+                 edit(request,response);
+                 break;
             default:
                 showEmployeeList(request,response);
         }
 
+    }
+
+    private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id;
+        List<Employee> employeeList;
+        id= Integer.parseInt(request.getParameter("id"));
+        employeeList = employeeService.getAll();
+        for (int i = 0; i < employeeList.size() ; i++) {
+            if(id == employeeList.get(i).getEmployeeID()){
+                request.setAttribute("id",employeeList.get(i).getEmployeeID());
+                request.setAttribute("name",employeeList.get(i).getEmployeeName());
+                request.setAttribute("dayOfBirth",employeeList.get(i).getDayOfBirth());
+                request.setAttribute("email",employeeList.get(i).getEmail());
+                request.setAttribute("phoneNumber",employeeList.get(i).getPhoneNumber());
+                request.getRequestDispatcher("/view/EmployeeJSP/editEmployee.jsp").forward(request,response);
+            }
+        }
     }
 
     private void showEmployeeList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -60,14 +80,44 @@ public class EmployeeServlet extends HttpServlet {
                 boolean checkCreate = employeeService.createEmployee(employee);
                 String mess ;
                 if(checkCreate){
-                    mess = "Thêm mới thành công";
+                    mess = "ADD NEW EMPLOYEE SUCCEED !";
                 }else {
-                    mess = " Thêm mới thất bại ! Số điện thoại bị trùng lặp";
+                    mess = " ADD NEW FAIL !";
                 }
                 request.setAttribute("mess",mess);
                 request.getRequestDispatcher("/view/EmployeeJSP/createEmployee.jsp").forward(request,response);
                 break;
+            case "edit":
+                id = Integer.parseInt(request.getParameter("id"));
+                name = request.getParameter("name");
+                email = request.getParameter("email");
+                dayOfBirth = request.getParameter("dayOfBirth");
+                phoneNumber = request.getParameter("phoneNumber");
+                employee = new Employee(id,name,dayOfBirth,phoneNumber,email);
+                boolean checkEdit = employeeService.edit(employee);
+                String message = " Edit succeed !";
+                if(!checkEdit){
+                    message = "Edit Fail";
+                }
+                request.setAttribute("mess",message);
+                request.getRequestDispatcher("/view/EmployeeJSP/editEmployee.jsp").forward(request,response);
+                break;
+            case "delete":
+                id = Integer.parseInt(request.getParameter("id"));
+                employeeService.deleteEmployee(id);
+                showEmployeeList(request,response);
+                break;
+            case "find" :
+                find(request, response);
+                break;
         }
+    }
 
+    private void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nameFind = request.getParameter("name");
+        String phoneNumberFind = request.getParameter("phoneNumber");
+        List<Employee> employeeList =employeeService.findCustomer(nameFind,phoneNumberFind);
+        request.setAttribute("employeeList",employeeList);
+        request.getRequestDispatcher("/view/EmployeeJSP/employeeList.jsp").forward(request, response);
     }
 }
