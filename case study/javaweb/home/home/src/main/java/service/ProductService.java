@@ -1,5 +1,6 @@
 package service;
 
+import model.Oder;
 import model.Product;
 import repository.IProductRepo;
 import repository.ProductRepo;
@@ -30,5 +31,10 @@ public class ProductService implements IProductService{
     @Override
     public boolean editProduct(int maSan,String tenSan, String tenLoaiSan, double gia) {
         return productRepo.editProduct(maSan,tenSan,tenLoaiSan,gia);
+    }
+
+    @Override
+    public boolean oderProduct(Oder oder) {
+        return productRepo.oderProduct(oder);
     }
 }

@@ -48,8 +48,8 @@ text-align: center;
             <input  class="form-control"  type="text" name="gia" required >
         </div>
         <div>
-            <button type="submit"  class="btn btn-outline-primary" style="width: 65% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 5px ">Add new</button>
-            <button type="submit"  class="btn btn-outline-primary" style="width: 32% ; margin-top: 15px ;background-color:#0a4275" onclick="window.location.href='/product?action='">Back</button>
+            <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px ">Add new</button>
+            <button type="submit"  class="btn btn-warning" style="width: 32% ; margin-top: 15px " onclick="window.location.href='/product?action='">Back</button>
             <br>
             <h3>${mess}</h3>
         </div>

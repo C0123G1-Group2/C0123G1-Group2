@@ -1,39 +1,51 @@
 CREATE DATABASE threelion_management;
 USE threelion_management;
-CREATE TABLE soccer_field(
-soccer_field_id INT PRIMARY KEY AUTO_INCREMENT,
-soccer_field_name VARCHAR(20) NOT NULL  UNIQUE,
-soccer_field_type VARCHAR(20) NOT NULL  ,
-price DOUBLE NOT NULL);
-
- CREATE TABLE customer(
- customer_id INT PRIMARY KEY,
- name VARCHAR(20) NOT NULL,
- phone_number  VARCHAR(11) NOT NULL UNIQUE,
- address VARCHAR(50),
- email VARCHAR(50) NOT NULL UNIQUE
- );
-  CREATE TABLE employee(
- employee_id INT PRIMARY KEY AUTO_INCREMENT,
- employee_name VARCHAR(50) NOT NULL,
- day_birth DATE NOT NULL,
- phone INT NOT NULL UNIQUE,
- email VARCHAR(50) NOT NULL
+CREATE TABLE soccer_field (
+    soccer_field_id INT PRIMARY KEY AUTO_INCREMENT,
+    soccer_field_name VARCHAR(20) NOT NULL UNIQUE,
+    soccer_field_type VARCHAR(20) NOT NULL,
+    price DOUBLE NOT NULL
 );
- CREATE TABLE bill(
- bill_id INT PRIMARY KEY,
- customer_id INT, FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
- soccer_field_id INT, FOREIGN KEY(soccer_field_id) REFERENCES soccer_field(soccer_field_id),
-  employee_id INT , FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
- begin_time DATETIME NOT NULL,
- rental_time INT
- );
- 
+
+ CREATE TABLE customer (
+    customer_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    phone_number VARCHAR(11) NOT NULL UNIQUE,
+    address VARCHAR(50),
+    email VARCHAR(50) NOT NULL UNIQUE
+);
+  CREATE TABLE employee (
+    employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_name VARCHAR(50) NOT NULL,
+    day_birth DATE NOT NULL,
+    phone INT NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL
+);
+CREATE TABLE oder (
+    oder_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT,
+    FOREIGN KEY (customer_id)
+        REFERENCES customer (customer_id),
+    soccer_field_id INT,
+    FOREIGN KEY (soccer_field_id)
+        REFERENCES soccer_field (soccer_field_id),
+    begin_time VARCHAR(50) NOT NULL,
+    rental_time INT
+);
+ CREATE TABLE bill (
+    bill_id INT PRIMARY KEY AUTO_INCREMENT,
+    oder_id INT,
+    FOREIGN KEY (oder_id)
+        REFERENCES oder (oder_id)
+);
+
  CREATE TABLE detailed_bill (
- detailed_bill_id INT PRIMARY KEY,
- bill_id INT, FOREIGN KEY(bill_id) REFERENCES bill(bill_id),
- total_price INT
- );
+    detailed_bill_id INT PRIMARY KEY AUTO_INCREMENT,
+    bill_id INT,
+    FOREIGN KEY (bill_id)
+        REFERENCES bill (bill_id),
+    total_price INT
+);
 INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
 ("Sân số 3","sân 5",300000),
@@ -63,3 +75,4 @@ INSERT INTO customer VALUES
 (15, 'Nguyễn Thanh Long', '0782143391', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'thanhlongzz@gmail.com')
 ;
 INSERT INTO customer VALUES (16,'nga','0914000056','My','nganguyen@gmail.com');
+INSERT INTO bill (customer_id,soccer_field_id,begin_time,price) VALUES (1,1,'0914000056','My','nganguyen@gmail.com');

@@ -5,6 +5,7 @@
     <title>Trang chủ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         h5, p {
             color: #FFD700;
@@ -108,11 +109,6 @@
                 <li class="nav-item active" style="font-weight: 700;margin-right: 20px;">
                     <a class="nav-link " href="/index.jsp" style="height: 100%;color: #FFD700;">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="product/home.jsp"
-                       style="font-weight: 500;margin-right: 20px;width: 105%;height: 100%;color: #FFD700">Dịch vụ đi
-                        kèm</a>
-                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/product" style="width: 115%;height: 100%;color: #FFD700">Manager
@@ -152,24 +148,11 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">
-                                    Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=1'">
+                                    Đặt sân
                                 </button>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -181,23 +164,10 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">Đặt sân
                                 </button>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -211,23 +181,11 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 3(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">
+                                    Đặt sân
                                 </button>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -239,23 +197,11 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 4(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">
+                                    Đặt sân
                                 </button>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -269,24 +215,13 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">
+                                    Đặt sân
                                 </button>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
@@ -297,23 +232,11 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">
+                                    Đặt sân
                                 </button>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -327,25 +250,13 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân Futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">
+                                    Đặt sân
                                 </button>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
 
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
@@ -356,23 +267,11 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large">Xem
-                                    chi tiết sân bóng
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px">
+                                    Đặt sân
                                 </button>
-                            </div>
-                            <div class="list-group list-group-flush">
-                                <a style="font-size: xx-large; color: #FFD700">Giờ đặt sân</a>
-                                <div>
-                                    <button type="button" class="btn btn-outline-warning">15h-16h</button>
-                                    <button type="button" class="btn btn-outline-warning">16h-17h</button>
-                                    <button type="button" class="btn btn-outline-warning">17h-18h</button>
-                                    <button type="button" class="btn btn-outline-warning">18h-19h</button>
-                                    <button type="button" class="btn btn-outline-warning">19h-20h</button>
-                                    <button type="button" class="btn btn-outline-warning">20h-21h</button>
-                                    <button type="button" class="btn btn-outline-warning">21-22h</button>
-                                    <button type="button" class="btn btn-outline-warning">22h-23h</button>
-                                    <button type="button" class="btn btn-outline-warning">23h-24h</button>
-                                </div>
+                                <br>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -454,6 +353,7 @@
     </div>
 </div>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
