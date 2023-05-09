@@ -18,10 +18,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 600px;
-
+            width: 500px;
+            text-align: center;
         }
-
+        label{
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +32,7 @@
     <form method="post" action="/product?action=edit&value=${product.getMaSan()}">
         <div>
             <label>Tên sân</label>
-            <input  class="form-control" type="text" name="tenSan" required placeholder="${product.getTenSan()}">
+            <input  class="form-control" type="text" name="tenSan" required value="${product.getTenSan()}">
         </div>
         <div>
             <label>Loại sân</label>
@@ -43,7 +45,7 @@
         </div>
         <div>
             <label>Giá</label>
-            <input  class="form-control"  type="text" name="gia" required placeholder="${product.getGia()}">
+            <input  class="form-control"  type="text" name="gia" required value="${product.getGia()}">
         </div>
         <div>
             <button type="submit"  class="btn btn-outline-primary" style="width: 65% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 5px ">Edit</button>
