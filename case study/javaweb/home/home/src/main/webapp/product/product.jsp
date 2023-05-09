@@ -9,12 +9,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Management Soccer Field</title>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <body>
-<h1 style="justify-content: center">Danh sách sân</h1>
+<div style="text-align: center">
+<h1 >Management Soccer Field</h1>
+</div>
 <table class="table table-striped">
     <thead>
     <tr>
@@ -32,16 +34,16 @@
             <td>${product.getTenSan()}</td>
             <td>${product.getLoaiSan()}</td>
             <td>${product.getGia()}</td>
-            <td><button type="button" class="btn btn-outline-primary" style="margin-right: 20px">Sửa</button><button type="button" onclick="infoDelete('${product.getMaSan()}','${product.getTenSan()}')" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Xóa
+            <td><button type="button" class="btn btn-outline-primary" style="margin-right: 20px" onclick="window.location.href='/product?action=edit&value=${product.getMaSan()}'">Edit</button><button type="button" onclick="infoDelete('${product.getMaSan()}','${product.getTenSan()}')" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
             </button></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <h1 style="color: #0082ca">${mess}</h1>
-<button class="btn btn-outline-primary" onclick="window.location.href='index.jsp'">Quay lai trang chu</button>
-<button class="btn btn-outline-primary" style="margin-left: 100px" onclick="window.location.href='/product?action=add'">Thêm loại dịch vụ</button>
+<button class="btn btn-outline-primary" onclick="window.location.href='index.jsp'">Back Home</button>
+<button class="btn btn-outline-primary" style="margin-left: 100px" onclick="window.location.href='/product?action=add'">Add new Soccer Field</button>
 
 
 

@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <title>Add</title>
+    <title>Edit</title>
     <style>
         h2{
             text-align: center;
@@ -27,14 +27,15 @@
 <body>
 <div class="content">
     <h2>Edit Customer</h2>
-    <form method="post" action="/product?action=add">
+    <form method="post" action="/product?action=edit&value=${product.getMaSan()}">
         <div>
             <label>Tên sân</label>
-            <input  class="form-control" type="text" name="tenSan" required ">
+            <input  class="form-control" type="text" name="tenSan" required placeholder="${product.getTenSan()}">
         </div>
         <div>
             <label>Loại sân</label>
             <select class="form-select" aria-label="Default select example" name="tenLoaiSan">
+                <option value="${product.getLoaiSan()}">${product.getLoaiSan()}</option>
                 <option value="Sân 5">Sân 5</option>
                 <option value="Sân 7">Sân 7</option>
                 <option value="Sân futlsan">Sân futlsan</option>
@@ -42,10 +43,10 @@
         </div>
         <div>
             <label>Giá</label>
-            <input  class="form-control"  type="text" name="gia" required >
+            <input  class="form-control"  type="text" name="gia" required placeholder="${product.getGia()}">
         </div>
         <div>
-            <button type="submit"  class="btn btn-outline-primary" style="width: 65% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 5px ">Add new</button>
+            <button type="submit"  class="btn btn-outline-primary" style="width: 65% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 5px ">Edit</button>
             <button type="submit"  class="btn btn-outline-primary" style="width: 32% ; margin-top: 15px ;background-color:#0a4275" onclick="window.location.href='/product?action='">Back</button>
             <br>
             <h3>${mess}</h3>
