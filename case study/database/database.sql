@@ -7,14 +7,14 @@ CREATE TABLE soccer_field (
     price DOUBLE NOT NULL
 );
 
- CREATE TABLE customer (
+CREATE TABLE customer (
     customer_id INT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
     phone_number VARCHAR(11) NOT NULL UNIQUE,
     address VARCHAR(50),
     email VARCHAR(50) NOT NULL UNIQUE
 );
-  CREATE TABLE employee (
+CREATE TABLE employee (
     employee_id INT PRIMARY KEY AUTO_INCREMENT,
     employee_name VARCHAR(50) NOT NULL,
     day_birth DATE NOT NULL,
@@ -32,13 +32,15 @@ CREATE TABLE orders (
     begin_time VARCHAR(50) NOT NULL,
     rental_time INT
 );
- CREATE TABLE bill (
+CREATE TABLE bill (
     bill_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_id INT,FOREIGN KEY (employee_id)
+        REFERENCES employee (employee_id),
     order_id INT,
     FOREIGN KEY (order_id)
         REFERENCES orders (order_id)
 );
- CREATE TABLE detailed_bill (
+CREATE TABLE detailed_bill (
     detailed_bill_id INT PRIMARY KEY AUTO_INCREMENT,
     bill_id INT,
     FOREIGN KEY (bill_id)
@@ -46,23 +48,40 @@ CREATE TABLE orders (
     total_price INT
 );
 
-CREATE TABLE users(
-id INT PRIMARY KEY AUTO_INCREMENT ,
-user_login VARCHAR(50) NOT NULL UNIQUE,
-password_login VARCHAR(50) NOT NULL
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_login VARCHAR(50) NOT NULL UNIQUE,
+    password_login VARCHAR(50) NOT NULL
 );
 INSERT INTO users (user_login , password_login) VALUES('admin','12345');
 INSERT INTO users (user_login , password_login) VALUES('thang','12345');
-SELECT * FROM users ;
-CREATE TABLE user_customer(
-user_customer VARCHAR(50) PRIMARY KEY ,
-password_customer VARCHAR(50) NOT NULL UNIQUE
+SELECT 
+    *
+FROM
+    users;
+CREATE TABLE user_customer (
+    user_customer VARCHAR(50) PRIMARY KEY,
+    password_customer VARCHAR(50) NOT NULL UNIQUE
 );
 
-SELECT * FROM user_customer;
-SELECT * FROM customer ;
-SELECT * FROM customer ORDER BY `name` ;
-SELECT * FROM customer ORDER BY `name` ;
+SELECT 
+    *
+FROM
+    user_customer;
+SELECT 
+    *
+FROM
+    customer;
+SELECT 
+    *
+FROM
+    customer
+ORDER BY `name`;
+SELECT 
+    *
+FROM
+    customer
+ORDER BY `name`;
 INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
 ("Sân số 3","sân 5",300000),
@@ -186,3 +205,52 @@ SET
 END$$
  DELIMITER ;
 SELECT * FROM before_customer_create;
+
+-- trigger uppdate employee
+CREATE TABLE trigger_employee_update (
+   employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_name VARCHAR(50) NOT NULL,
+    day_birth DATE NOT NULL,
+    phone INT NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL,
+    date DATETIME
+);
+DELIMITER $$
+ CREATE TRIGGER before_employee_update
+ BEFORE UPDATE ON employee
+ FOR EACH ROW
+BEGIN
+ INSERT INTO trigger_employee_update
+SET
+ employee_name = OLD.employee_name,
+ day_birth = OLD.day_birth,
+ phone = OLD.phone,
+ email=OLD.email,
+ date = NOW();
+END$$
+ DELIMITER ;
+ 
+  -- trigger create
+CREATE TABLE before_employee_create (
+ employee_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_name VARCHAR(50) NOT NULL,
+    day_birth DATE NOT NULL,
+    phone INT NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL,
+    date DATETIME
+);
+DELIMITER $$
+ CREATE TRIGGER before_employee_create
+ BEFORE INSERT ON employee
+ FOR EACH ROW
+BEGIN
+ INSERT INTO before_employee_create
+SET
+ employee_name = NEW.employee_name,
+ day_birth = NEW.day_birth,
+ phone = NEW.phone,
+ email= NEW.email,
+ date = NOW();
+END$$
+ DELIMITER ;
+SELECT * FROM before_employee_create;
