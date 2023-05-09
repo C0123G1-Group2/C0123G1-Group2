@@ -8,7 +8,7 @@ import java.util.List;
 public interface ICustomerService {
     List<Customer> getAll();
 
-    void saveCustomer(Customer customer);
+    boolean saveCustomer(Customer customer);
 
 
 
@@ -16,5 +16,9 @@ public interface ICustomerService {
 
     void delete(int id);
 
-    void edit(Customer customer);
+    boolean edit(Customer customer);
+
+
+
+    List<Customer> findCustomer(String nameFind, String phoneNumberFind);
 }

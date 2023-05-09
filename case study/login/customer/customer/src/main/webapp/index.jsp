@@ -6,6 +6,13 @@
     <title></title>
 </head>
 <body>
-<c:redirect url="/login.jsp"> </c:redirect>
+<%--<%--%>
+<%--        Cookie cookie = new Cookie("login", "false");--%>
+<%--        response.addCookie(cookie);--%>
+<%--    %>--%>
+<c:redirect url="/home.jsp"> </c:redirect>
 </body>
+<script>
+    sessionStorage.removeItem('login');
+</script>
 </html>

@@ -10,8 +10,9 @@ ma_dich_vu INT, FOREIGN KEY(ma_dich_vu) REFERENCES dich_vu(ma_dich_vu),
 ten_loai_dich_vu VARCHAR(20) NOT NULL UNIQUE
  );
  CREATE TABLE customer(
+ 
  customer_id INT PRIMARY KEY,
- name VARCHAR(20) NOT NULL,
+ `name` VARCHAR(20) NOT NULL,
  phone_number  VARCHAR(11) NOT NULL UNIQUE,
  address VARCHAR(50),
  email VARCHAR(50) NOT NULL UNIQUE
@@ -28,9 +29,9 @@ ten_loai_dich_vu VARCHAR(20) NOT NULL UNIQUE
  ma_hoa_don INT, FOREIGN KEY(ma_hoa_don) REFERENCES hoa_don(ma_hoa_don),
  tong_tien INT
  );
-khach_hangINSERT INTO dich_vu (ten_dich_vu,gia) VALUES("Sân 5",400000),
-("Sân 7",590000),
-("Sân futsal",600000);
+-- khach_hangINSERT INTO dich_vu (ten_dich_vu,gia) VALUES("Sân 5",400000),
+-- ("Sân 7",590000),
+-- ("Sân futsal",600000);
 INSERT INTO loai_dich_vu (ma_dich_vu,ten_loai_dich_vu) VALUES (1,"Sân số 1"),
 (1,"Sân số 2"),
 (1,"Sân số 4"),
@@ -43,6 +44,25 @@ JOIN loai_dich_vu ldv ON ldv.ma_dich_vu = dv.ma_dich_vu;
 -- DROP DATABASE threelion_management
 
 SELECT * FROM customer;
+
+DELETE FROM customer WHERE customer_id  = 16;
+DELIMITER // 
+CREATE PROCEDURE delete_by_id(IN c_id INT)
+BEGIN 
+DELETE FROM customer WHERE customer_id = c_id ;
+END //
+DELIMITER ;
+Call delete_by_id(35);
+
+DELIMITER //
+CREATE PROCEDURE update_customer(IN c_id INT ,  c_name VARCHAR(20), c_phone_number VARCHAR(11) ,  c_address VARCHAR(50), c_email VARCHAR(50)) 
+BEGIN 
+UPDATE customer set `name` = c_name , phone_number = c_phone_number, address = c_address, email =c_email WHERE customer_id = c_id;
+END // 
+DELIMITER ;
+CALL update_customer(2,"a","761237712","uaujdgfdmah","hagkfjgj"); -- test nhu ri truocc ne, nho dung vi tri la ok ý là chắc nảy để id ở cuí rớ nge
+SELECT * FROM customer ;
+
 INSERT INTO customer VALUES
 (1, 'Nguyễn Đức Thắng', '0782391943', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'nguyenthangfa2001@gmail.com'),
 (2, 'Nguyễn Đức Thành', '078232345', 'Hòa Xuân,Cẩm Lệ,Đà Nẵng', 'ducthanh@gmail.com'),
@@ -61,3 +81,4 @@ INSERT INTO customer VALUES
 (15, 'Nguyễn Thanh Long', '0782143391', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'thanhlongzz@gmail.com')
 ;
 INSERT INTO customer VALUES (16,'nga','0914000056','My','nganguyen@gmail.com');
+SELECT * FROM customer WHERE `name` Like  '%thắng%' AND phone_number Like '%0782391943%' ;

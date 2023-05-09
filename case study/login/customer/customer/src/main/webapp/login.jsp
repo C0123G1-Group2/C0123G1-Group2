@@ -12,7 +12,7 @@
 
 <html>
 <head>
-    <title>Login</title>
+  <title>Login</title>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
         </div>
 
         <div style="text-align: center"><h2>Login</h2></div>
-          <h5 style="color: red ;text-align: center ; font-size: x-large">${message}</h5>
+        <h5 style="color: red ;text-align: center ; font-size: x-large">${message}</h5>
         <div class="div-input">
           <form action="LoginServlet" method="post" style="margin:  0 auto">
             <div class="input-form">

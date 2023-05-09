@@ -12,21 +12,61 @@
 <html>
 <head>
     <title>Edit</title>
+    <style>
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .form-input{
+            flex-direction: column;
+            align-items: start;
+            text-align: center;
+            display: flex;
+
+
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+
+        }
+
+    </style>
 </head>
 <body>
-<form method="post">
+<div class="content">
+<h2>Edit Customer</h2>
+<form action="/customer?action=edit&idEdit=${customer.getCustomerId()}" method="post">
 
-    <label>Name Customer</label>
-    <input  class="form-control" type="text" name="name" required>
-    <label>Phone Number</label>
-    <input   class="form-control" type="number" name="phoneNumber"  required>
-    <label>Address</label>
-    <input  class="form-control"  type="text" name="address" required>
-    <label>Email</label>
-    <input  class="form-control" type="text" name="email" required>
-    <button type="submit"  class="btn btn-outline-success">Edit</button>
+    <div class="form-input">
+        <label>Name Customer</label>
+        <input value="${customer.getName()}" class="form-control" type="text" name="name"  required>
+    </div>
+    <div>
+        <label>Phone Number</label>
+        <input  value="${customer.getPhoneNumber()}"   class="form-control" type="number" name="phoneNumber"     required>
+    </div>
+    <div>
+        <label>Address</label>
+        <input  value="${customer.getAddress()}" class="form-control"  type="text" name="address"  required>
+    </div>
+    <div>
+        <label>Email</label>
+        <input value="${customer.getEmail()}"  class="form-control" type="text" name="email"   required>
+    </div>
+    <div>
+        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275 ; margin-right: 2%">Edit</button>
+        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275" onclick="window.location.href='/customer?action='">Back</button>
+        <br>
+        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
+    </div>
+
     
 </form>
-
+</div>
 </body>
 </html>

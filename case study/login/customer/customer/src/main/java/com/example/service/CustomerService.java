@@ -8,27 +8,30 @@ import com.example.repository.ICustomerRepository;
 import java.util.List;
 
 public class CustomerService implements ICustomerService{
-private ICustomerRepository customerRepository = new CustomerRepository();
-
+    private ICustomerRepository customerRepository = new CustomerRepository();
+    List<Customer> customerList;
     @Override
     public List<Customer> getAll() {
-        List<Customer> customerList = customerRepository.getAll();
+       customerList = customerRepository.getAll();
 
         return customerList;
     }
 
     @Override
-    public void saveCustomer(Customer customer) {
-        customerRepository.save(customer);
+    public boolean saveCustomer(Customer customer) {
+       boolean check=customerRepository.save(customer);
+        return check;
     }
 
-
-    public  boolean checkLogin(User user){
-        if("admin".equals(user.getUsername())&& "12345".equals(user.getPassword()) ){
-            return true ;
-        }else {
+    //
+    public  boolean checkLogin(User user) {
+        if ("admin".equals(user.getUsername()) && "12345".equals(user.getPassword())) {
+            return true;
+        } else {
             return false;
         }
+
+
 
     }
 
@@ -38,8 +41,17 @@ private ICustomerRepository customerRepository = new CustomerRepository();
     }
 
     @Override
-    public void edit(Customer customer) {
-        customerRepository.edit(customer);
+    public boolean edit(Customer customer) {
+      boolean check =  customerRepository.edit(customer);
+      return check;
     }
 
+    @Override
+    public List<Customer> findCustomer(String nameFind, String phoneNumberFind) {
+        customerList = customerRepository.findCustomer(nameFind,phoneNumberFind);
+        return customerList;
+    }
+
+
 }
+

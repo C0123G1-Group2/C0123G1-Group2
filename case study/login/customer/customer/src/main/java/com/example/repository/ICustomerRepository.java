@@ -7,9 +7,11 @@ import java.util.List;
 public interface ICustomerRepository{
     List<Customer> getAll();
 
-    void save(Customer customer);
+    boolean save(Customer customer);
 
-    void delete(int id);
+    boolean delete(int id);
 
-    void edit(Customer customer);
+    boolean edit(Customer customer);
+
+    List<Customer> findCustomer(String nameFind,  String phoneNumberFind);
 }

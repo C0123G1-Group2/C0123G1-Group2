@@ -2,51 +2,119 @@ package com.example.repository;
 
 import com.example.model.Customer;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository {
-    private static List<Customer> customerList = new ArrayList<>();
 
-    static {
-        customerList.add(new Customer(1, "Nguyễn Đức Thắng", "0782391943", "Hòa Xuân,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(2, "Nguyễn Đức Thành", "078232345", "Hòa Xuân,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(3, "Nguyễn Đức Thống", "033987789", "Khuê Trung,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(4, "Nguyễn Đức Thịnh", "0905378291", "Hòa Thọ Đông,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(5, "Nguyễn Đức Thanh", "0914000627", "Hòa Thọ Tây,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(6, "Nguyễn Đức Thạnh", "0782391999", "Hòa An,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(7, "Nguyễn Đức Nhân", "0782391943", "Hòa Phát,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-        customerList.add(new Customer(8, "Nguyễn Đức Hoàng", "0987782289", "Hòa Xuân,Cẩm Lệ,Đà Nẵng", "nguyenthangfa2001@gmail.com"));
-    }
+
+    private final String SELECT_ALL = "SELECT * FROM customer;";
+    private  final String INSERT_INTO = "INSERT INTO customer VALUES (?,?,?,?,?);";
+    private  final String DELETE_CUSTOMER = "Call delete_by_id(?);";
+    private final  String UPDATE_CUSTOMER = "CALL update_customer(?,?,?,?,?);";
+    private final  String FIND_CUSTOMER = "SELECT * FROM customer WHERE `name` Like ?  AND phone_number Like ? ;";
+
 
 
     @Override
+
     public List<Customer> getAll() {
+        List<Customer> customerList = new ArrayList<>() ;
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement =connection.prepareStatement(SELECT_ALL);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int customerId = resultSet.getInt("customer_id");
+                String name = resultSet.getString("name");
+                String phoneNumber=resultSet.getString("phone_number");
+                String address = resultSet.getString("address");
+                String email = resultSet.getString("email");
+                Customer customer = new Customer(customerId,name,phoneNumber,address,email);
+                customerList.add(customer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return customerList;
     }
 
     @Override
-    public void save(Customer customer) {
-        customerList.add(customer);
+    public boolean save(Customer customer) {
+
+        Connection connection = BaseRepository.getConnectDB();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_INTO);
+            preparedStatement.setString(2, customer.getName());
+            preparedStatement.setString(3, customer.getPhoneNumber());
+            preparedStatement.setString(4, customer.getAddress());
+            preparedStatement.setString(5, customer.getEmail());
+            preparedStatement.setInt(1, customer.getCustomerId());
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
-    public void delete(int id) {
-        for (int i = 0; i < customerList.size(); i++) {
-            if (id == customerList.get(i).getCustomerId()) {
-                customerList.remove(i);
-                break;
-            }
+    public boolean delete(int id) {
+        Connection connection = BaseRepository.getConnectDB();
+
+        try {
+            CallableStatement callableStatement = connection.prepareCall(DELETE_CUSTOMER);
+            callableStatement.setInt(1,id);
+            return callableStatement.executeUpdate() > 0 ;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return false;
     }
 
     @Override
-    public void edit(Customer customer) {
-        int id = customer.getCustomerId();
-        for (int i = 0; i <customerList.size() ; i++) {
-            if(id== customerList.get(i).getCustomerId()){
-                customerList.set(i,customer);
-            }
+    public boolean edit(Customer customer) {
+        boolean   rowUpdate = false;
+      Connection connection = BaseRepository.getConnectDB();
+        try {
+            CallableStatement callableStatement = connection.prepareCall(UPDATE_CUSTOMER);
+            callableStatement.setInt(1,customer.getCustomerId());
+            callableStatement.setString(2,customer.getName());
+            callableStatement.setString(3,customer.getPhoneNumber());
+            callableStatement.setString(4,customer.getAddress());
+            callableStatement.setString(5,customer.getEmail());
+            rowUpdate = callableStatement.executeUpdate() > 0 ;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        return rowUpdate ;
     }
+
+    @Override
+    public List<Customer> findCustomer(String nameFind,  String phoneNumberFind) {
+        List<Customer> customerList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnectDB();
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(FIND_CUSTOMER);
+            preparedStatement.setString(1,'%'+nameFind+'%');
+            preparedStatement.setString(2,'%'+phoneNumberFind+'%');
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int customerId = resultSet.getInt("customer_id");
+                String name = resultSet.getString("name");
+                String phoneNumber=resultSet.getString("phone_number");
+                String address = resultSet.getString("address");
+                String email = resultSet.getString("email");
+                customerList.add(new Customer(customerId,name,phoneNumber,address,email));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customerList;
+    }
+
+
+
 }
