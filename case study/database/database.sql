@@ -1,10 +1,10 @@
 CREATE DATABASE threelion_management;
 USE threelion_management;
-CREATE TABLE san_bong(
-ma_san_bong INT PRIMARY KEY AUTO_INCREMENT,
-ten_san_bong VARCHAR(20) NOT NULL  UNIQUE,
-loai_san_bong VARCHAR(20) NOT NULL  ,
-gia DOUBLE NOT NULL);
+CREATE TABLE soccer_field(
+soccer_field_id INT PRIMARY KEY AUTO_INCREMENT,
+soccer_field_name VARCHAR(20) NOT NULL  UNIQUE,
+soccer_field_type VARCHAR(20) NOT NULL  ,
+price DOUBLE NOT NULL);
 
  CREATE TABLE customer(
  customer_id INT PRIMARY KEY,
@@ -13,19 +13,28 @@ gia DOUBLE NOT NULL);
  address VARCHAR(50),
  email VARCHAR(50) NOT NULL UNIQUE
  );
- CREATE TABLE hoa_don(
- ma_hoa_don INT PRIMARY KEY,
- ma_khach_hang INT, FOREIGN KEY(ma_khach_hang) REFERENCES customer(customer_id),
- ma_san_bong INT, FOREIGN KEY(ma_san_bong) REFERENCES san_bong(ma_san_bong),
- gio_bat_dau DATETIME NOT NULL,
- so_gio_dat INT
+  CREATE TABLE employee(
+ employee_id INT PRIMARY KEY AUTO_INCREMENT,
+ employee_name VARCHAR(50) NOT NULL,
+ day_birth DATE NOT NULL,
+ phone INT NOT NULL UNIQUE,
+ email VARCHAR(50) NOT NULL
+);
+ CREATE TABLE bill(
+ bill_id INT PRIMARY KEY,
+ customer_id INT, FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
+ soccer_field_id INT, FOREIGN KEY(soccer_field_id) REFERENCES soccer_field(soccer_field_id),
+  employee_id INT , FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
+ begin_time DATETIME NOT NULL,
+ rental_time INT
  );
- CREATE TABLE hoa_don_chi_tiet (
- ma_hoa_don_chi_tiet INT PRIMARY KEY,
- ma_hoa_don INT, FOREIGN KEY(ma_hoa_don) REFERENCES hoa_don(ma_hoa_don),
- tong_tien INT
+ 
+ CREATE TABLE detailed_bill (
+ detailed_bill_id INT PRIMARY KEY,
+ bill_id INT, FOREIGN KEY(bill_id) REFERENCES bill(bill_id),
+ total_price INT
  );
-INSERT INTO san_bong (ten_san_bong,loai_san_bong,gia) VALUES ("Sân số 1","sân 5",300000),
+INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
 ("Sân số 3","sân 5",300000),
 ("Sân số 4","sân 5",300000),

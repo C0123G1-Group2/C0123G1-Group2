@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <title>Add</title>
+    <title>Add new Soccer Field</title>
     <style>
         h2{
             text-align: center;
@@ -18,19 +18,22 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 600px;
-
+            width: 500px;
+text-align: center;
+        }
+        label{
+            font-weight: 700;
         }
 
     </style>
 </head>
 <body>
 <div class="content">
-    <h2>Edit Customer</h2>
+    <h2>Add new Soccer Field</h2>
     <form method="post" action="/product?action=add">
         <div>
             <label>Tên sân</label>
-            <input  class="form-control" type="text" name="tenSan" required ">
+            <input  class="form-control" type="text" name="tenSan" required >
         </div>
         <div>
             <label>Loại sân</label>
