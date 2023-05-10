@@ -82,7 +82,7 @@ public class EmployeeServlet extends HttpServlet {
                 if(checkCreate){
                     mess = "ADD NEW EMPLOYEE SUCCEED !";
                 }else {
-                    mess = " ADD NEW FAIL !";
+                    mess = " ADD NEW FAIL ! Phone number OR Email already exists  !";
                 }
                 request.setAttribute("mess",mess);
                 request.getRequestDispatcher("/view/EmployeeJSP/createEmployee.jsp").forward(request,response);

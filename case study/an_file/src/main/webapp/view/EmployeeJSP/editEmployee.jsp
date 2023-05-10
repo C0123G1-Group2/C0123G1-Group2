@@ -28,10 +28,81 @@
             width: 400px;
 
         }
+        .navbar{
+            height: 7vw ;
+            background-color: black;
+            padding: 0 40px;
+        }
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .dropdown .dropdown-toggle{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .dropdown .dropdown-toggle:after{
+            content: "A" !important;
+            border: none !important;
+            margin-left: 0;
+            position: absolute;
+            top: 2px;
+            left: 35%;
+        }
+
+        .dropdown-menu.show {
+            right: 0 !important;
+            left: auto !important;
+        }
+        .nav-item.active {
+            margin-left: -18px;
+        }
 
     </style>
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar " >
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <img style="width: 86px ; height: 86px"  src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg?w=1060" >
+                </li>
+                <li style="text-align: center">
+                    <button style=" background-color: black;color: gold;"  >Employee</button>
+
+                </li>
+                <li>
+                    <button style=" background-color: black;color: gold">Customer</button>
+                </li>
+                <li>
+                    <button style=" background-color: black;color: gold">Manger Customer</button>
+
+                </li>
+
+            </ul>
+            <div style="display: flex; align-items: center;justify-content: space-between">
+                <span id="no-auth"><i style="margin-left: 5px;" class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>
+                <div id="auth">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <form id="form-action" method="post">
+                                <p class="dropdown-item" onclick="handleClick('myAccount')">My Account</p>
+                                <p class="dropdown-item" onclick="handleClick('logout')">Logout</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </nav>
+</header>
 <div class="content">
     <h2>Edit Employee</h2>
     <form action="/employee?action=edit&id=${id}" method="post">
@@ -58,14 +129,39 @@
         </div>
         <div>
             <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ; margin-right: 2% ;background: black ; color: gold">Save</button>
-            <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ;background: black ; color: white"" onclick="window.location.href='/employee?action='">Back</button>
             <br>
             <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
         </div>
 
 
     </form>
+    <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ;background: black ; color: gold" onclick="window.location.href='/employee?action='">Back</button>
+
 </div>
 <script src="/validate/validate.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script>
+    const form = document.getElementById('form-action');
+    function handleClick(type) {
+        if(type === 'myAccount'){
+            form.action = "/LoginServlet?username=1";
+            form.method = 'post';
+        }
+        else if(type === 'logout'){
+            localStorage.removeItem('login');
+            form.action = "/LoginServlet?logout=true";
+            form.method = 'post';
+        }
+        form.submit();
+    }
+</script>
 </body>
 </html>

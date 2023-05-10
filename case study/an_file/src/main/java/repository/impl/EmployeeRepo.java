@@ -13,7 +13,7 @@ import java.util.List;
 
 public class EmployeeRepo implements IEmployeeRepo {
     private final String FIND_EMPLOYEE = "SELECT * FROM employee WHERE employee_name LIKE ? AND phone LIKE ?;";
-    private final String UPDATE_USER = "UPDATE employee SET employee_name = ?,day_birth=?,phone =?,email = ? WHERE employee_id = ?; ";
+    private final String UPDATE_USER = "UPDATE employee SET employee_name = ?,day_birth=?,phone =?,email = ?,update_at =now() WHERE employee_id = ?; ";
     private final String DELETE_EMPLOYEE = "DELETE FROM employee WHERE employee_id = ?;";
     private final String SELECT_ALL = "SELECT * FROM employee;";
     private final String INSERT_INTO = "INSERT INTO employee(employee_name,day_birth,phone,email) values(?,?,?,?);";
