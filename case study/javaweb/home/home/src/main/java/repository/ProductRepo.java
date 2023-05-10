@@ -16,7 +16,7 @@ public class ProductRepo implements IProductRepo{
     private final String DELETEPRODUCT="DELETE FROM soccer_field WHERE soccer_field_id=?;";
     private final String ADDPRODUCT="INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES (?,?,?);";
     private final String EDITPRODUCT="UPDATE soccer_field SET soccer_field_name=?,soccer_field_type=?,price=?,update_at=NOW() WHERE soccer_field_id=?;";
-    private final String ODERPRODUCT="INSERT INTO orders(customer_id,soccer_field_id,begin_time,rental_time) VALUES(?,?,?,?)";
+    private final String ODERPRODUCT="INSERT INTO orders(customer_id,employee_id,soccer_field_id,begin_time,rental_time,total_price) VALUES(?,?,?,?,?,?)";
     private final String SEARCHPRODUCT=" SELECT * FROM soccer_field WHERE soccer_field_name LIKE ? AND soccer_field_type LIKE ?;";
 
 
@@ -93,9 +93,11 @@ public class ProductRepo implements IProductRepo{
         try {
             PreparedStatement preparedStatement= connection.prepareStatement(ODERPRODUCT);
             preparedStatement.setInt(1,1);
-            preparedStatement.setInt(2,order.getSoccerFieldId());
-            preparedStatement.setString(3,order.getBeginTime());
-            preparedStatement.setInt(4,order.getRentalTime());
+            preparedStatement.setInt(2,1);
+            preparedStatement.setInt(3,order.getSoccerFieldId());
+            preparedStatement.setString(4,order.getBeginTime());
+            preparedStatement.setInt(5,order.getRentalTime());
+            preparedStatement.setDouble(6,order.getTotalPrice());
             return preparedStatement.executeUpdate()>0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
