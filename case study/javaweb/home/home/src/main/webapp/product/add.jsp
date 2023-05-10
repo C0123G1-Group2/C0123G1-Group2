@@ -49,11 +49,11 @@ text-align: center;
         </div>
         <div>
             <button type="submit"  class="btn " style="width: 65% ; margin-top: 15px  ; margin-right: 5px; background-color: black;color: #FFD700">Add new</button>
-            <button type="submit"  class="btn " style="width: 32% ; margin-top: 15px; background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
             <br>
             <h3>${mess}</h3>
         </div>
     </form>
+    <button type="submit"  class="btn " style="width: 32% ; margin-top: 15px; background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
 </div>
 </body>
 </html>
