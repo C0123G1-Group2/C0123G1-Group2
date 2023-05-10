@@ -9,7 +9,7 @@ CREATE TABLE soccer_field (
 
 CREATE TABLE customer (
     customer_id INT PRIMARY KEY,
-    name VARCHAR(20) NOT NULL,
+    `name` VARCHAR(20) NOT NULL,
     phone_number VARCHAR(11) NOT NULL UNIQUE,
     address VARCHAR(50),
     email VARCHAR(50) NOT NULL UNIQUE
@@ -55,8 +55,8 @@ CREATE TABLE users (
     is_cus INT NOT NULL,
     is_admin INT NOT NULL
 );
-INSERT INTO users (user_login , password_login) VALUES('admin','12345');
-INSERT INTO users (user_login , password_login) VALUES('thang','12345');
+INSERT INTO users (user_login , password_login,is_cus,is_admin) VALUES('admin','12345',0,1);
+INSERT INTO users (user_login , password_login,is_cus,is_admin) VALUES('thang','12345',1,0);
 
 INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
@@ -85,7 +85,7 @@ INSERT INTO customer VALUES
 (15, 'Nguyễn Thanh Long', '0782143391', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'thanhlongzz@gmail.com')
 ;
 INSERT INTO customer VALUES (16,'nga','0914000056','My','nganguyen@gmail.com');
-INSERT INTO bill (customer_id,soccer_field_id,begin_time,price) VALUES (1,1,'0914000056','My','nganguyen@gmail.com');
+
 
 -- trigger uppdate soccer_field
 CREATE TABLE trigger_soccer_field_update (
@@ -136,7 +136,7 @@ SELECT * FROM before_soccer_field_create;
 -- trigger uppdate CUSTOMER
 CREATE TABLE trigger_customer_update (
    customer_id INT PRIMARY KEY,
-    name VARCHAR(20) NOT NULL,
+    `name` VARCHAR(20) NOT NULL,
     phone_number VARCHAR(11) NOT NULL UNIQUE,
     address VARCHAR(50),
     email VARCHAR(50) NOT NULL UNIQUE,
@@ -149,7 +149,7 @@ DELIMITER $$
 BEGIN
  INSERT INTO trigger_customer_update
 SET
- name = OLD.name,
+ `name` = OLD.name,
  phone_number = OLD.phone_number,
  address = OLD.address,
  email=OLD.email,
@@ -160,7 +160,7 @@ END$$
   -- trigger create
 CREATE TABLE before_customer_create (
    customer_id INT PRIMARY KEY,
-    name VARCHAR(20) NOT NULL,
+    `name` VARCHAR(20) NOT NULL,
     phone_number VARCHAR(11) NOT NULL UNIQUE,
     address VARCHAR(50),
     email VARCHAR(50) NOT NULL UNIQUE,
@@ -173,7 +173,7 @@ DELIMITER $$
 BEGIN
  INSERT INTO before_customer_create
 SET
- name = NEW.name,
+ `name` = NEW.name,
  phone_number = NEW.phone_number,
  address = NEW.address,
  email= NEW.email,
