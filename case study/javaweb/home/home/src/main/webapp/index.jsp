@@ -10,7 +10,10 @@
         h5, p {
             color: #FFD700;
         }
-
+        .container-fluid{
+            margin-left: 0px;
+            padding-left: 0px;
+        }
         .left {
             padding-right: 0px;
             background: linear-gradient(35deg, black, white, black);
@@ -56,7 +59,7 @@
             border-radius: 5px;
         }
 
-        .border-warning, img {
+        .card, img {
             border-radius: 5%;
         }
 
@@ -97,11 +100,11 @@
 </head>
 <body>
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light "
-         style="position: sticky;top: 0;left: 0;right: 0;z-index: +1;background:linear-gradient(45deg,black,black,white,black,black); height: 100px;font-size: 20px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  "
+         style="position: sticky;top: 0;left: 0;right: 0;z-index: +1;margin-left: 0px;background:linear-gradient(45deg,black,black,white,black,black); height: 100px;font-size: 20px">
         <a class="navbar-brand card-r" href="#" style="margin-right: 20px">
             <img
-                    src="https://www.shutterstock.com/shutterstock/photos/1111432652/display_1500/stock-vector-three-head-lion-mascot-1111432652.jpg"
+                    src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg?w=1060"
                     style="width: 100px;height: 100%;margin-left: 0px">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -141,7 +144,7 @@
             <div class="col-sm-11">
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://aobongda24h.com/pic/news/images/images/6369336271236010271.jpg"
                                  alt="...">
@@ -157,7 +160,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/12/13/san-bong-da-ho-chi-minh-1.jpg"
                                  alt="...">
@@ -174,7 +177,7 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/11/6/tim-hieu-thong-tin-san-bong-da-5-nguoi-2.jpg"
                                  alt="...">
@@ -190,7 +193,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://yousport.vn/Media/Blog/Nh%E1%BB%AFng%20m%E1%BA%B7t%20s%C3%A2n%20b%C3%B3ng%20%C4%91%C3%A1%20ph%E1%BB%95%20bi%E1%BA%BFn%20hi%E1%BB%87n%20nay/nhung-mat-san-bong-da-pho-bien-nhat-hien-nay-2G.jpg"
                                  alt="...">
@@ -208,7 +211,7 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
                                  alt="...">
@@ -225,7 +228,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
                                  alt="...">
@@ -243,7 +246,7 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://trungtambongro.vn/wp-content/uploads/2018/09/ngoisao_san-Q-PN-2.jpg"
                                  alt="...">
@@ -260,7 +263,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card border-warning" style="width: 90%;">
+                        <div class="card " style="width: 90%;">
                             <img style="width: 100%"
                                  src="https://static-images.vnncdn.net/files/publish/2022/8/30/u9-toan-quoc-113.jpg"
                                  alt="...">

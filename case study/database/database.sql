@@ -52,8 +52,8 @@ CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_login VARCHAR(50) NOT NULL UNIQUE,
     password_login VARCHAR(50) NOT NULL,
-    isSell INT NOT NULL,
-    isAdmin INT NOT NULL
+    is_cus INT NOT NULL,
+    is_admin INT NOT NULL
 );
 INSERT INTO users (user_login , password_login) VALUES('admin','12345');
 INSERT INTO users (user_login , password_login) VALUES('thang','12345');
