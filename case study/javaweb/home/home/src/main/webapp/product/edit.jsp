@@ -28,7 +28,7 @@
 </head>
 <body>
 <div class="content">
-    <h2>Edit Customer</h2>
+    <h2>Edit Soccer Field</h2>
     <form method="post" action="/product?action=edit&value=${product.getMaSan()}">
         <div>
             <label>Tên sân</label>
@@ -49,11 +49,12 @@
         </div>
         <div>
             <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
-            <button type="submit"  class="btn btn-warning" style="width: 32% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
             <br>
-            <h3>${mess}</h3>
+
         </div>
     </form>
+    <button   class="btn btn-warning" style="width: 32% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
+    <h3>${mess}</h3>
 </div>
 </body>
 </html>
