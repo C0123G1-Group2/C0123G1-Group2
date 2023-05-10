@@ -14,7 +14,34 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <body>
-<div class="container" style="margin-top: 100px">
+<div class="container-fluid" style="margin:50px;margin-right: 50px;padding: 0px;width: 95%">
+
+    <form action="/product?action=search" method="post">
+        <div class="d-flex justify-content-end" style="margin-right: 30px">
+            <div class="mb-3">
+                <label class="form-label" style="font-weight: 700">Loại sân</label>
+                <select class="form-select" aria-label="Default select example" name="tenLoaiDV">
+                    <option selected value="">Open this select menu</option>
+                    <option value="Sân 5">Sân 5</option>
+                    <option value="Sân 7">Sân 7</option>
+                    <option value="Sân futlsan">Sân futlsan</option>
+                </select>
+            </div>
+            <div class="mb-3" style="margin-left: 20px">
+                <label class="form-label" style="font-weight: 700">Tên sân</label>
+                <input type="text" class="form-control" placeholder="name" name="tenDV">
+            </div>
+            <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
+                <button class="btn" type="submit" style="background-color: black;color: #FFD700;height: 40px">Search
+                </button>
+            </div>
+            <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
+                <button class="btn"  style="background-color: black;color: #FFD700;height: 40px" onclick="window.location.href='product.jsp'">Back List
+                </button>
+            </div>
+        </div>
+    </form>
+
     <div style="text-align: center">
         <h1>Management Soccer Field</h1>
     </div>
@@ -36,11 +63,12 @@
                 <td>${product.getLoaiSan()}</td>
                 <td>${product.getGia()} VND</td>
                 <td>
-                    <button type="button" class="btn btn-warning" style="margin-right: 20px"
+                    <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
                             onclick="window.location.href='/product?action=edit&value=${product.getMaSan()}'">Edit
                     </button>
                     <button type="button" onclick="infoDelete('${product.getMaSan()}','${product.getTenSan()}')"
-                            class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            style="background-color: black;color: #FFD700">
                         Delete
                     </button>
                 </td>
@@ -49,8 +77,10 @@
         </tbody>
     </table>
     <h1 style="color: #0082ca">${mess}</h1>
-    <button class="btn btn-warning" onclick="window.location.href='index.jsp'">Back Home</button>
-    <button class="btn btn-warning" style="margin-left: 100px"
+    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='index.jsp'">Back
+        Home
+    </button>
+    <button class="btn " style="margin-left: 100px;background-color: black;color: #FFD700"
             onclick="window.location.href='/product?action=add'">Add new Soccer Field
     </button>
 
@@ -69,10 +99,12 @@
                         <span>Ban co muon xoa dich vu: </span><span style="color: #dd4b39" id="tenLoaiDV"></span>
                     </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
+<%--                    <div class="modal-footer">--%>
+<%--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--%>
+<%--                        <button type="submit" class="btn btn-primary">Save changes</button>--%>
+<%--                    </div>--%>
+
+
                 </form>
             </div>
         </div>

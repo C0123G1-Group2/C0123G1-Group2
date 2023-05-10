@@ -70,11 +70,22 @@ public class ProductServlet extends HttpServlet {
             case "oder":
                 orderProduct(request,response);
                 break;
+            case "search":
+                searchProduct(request,response);
+                    break;
             default:
                 showListProduct(request,response);
                 break;
         }
 
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String tenDV=request.getParameter("tenDV");
+        String tenLoaiDV=request.getParameter("tenLoaiDV");
+        List<Product> productList=productService.searchProduct(tenDV,tenLoaiDV);
+        request.setAttribute("productList",productList);
+        request.getRequestDispatcher("product/product.jsp").forward(request,response);
     }
 
     private void orderProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

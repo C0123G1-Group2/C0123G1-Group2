@@ -15,4 +15,6 @@ public interface IProductRepo {
     boolean editProduct(int maSan,String tenSan, String tenLoaiSan, double gia);
 
     boolean orderProduct(Order order);
+
+    List<Product> searchProduct(String tenDV, String tenLoaiDV);
 }

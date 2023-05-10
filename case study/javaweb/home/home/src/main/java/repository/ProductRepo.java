@@ -15,8 +15,9 @@ public class ProductRepo implements IProductRepo{
     private final String SHOWLISTPRODUCT="SELECT * FROM soccer_field;";
     private final String DELETEPRODUCT="DELETE FROM soccer_field WHERE soccer_field_id=?;";
     private final String ADDPRODUCT="INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES (?,?,?);";
-    private final String EDITPRODUCT="UPDATE soccer_field SET soccer_field_name=?,soccer_field_type=?,price=? WHERE soccer_field_id=?;";
+    private final String EDITPRODUCT="UPDATE soccer_field SET soccer_field_name=?,soccer_field_type=?,price=?,update_at=NOW() WHERE soccer_field_id=?;";
     private final String ODERPRODUCT="INSERT INTO orders(customer_id,soccer_field_id,begin_time,rental_time) VALUES(?,?,?,?)";
+    private final String SEARCHPRODUCT=" SELECT * FROM soccer_field WHERE soccer_field_name LIKE ? AND soccer_field_type LIKE ?;";
 
 
     @Override
@@ -99,5 +100,28 @@ public class ProductRepo implements IProductRepo{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<Product> searchProduct(String ten, String tenLoai) {
+        List<Product> productList=new ArrayList<>();
+        Connection connection=DBContext.getConnection();
+        try {
+            PreparedStatement preparedStatement= connection.prepareStatement(SEARCHPRODUCT);
+            preparedStatement.setString(1,"%"+ten+"%");
+            preparedStatement.setString(2, "%"+tenLoai+"%");
+            ResultSet resultSet=preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int maDV = resultSet.getInt("soccer_field_id");
+                String tenDV= resultSet.getString("soccer_field_name");
+                String tenLoaiDV=resultSet.getString("soccer_field_type");
+                double gia = resultSet.getDouble("price");
+                Product product=new Product(maDV,tenDV,tenLoaiDV,gia);
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
     }
 }
