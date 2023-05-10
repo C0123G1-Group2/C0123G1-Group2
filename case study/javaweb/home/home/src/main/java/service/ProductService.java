@@ -37,4 +37,10 @@ public class ProductService implements IProductService{
     public boolean orderProduct(Order order) {
         return productRepo.orderProduct(order);
     }
+
+    @Override
+    public List<Product> searchProduct(String tenDV,String tenLoaiDV) {
+        List<Product> productList=productRepo.searchProduct(tenDV,tenLoaiDV);
+        return productList;
+    }
 }
