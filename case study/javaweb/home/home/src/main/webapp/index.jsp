@@ -167,7 +167,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px " onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px " onclick="window.location.href='/order'">Đặt sân
                                 </button>
                                 <br>
                                 <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
@@ -184,7 +184,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 3(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=3'">
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/order?action=oder&maDV=3'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -200,7 +200,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 4(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=4'">
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/order?action=oder&maDV=4'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -218,7 +218,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=5'">
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/order?action=oder&maDV=5'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -235,7 +235,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=6'">
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/order?action=oder&maDV=6'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -253,7 +253,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân Futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=7'">
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/order?action=oder&maDV=7'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -270,7 +270,7 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=8'">
+                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/order?action=oder&maDV=8'">
                                     Đặt sân
                                 </button>
                                 <br>

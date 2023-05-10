@@ -92,7 +92,16 @@ public class ProductServlet extends HttpServlet {
         int maDV= Integer.parseInt(request.getParameter("value"));
         String beginTime=request.getParameter("beginTime");
         int rentalTime= Integer.parseInt(request.getParameter("rentalTime"));
-        Order order =new Order(maDV,beginTime,rentalTime);
+        double gia = 0;
+        List<Product> productList=productService.showListProduct();
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).getMaSan()==maDV){
+                gia=productList.get(i).getGia();
+                break;
+            }
+        }
+        gia=gia*rentalTime;
+        Order order=new Order(1,1,maDV,beginTime,rentalTime, gia);
         boolean check= productService.orderProduct(order);
         String mess="Oder success!";
         if (!check){

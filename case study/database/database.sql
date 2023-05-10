@@ -79,5 +79,8 @@ INSERT INTO customer (`name`,phone_number,address,email) VALUES
 ( 'Nguyễn Thanh Long', '0782143391', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'thanhlongzz@gmail.com')
 ;
 INSERT INTO customer (`name`,phone_number,address,email) VALUES ('truongan','090900023','dânng','dannag');
+INSERT INTO employee (employee_name , day_birth,phone,email) VALUES('Thang','2001-09-12','010101001','thang@gmail.com'),
+('Vien','2001-01-22','011232001','vien@gmail.com'),
+('An','1999-07-19','555666666','an@gmail.com');
 
-
+SELECT * FROM employee;
