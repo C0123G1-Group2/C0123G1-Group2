@@ -15,7 +15,7 @@ public interface ICustomerRepository{
 
     boolean edit(Customer customer);
 
-    List<Customer> findCustomer(String nameFind,  String phoneNumberFind);
+    List<Customer> findCustomer(String nameFind,  String phoneNumberFind , String addressFind);
 
     List<User> getUser();
 

@@ -84,12 +84,11 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action){
             case "create":
-                id = Integer.parseInt(request.getParameter("id"));
                 String name = request.getParameter("name");
                 String phoneNumber = request.getParameter("phoneNumber");
                 String address = request.getParameter("address");
                 String email = request.getParameter("email");
-                Customer customer = new Customer(id,name,phoneNumber,address,email);
+                Customer customer = new Customer(name,phoneNumber,address,email);
                 boolean check =   customerService.saveCustomer(customer);
                 String mess = "Thêm mới Thành Công";
                 if(!check){
@@ -118,7 +117,8 @@ public class CustomerServlet extends HttpServlet {
     public void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nameFind = request.getParameter("name");
         String phoneNumberFind = request.getParameter("phoneNumber");
-        List<Customer> customerList =customerService.findCustomer(nameFind,phoneNumberFind);
+        String addressFind = request.getParameter("address");
+        List<Customer> customerList =customerService.findCustomer(nameFind,phoneNumberFind,addressFind);
         request.setAttribute("customerList",customerList);
         request.getRequestDispatcher("/list.jsp").forward(request, response);
     }

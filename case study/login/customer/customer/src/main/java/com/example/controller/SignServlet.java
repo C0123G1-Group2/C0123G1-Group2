@@ -38,7 +38,7 @@ public class SignServlet extends HttpServlet {
 
     }
 
-    private void createUserCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void createUserCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String user = request.getParameter("user");
         String password = request.getParameter("password");
         String name =request.getParameter("name");
@@ -49,6 +49,6 @@ public class SignServlet extends HttpServlet {
         Customer customer = new Customer(name,phoneNumber,address,email);
         customerService.saveCustomer(customer);
         customerService.saveUserCustomer(userCustomer);
-
+response.sendRedirect("login.jsp");
     }
 }

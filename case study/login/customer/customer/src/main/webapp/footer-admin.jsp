@@ -14,7 +14,7 @@
 <footer>
 <section class="footer">
   <!-- Footer -->
-  <footer class="text-center text-white" style="background-color: #0a4275;">
+  <footer class="text-center text-white" style="background-color: black;">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: CTA -->
@@ -29,9 +29,9 @@
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2023 Copyright:
-      <a class="text-white" target="_blank" href="https://toanthaydinh.com/wp-content/uploads/2020/05/hinh-anh-mat-cuoi.jpg20.jpg">Vien-Thang-An</a>
+    <div class="text-center p-3" style="background-color: black">
+      <span style="color: gold">  © 2023 Copyright:</span>
+      <a class="text-white" target="_blank"  href="https://toanthaydinh.com/wp-content/uploads/2020/05/hinh-anh-mat-cuoi.jpg20.jpg"><span style="color: gold">Vien-Thang-An</span></a>
     </div>
     <!-- Copyright -->
   </footer>

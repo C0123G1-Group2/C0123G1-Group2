@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <html>
 <head>
     <title>List</title>
@@ -42,7 +44,11 @@
         }
         table thead th, table tbody td {
             text-align: center !important;
-            vertical-align: middle;
+            vertical-align: middle !important;
+        }
+        button{
+
+
         }
     </style>
 </head>
@@ -99,15 +105,16 @@
 
             <ul class="navbar-nav mb-2 mb-lg-0">
 
-                <button class="btn btn-outline-primary" type="submit"  onclick="window.location.href='/customer?action=create'">Create</button>
-                <button type="button" class="btn btn-outline-primary" onclick="printDiv('contentTable')">
+                <button class="btn btn-primary" type="submit" style="background-color:black ; color: gold ;" onclick="window.location.href='/customer?action=create'">Create</button>
+                <button type="button" class="btn btn-primary" style="background-color:black ; color: gold ;" onclick="printDiv('contentTable')">
                     Print
                 </button>
             </ul>
             <form class="d-flex input-group w-auto"  method="post"  action="/customer?action=find" style="margin-block-end: 0; gap: 10px;" >
-                <input type="search" class="form-control" placeholder="Tên" aria-label="Search" name="name" />
-                <input type="search"   class="form-control"  placeholder="Số Điện Thoại" name="phoneNumber"/>
-                <button class="btn btn-outline-primary btn-search" type="submit" data-mdb-ripple-color="dark">Search</button>
+                <input type="search" style="flex: none ;width: 170px"   class="form-control" placeholder="Name" aria-label="Search" name="name" />
+                <input type="search"  style="flex: none ;width: 125px"  class="form-control"  placeholder="Phone Number" name="phoneNumber"/>
+                <input type="search" style="flex: none ;width: 170px"   class="form-control"  placeholder="Address" name="address"/>
+                <button class="btn btn-primary btn-search" style="background-color: black; color: gold;padding: 0 15px" type="submit" data-mdb-ripple-color="dark">Search</button>
             </form>
         </div>
     </div>
@@ -139,8 +146,8 @@
                 <td>
                     <!-- Button trigger modal -->
                     <button type="button" onclick="infoDelete('${customer.customerId}','${customer.name}')"
-                            class="btn btn-outline-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
+                            class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" style="background-color:black ; color: gold ;">
                         Delete
                     </button>
 
@@ -148,7 +155,7 @@
                 </td>
 
                 <td>
-                    <button type="submit" class="btn btn-outline-primary"
+                    <button type="submit" class="btn btn-primary" style="background-color: black ; color: gold"
                             onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">
                         Edit
                     </button>

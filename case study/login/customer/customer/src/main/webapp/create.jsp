@@ -50,10 +50,7 @@
 <div class="content">
 <h2>Create Customer</h2>
 <form action="/customer?action=create" method="post">
-    <div class="form-input">
-        <label hidden>Customer Id </label>
-        <input hidden style="border: 1px solid; " class="form-control" type="number" name="id" required value="1">
-    </div>
+
     <div class="form-input">
         <label>Name Customer</label>
         <input style="border: 1px solid; "  class="form-control" type="text" name="name" id="name" required>
@@ -72,8 +69,8 @@
     </div>
 
     <div>
-        <button style=" width: 48% ; margin-top: 15px ;background-color:#0a4275 ; color: white" class="btn btn-outline-primary" type="submit">Create</button>
-        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:#0a4275 ;margin-left: 2%"  onclick="window.location.href='/customer?action='">Back</button>
+        <button style=" width: 48% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
+        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:black ; color: gold ;margin-left: 2%"  onclick="window.location.href='/customer?action='">Back</button>
         <br>
         <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>

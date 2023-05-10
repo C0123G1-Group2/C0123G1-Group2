@@ -21,7 +21,7 @@ public interface ICustomerService {
 
 
 
-    List<Customer> findCustomer(String nameFind, String phoneNumberFind);
+    List<Customer> findCustomer(String nameFind, String phoneNumberFind ,String addressFind);
 
     boolean saveUserCustomer(UserCustomer userCustomer);
 

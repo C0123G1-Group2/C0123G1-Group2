@@ -12,12 +12,13 @@ public class CustomerRepository implements ICustomerRepository {
 
 
     private final String SELECT_ALL = "SELECT * FROM customer;";
+
     private  final String INSERT_INTO = "INSERT INTO customer (`name`,phone_number,address,email ) VALUES (?,?,?,?);";
-    private  final String DELETE_CUSTOMER = "Call delete_by_id(?);";
-    private final  String UPDATE_CUSTOMER = "CALL update_customer(?,?,?,?,?);";
-    private final  String FIND_CUSTOMER = "SELECT * FROM customer WHERE `name` Like ?  AND phone_number Like ? ;";
-    private final  String CHECK_LOGIN = "SELECT * FROM users ;";
-    private final  String INSERT_USER_CUSTOMER = "INSERT INTO user_customer VALUES(?,?);";
+    private  final String DELETE_CUSTOMER = "DELETE FROM customer Where customer_id = ? ; ";
+    private final  String UPDATE_CUSTOMER = "UPDATE  customer SET  `name` = ? , phone_number = ?,address = ?,email=? where customer_id = ?;";
+    private final  String FIND_CUSTOMER = "SELECT * FROM customer WHERE `name` Like  ? AND phone_number Like ? AND address LIKE ? ;";
+    private final  String CHECK_LOGIN = "SELECT user_login,password_login FROM users ;";
+    private final  String INSERT_USER_CUSTOMER = "INSERT INTO users(user_login,password_login,is_cus,is_admin) VALUES(?,?,1,0);";
 
 
 
@@ -54,7 +55,7 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(2, customer.getPhoneNumber());
             preparedStatement.setString(3, customer.getAddress());
             preparedStatement.setString(4, customer.getEmail());
-            return preparedStatement.executeUpdate() > 0;
+          return preparedStatement.executeUpdate() >0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -81,11 +82,12 @@ public class CustomerRepository implements ICustomerRepository {
       Connection connection = BaseRepository.getConnectDB();
         try {
             CallableStatement callableStatement = connection.prepareCall(UPDATE_CUSTOMER);
-            callableStatement.setInt(1,customer.getCustomerId());
-            callableStatement.setString(2,customer.getName());
-            callableStatement.setString(3,customer.getPhoneNumber());
-            callableStatement.setString(4,customer.getAddress());
-            callableStatement.setString(5,customer.getEmail());
+
+            callableStatement.setString(1,customer.getName());
+            callableStatement.setString(2,customer.getPhoneNumber());
+            callableStatement.setString(3,customer.getAddress());
+            callableStatement.setString(4,customer.getEmail());
+            callableStatement.setInt(5,customer.getCustomerId());
             rowUpdate = callableStatement.executeUpdate() > 0 ;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -95,7 +97,7 @@ public class CustomerRepository implements ICustomerRepository {
     }
 
     @Override
-    public List<Customer> findCustomer(String nameFind,  String phoneNumberFind) {
+    public List<Customer> findCustomer(String nameFind,  String phoneNumberFind,String addressFind) {
         List<Customer> customerList = new ArrayList<>();
         Connection connection = BaseRepository.getConnectDB();
 
@@ -103,6 +105,8 @@ public class CustomerRepository implements ICustomerRepository {
             PreparedStatement preparedStatement = connection.prepareStatement(FIND_CUSTOMER);
             preparedStatement.setString(1,'%'+nameFind+'%');
             preparedStatement.setString(2,'%'+phoneNumberFind+'%');
+            preparedStatement.setString(3,'%'+addressFind+'%');
+
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 int customerId = resultSet.getInt("customer_id");

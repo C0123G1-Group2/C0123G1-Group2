@@ -26,6 +26,16 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
+        String isLogout = request.getParameter("logout");
+        HttpSession session = request.getSession();
+
+        if(isLogout != null && isLogout.equals("true")){
+            session.setAttribute("login", "false");
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            return;
+        }
+
         if (username==null){
             username="";
         }
@@ -33,7 +43,6 @@ public class LoginServlet extends HttpServlet {
 //            Cookie cookie = new Cookie("login", "true");
 //            response.addCookie(cookie);
 
-            HttpSession session = request.getSession();
             session.setAttribute("login", "true");
             response.sendRedirect("home.jsp");
         } else if (username.equals("")) {

@@ -13,6 +13,6 @@
 <c:redirect url="/home.jsp"> </c:redirect>
 </body>
 <script>
-    sessionStorage.removeItem('login');
+    localStorage.removeItem('login');
 </script>
 </html>
