@@ -31,30 +31,19 @@ CREATE TABLE orders (
     customer_id INT,
     FOREIGN KEY (customer_id)
         REFERENCES customer (customer_id),
+    employee_id INT,
+    FOREIGN KEY (employee_id)
+        REFERENCES employee (employee_id),
     soccer_field_id INT,
     FOREIGN KEY (soccer_field_id)
         REFERENCES soccer_field (soccer_field_id),
     begin_time VARCHAR(50) NOT NULL,
     rental_time INT,
-     created_at DATETIME DEFAULT NOW()
+    total_price INT,
+    created_at DATETIME DEFAULT NOW()
 );
-CREATE TABLE bill (
-    bill_id INT PRIMARY KEY AUTO_INCREMENT,
-    employee_id INT,FOREIGN KEY (employee_id)
-        REFERENCES employee (employee_id),
-    order_id INT,
-    FOREIGN KEY (order_id)
-        REFERENCES orders (order_id) ,
-         created_at DATETIME DEFAULT NOW()
-);
-CREATE TABLE detailed_bill (
-    detailed_bill_id INT PRIMARY KEY AUTO_INCREMENT,
-    bill_id INT,
-    FOREIGN KEY (bill_id)
-        REFERENCES bill (bill_id),
-    total_price INT ,
-     created_at DATETIME DEFAULT NOW()
-);
+
+
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_login VARCHAR(50) NOT NULL UNIQUE,
@@ -91,14 +80,4 @@ INSERT INTO customer (`name`,phone_number,address,email) VALUES
 ;
 INSERT INTO customer (`name`,phone_number,address,email) VALUES ('truongan','090900023','dânng','dannag');
 
--- trigger uppdate soccer_field
-DELIMITER $$
- CREATE TRIGGER before_soccer_field_update
- BEFORE UPDATE ON soccer_field
- FOR EACH ROW
-BEGIN
- UPDATE soccer_field
-SET
- update_at = NOW() ;
-END$$
- DELIMITER ;
+
