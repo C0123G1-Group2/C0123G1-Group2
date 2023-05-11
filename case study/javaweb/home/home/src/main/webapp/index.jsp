@@ -128,6 +128,7 @@
         }
     </style>
 </head>
+
 <body>
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light  "
@@ -147,6 +148,10 @@
                     <a class="nav-link " href="/product" style="width: 115%;height: 100%;color: #FFD700">Manager
                         Product</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/employee" style="width: 115%;height: 100%;color: #FFD700">Manager
+                        Employee</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0 d-flex" style="margin-left: 50%;margin-right: 4%">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
@@ -156,7 +161,6 @@
             <button type="button" class="btn btn-outline-warning">Login</button>
         </div>
     </nav>
-    <a href="/employee">employee list</a>
     <div class="content ">
         <div class="row ">
 
