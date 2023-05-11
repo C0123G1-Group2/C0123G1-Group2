@@ -151,6 +151,7 @@
             <button type="button" class="btn btn-outline-warning">Login</button>
         </div>
     </nav>
+    <a href="/employee">employee list</a>
     <div class="content ">
         <div class="row ">
 
