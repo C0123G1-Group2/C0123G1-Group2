@@ -1,5 +1,6 @@
 package controller;
 
+import com.example.util.Helper;
 import model.Employee;
 import service.IEmployeeService;
 import service.impl.EmployeeService;
@@ -17,6 +18,11 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean isLogin = Helper.checkUser(request);
+        if(!isLogin) {
+            request.getRequestDispatcher("/login.jsp").forward(request,response);
+            return;
+        }
         String action = request.getParameter("action");
         int id;
         if(action== null){

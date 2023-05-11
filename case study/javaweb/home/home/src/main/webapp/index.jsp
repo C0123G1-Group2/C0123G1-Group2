@@ -61,9 +61,7 @@
             border-radius: 5px;
         }
 
-        .card, img {
-            border-radius: 5%;
-        }
+
 
 
         .height-card {
@@ -131,36 +129,7 @@
 
 <body>
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light  "
-         style="position: sticky;top: 0;left: 0;right: 0;z-index: +1;margin-left: 0px;background:linear-gradient(45deg,black,black,white,black,black); height: 100px;font-size: 20px">
-        <a class="navbar-brand card-r" href="#" style="margin-right: 20px">
-            <img
-                    src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg?w=1060"
-                    style="width: 100px;height: 100%;margin-left: 0px">
-        </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active" style="font-weight: 700;margin-right: 20px;">
-                    <a class="nav-link " href="/index.jsp" style="height: 100%;color: #FFD700;">Home</a>
-                </li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/product" style="width: 115%;height: 100%;color: #FFD700">Manager
-                        Product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/employee" style="width: 115%;height: 100%;color: #FFD700">Manager
-                        Employee</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 d-flex" style="margin-left: 50%;margin-right: 4%">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       style="border-color: #FFD700; margin-right: 5%">
-                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <button type="button" class="btn btn-outline-warning">Login</button>
-        </div>
-    </nav>
+    <jsp:include page="/header-admin.jsp"/>
     <div class="content ">
         <div class="row ">
 
