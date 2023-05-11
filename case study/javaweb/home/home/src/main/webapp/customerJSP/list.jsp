@@ -7,8 +7,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
+<link rel="stylesheet" href="../bootstrap520/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../datatables/css/dataTables.bootstrap5.min.css"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -52,7 +52,7 @@
     </style>
 </head>
 <body>
-<jsp:include page="header-admin.jsp"/>
+<jsp:include page="../header-admin.jsp"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid" style="padding: 0">
         <button
@@ -157,11 +157,11 @@
         document.getElementById("deleteName").innerText = name;
     }
 </script>
-<jsp:include page="footer-admin.jsp"/>
+<jsp:include page="../footer-admin.jsp"/>
 
-<script src="jquery/jquery-3.5.1.min.js"></script>
-<script src="datatables/js/jquery.dataTables.min.js"></script>
-<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<script src="../jquery/jquery-3.5.1.min.js"></script>
+<script src="../datatables/js/jquery.dataTables.min.js"></script>
+<script src="../datatables/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#tableCustomer').dataTable({

@@ -45,7 +45,7 @@
 
 </head>
 <body>
-<jsp:include page="header-admin.jsp"/>
+<jsp:include page="../header-admin.jsp"/>
 
 <div class="content">
 <h2>Create Customer</h2>
@@ -53,13 +53,14 @@
 
     <div class="form-input">
         <label for="regexName">Name Customer</label>
-        <small  style="color: red" id="checkName" ></small>
-        <input style="border: 1px solid; " oninput="checkName()" class="form-control" type="text" name="name" id="regexName" required>
 
+        <input style="border: 1px solid; " oninput="checkName()" class="form-control" type="text" name="name" id="regexName" required>
+        <small  style="color: red" id="checkName" ></small>
     </div>
     <div class="form-input">
         <label>Phone Number</label>
-        <input style="border: 1px solid; " class="form-control" type="number" name="phoneNumber" required>
+        <input style="border: 1px solid " oninput="checkPhoneNumber()" class="form-control" type="number" name="phoneNumber" id="phone"required>
+        <small  style="color: red" id="checkPhone" ></small>
     </div>
     <div class="form-input">
         <label>Address</label>
@@ -95,6 +96,6 @@
 <%--  }--%>
 
 <%--</script>--%>
-
+<script src="regex.js"></script>
 </body>
 </html>

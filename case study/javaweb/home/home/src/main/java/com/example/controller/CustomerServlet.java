@@ -30,7 +30,7 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action){
             case "create":
-                request.getRequestDispatcher("/create.jsp").forward(request,response);
+                request.getRequestDispatcher("/customerJSP/create.jsp").forward(request,response);
                 break;
 
             case "edit":
@@ -46,10 +46,10 @@ public class CustomerServlet extends HttpServlet {
                 }
                 if(customer==null){
                     request.setAttribute("mess","ID Not Find");
-                    request.getRequestDispatcher("/list.jsp").forward(request,response);
+                    request.getRequestDispatcher("/customerJSP/list.jsp").forward(request,response);
                 }else {
                     request.setAttribute("customer",customer);
-                    request.getRequestDispatcher("/edit.jsp").forward(request,response);}
+                    request.getRequestDispatcher("/customerJSP/edit.jsp").forward(request,response);}
                 break;
             default:
                   customerList = customerService.getAll();
@@ -57,7 +57,7 @@ public class CustomerServlet extends HttpServlet {
                     request.getRequestDispatcher("/error.jsp").forward(request,response);
                 }else {
                     request.setAttribute("customerList",customerList);
-                    request.getRequestDispatcher("/list.jsp").forward(request,response);
+                    request.getRequestDispatcher("/customerJSP/list.jsp").forward(request,response);
                 }
         }
     }
@@ -82,7 +82,7 @@ public class CustomerServlet extends HttpServlet {
                     mess="New add failed";
                 }
                 request.setAttribute("mess",mess);
-                request.getRequestDispatcher("/create.jsp").forward(request,response);
+                request.getRequestDispatcher("/customerJSP/create.jsp").forward(request,response);
                 break;
             case "edit":
                 edit(request, response);
@@ -107,7 +107,7 @@ public class CustomerServlet extends HttpServlet {
         String addressFind = request.getParameter("address");
         List<Customer> customerList =customerService.findCustomer(nameFind,phoneNumberFind,addressFind);
         request.setAttribute("customerList",customerList);
-        request.getRequestDispatcher("/list.jsp").forward(request, response);
+        request.getRequestDispatcher("/customerJSP/list.jsp").forward(request, response);
     }
 
     public void edit(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -134,7 +134,7 @@ public class CustomerServlet extends HttpServlet {
                 request.setAttribute("address",customerList.get(i).getAddress());
                 request.setAttribute("email",customerList.get(i).getEmail());
                 try {
-                    request.getRequestDispatcher("/edit.jsp").forward(request,response);
+                    request.getRequestDispatcher("/customerJSP/edit.jsp").forward(request,response);
                 } catch (ServletException e) {
                     e.printStackTrace();
                 }
