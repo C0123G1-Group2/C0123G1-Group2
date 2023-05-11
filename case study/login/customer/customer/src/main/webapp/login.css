@@ -39,7 +39,7 @@ section .noi-dung {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20230411/pngtree-football-player-illustration-color-advertising-background-image_2283768.jpg);
+    background-image: url(https://tophinhanhdep.com/wp-content/uploads/2021/10/Black-and-Gold-Desktop-Wallpapers.jpg);
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -91,21 +91,22 @@ section .noi-dung .form .input-form input {
     letter-spacing: 1px;
     color: black;
     background: transparent;
+    border-radius: 7px ;
 
 }
 
 section .noi-dung .form .input-form input[type="submit"] {
-    background: #ff4584;
-    color: black;
+    background: black;
+    color: yellow;
     outline: none;
     border: none;
     font-weight: 500;
     cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
-    0 2px 2px rgba(0, 0, 0, 0.12),
-    0 4px 4px rgba(0, 0, 0, 0.12),
-    0 8px 8px rgba(0, 0, 0, 0.12),
-    0 16px 16px rgba(0, 0, 0, 0.12);
+    /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),*/
+    /*0 2px 2px rgba(0, 0, 0, 0.12),*/
+    /*0 4px 4px rgba(0, 0, 0, 0.12),*/
+    /*0 8px 8px rgba(0, 0, 0, 0.12),*/
+    /*0 16px 16px rgba(0, 0, 0, 0.12);*/
     width: 225px;
 
 }
@@ -114,7 +115,7 @@ section .noi-dung .form .input-form input[type="submit"] {
     padding-top: 10px;
 }
 section .noi-dung .form .input-form input[type="submit"]:hover {
-    background: #cb5454;
+    background: #947f3b;
 }
 
 section .noi-dung .form .nho-dang-nhap {

@@ -9,8 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
-
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -27,13 +25,6 @@
     <style>
         #contentTable{
             padding: 20px 40px;
-
-        }
-        .navbar-nav {
-            gap: 10px;
-        }
-        .navbar-collapse {
-            justify-content: space-between;
         }
         input.form-control, .btn-search{
             height: 30px;
@@ -46,47 +37,21 @@
             text-align: center !important;
             vertical-align: middle !important;
         }
-        button{
-
-
+        #tableCustomer_paginate .page-item.active a{
+            background-color: black !important;
+            color: gold;
+        }
+        #tableCustomer_paginate #tableCustomer_next a{
+            background-color: black !important;
+            color: gold !important;
+        }
+        #tableCustomer_paginate #tableCustomer_previous a{
+            background-color: black !important;
+            color: gold !important;
         }
     </style>
 </head>
 <body>
-<%--<nav class="navbar navbar-expand-lg navbar-light bg-light">--%>
-<%--    <a class="navbar-brand" href="#" style="margin-right: 0">--%>
-<%--        <img style="width: 50px ; height: 30px ; margin-left: 17px"  src="https://www.threelions.nl/wp-content/uploads/2020/09/logo-three-lions-rgb.png" >--%>
-<%--    </a>--%>
-<%--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">--%>
-<%--        <span class="navbar-toggler-icon"></span>--%>
-<%--    </button>--%>
-
-<%--    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="display: flex; justify-content: space-between; padding: 0 10px;">--%>
-<%--        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">--%>
-<%--            <li class="nav-item active">--%>
-<%--                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>--%>
-<%--            </li>--%>
-<%--            <li class="nav-item">--%>
-<%--                <a class="nav-link" href="#">Link</a>--%>
-<%--            </li>--%>
-<%--            <li class="nav-item">--%>
-<%--                <a class="nav-link disabled" href="#">Disabled</a>--%>
-<%--            </li>--%>
-<%--        </ul>--%>
-<%--        <div style="display: flex; align-items: center;margin-right: 10px;">--%>
-<%--            <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px" method="post"  action="/customer?action=find">--%>
-<%--                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="name">--%>
-
-<%--                <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit" style="padding: 0px 12px;" >Search</button>--%>
-<%--            </form>--%>
-<%--            <span id="no-auth"><i style="margin-left: 5px;" class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>--%>
-<%--            <div id="auth">--%>
-<%--                <span style="width: 25px; height: 25px; background: #2ea6da; border-radius: 50%; display: inline-block"></span>--%>
-<%--                <span >Admin</span>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
 <jsp:include page="header-admin.jsp"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid" style="padding: 0">
@@ -142,7 +107,6 @@
                 <td>${customer.getPhoneNumber()}</td>
                 <td>${customer.getAddress()}</td>
                 <td>${customer.getEmail()}</td>
-
                 <td>
                     <!-- Button trigger modal -->
                     <button type="button" onclick="infoDelete('${customer.customerId}','${customer.name}')"
@@ -150,22 +114,15 @@
                             data-bs-target="#exampleModal" style="background-color:black ; color: gold ;">
                         Delete
                     </button>
-
-
                 </td>
-
                 <td>
                     <button type="submit" class="btn btn-primary" style="background-color: black ; color: gold"
                             onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">
                         Edit
                     </button>
                 </td>
-
-
             </tr>
-
         </c:forEach>
-
         </tbody>
     </table>
 </div>
@@ -193,7 +150,7 @@
         </div>
     </div>
 </div>
-
+<h3>${mess}</h3>
 <script>
     function infoDelete(customerId, name) {
         document.getElementById("deleteId").value = customerId;
@@ -201,13 +158,7 @@
     }
 </script>
 <jsp:include page="footer-admin.jsp"/>
-<%--<footer class="bg-light text-center text-lg-start">--%>
-<%--    <div class="text-center p-3" style="background-color: hsl(216, 25%, 95.1%);">--%>
-<%--        © 2023 Copyright:--%>
-<%--        <a class="text-dark" target="_blank"  href="https://toanthaydinh.com/wp-content/uploads/2020/05/hinh-anh-mat-cuoi.jpg20.jpg">Group 2</a>--%>
-<%--    </div>--%>
 
-<%--</footer>--%>
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
@@ -219,17 +170,6 @@
             "pageLength": 5
         });
     });
-
-    const isLogin = localStorage.getItem("login");
-    if (isLogin && isLogin === "true") {
-        document.getElementById("no-auth").style.display = "none";
-        document.getElementById("auth").style.display = "flex";
-
-    } else {
-        document.getElementById("no-auth").style.display = "block";
-        document.getElementById("auth").style.display = "none";
-
-    }
 </script>
 <script>
     function printDiv(divID) {

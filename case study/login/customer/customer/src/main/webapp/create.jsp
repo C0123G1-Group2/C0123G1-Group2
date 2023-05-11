@@ -52,8 +52,10 @@
 <form action="/customer?action=create" method="post">
 
     <div class="form-input">
-        <label>Name Customer</label>
-        <input style="border: 1px solid; "  class="form-control" type="text" name="name" id="name" required>
+        <label for="regexName">Name Customer</label>
+        <small  style="color: red" id="checkName" ></small>
+        <input style="border: 1px solid; " oninput="checkName()" class="form-control" type="text" name="name" id="regexName" required>
+
     </div>
     <div class="form-input">
         <label>Phone Number</label>

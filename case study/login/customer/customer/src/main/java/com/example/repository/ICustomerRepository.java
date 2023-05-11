@@ -2,7 +2,6 @@ package com.example.repository;
 
 import com.example.model.Customer;
 import com.example.model.User;
-import com.example.model.UserCustomer;
 
 import java.util.List;
 
@@ -17,8 +16,6 @@ public interface ICustomerRepository{
 
     List<Customer> findCustomer(String nameFind,  String phoneNumberFind , String addressFind);
 
-    List<User> getUser();
 
-    boolean saveUserCustomer(UserCustomer userCustomer);
 
 }

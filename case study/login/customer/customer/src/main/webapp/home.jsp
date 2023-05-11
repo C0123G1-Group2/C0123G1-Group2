@@ -14,11 +14,11 @@
 <h1>Đây Là Trang Đăng Nhập</h1>
 
 <a href="/customer">Kích Vô Để Coi Chi Tiết </a>
-<p id="session" style="display: none"><%= session.getAttribute("login")%></p>
+<%--<p id="session" style="display: none"><%= session.getAttribute("login")%></p>--%>
 
 </body>
 <script>
-    let session = document.getElementById('session').textContent;
-    localStorage.setItem('login', session);
+    // let session = document.getElementById('session').textContent;
+    // localStorage.setItem('login', session);
 </script>
 </html>

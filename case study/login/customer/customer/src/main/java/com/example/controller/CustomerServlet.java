@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.model.Customer;
 import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
+import com.example.util.Helper;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -16,17 +17,11 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Boolean isLogin = false;
-//        Cookie[] cookies = request.getCookies();
-//        if (cookies != null) {
-//            for (Cookie cookie : cookies) {
-//                if (cookie.getName().equals("login") && cookie.getValue().equals("true")) {
-//                    isLogin = true;
-//                }
-//            }
-//        }
-        HttpSession session = request.getSession();
-        Boolean isLogin = session.getAttribute("login") == "true";
+        boolean isLogin = Helper.checkUser(request);
+        if(!isLogin) {
+            request.getRequestDispatcher("/login.jsp").forward(request,response);
+            return;
+        }
         List<Customer> customerList;
         String action = request.getParameter("action");
         int id ;
@@ -34,7 +29,7 @@ public class CustomerServlet extends HttpServlet {
             action="";
         }
         switch (action){
-            case  "create":
+            case "create":
                 request.getRequestDispatcher("/create.jsp").forward(request,response);
                 break;
 
@@ -47,32 +42,24 @@ public class CustomerServlet extends HttpServlet {
                         customer=customerList.get(i) ;
                         break;
                     }
-                }
-                    request.setAttribute("customer",customer);
-                    request.getRequestDispatcher("/edit.jsp").forward(request,response);
-                break;
 
-           
+                }
+                if(customer==null){
+                    request.setAttribute("mess","ID Not Find");
+                    request.getRequestDispatcher("/list.jsp").forward(request,response);
+                }else {
+                    request.setAttribute("customer",customer);
+                    request.getRequestDispatcher("/edit.jsp").forward(request,response);}
+                break;
             default:
                   customerList = customerService.getAll();
                 if(customerList==null){
                     request.getRequestDispatcher("/error.jsp").forward(request,response);
                 }else {
-                    if(isLogin){
-                        request.setAttribute("customerList",customerList);
-                        request.getRequestDispatcher("/list.jsp").forward(request,response);
-                    }
-                    else {
-                        request.getRequestDispatcher("/login.jsp").forward(request,response);
-                    }
+                    request.setAttribute("customerList",customerList);
+                    request.getRequestDispatcher("/list.jsp").forward(request,response);
                 }
-
-
-
         }
-
-
-
     }
 
     @Override

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.model.User" %><%--
   Created by IntelliJ IDEA.
   User: DELL
   Date: 5/8/2023
@@ -16,13 +16,17 @@
     <title>Title</title>
   <style>
     .navbar{
-      height: 7vw ;
+      height: 86px ;
       background-color: black;
       padding: 0 40px;
     }
     .navbar-nav {
       display: flex;
       align-items: center;
+      gap: 10px;
+    }
+    .navbar-collapse {
+      justify-content: space-between;
     }
     .dropdown .dropdown-toggle{
       width: 30px;
@@ -30,12 +34,12 @@
       border-radius: 50%;
     }
     .dropdown .dropdown-toggle:after{
-      content: "A" !important;
+      /*content: "A" !important;*/
       border: none !important;
-      margin-left: 0;
-      position: absolute;
-      top: 2px;
-      left: 35%;
+      /*margin-left: 0;*/
+      /*position: absolute;*/
+      /*top: 2px;*/
+      /*left: 35%;*/
     }
 
     .dropdown-menu.show {
@@ -68,26 +72,33 @@
         </li>
       </ul>
       <div style="display: flex; align-items: center;justify-content: space-between">
-        <!--                <form class="form-inline my-2 my-lg-0" style="display: flex;  height: 30px" method="post"  action="/customer?action=find">-->
-        <!--                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="name">-->
 
-        <!--                    <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit" style="padding: 0px 12px;" >Search</button>-->
-        <!--                </form>-->
-        <span id="no-auth"><i style="margin-left: 5px;" class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>
-        <div id="auth">
+        <div>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <form id="form-action" method="post">
-                <p class="dropdown-item" onclick="handleClick('myAccount')"><i class="fa-solid fa-user" style="color: #17191c;"></i> My Account</p>
-                <p class="dropdown-item" onclick="handleClick('logout')"><i class="fa-solid fa-right-from-bracket" style="color: #0a0a0a;"></i> Logout</p>
+                <div>
+                <span class="dropdown-item">
+                  <%=
+                    session.getAttribute("userSession")!=null
+                            ? "Hello " + ((User)session.getAttribute("userSession")).getUsername()
+                            :""
+                  %>
+                </span>
+                  <span class="text-white">
+                  <%=
+                    session.getAttribute("userSession")==null
+                            ? ("<a href='/login' class='dropdown-item'>Login</a>")
+                            :("<a href='/logout' class='dropdown-item'>Logout</a>")
+                  %>
+                </span>
+                </div>
               </form>
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
 
@@ -103,19 +114,19 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script>
-  const form = document.getElementById('form-action');
-  function handleClick(type) {
-    if(type === 'myAccount'){
-       form.action = "/LoginServlet?username=1";
-       form.method = 'post';
-    }
-    else if(type === 'logout'){
-      localStorage.removeItem('login');
-      form.action = "/LoginServlet?logout=true";
-      form.method = 'post';
-    }
-    form.submit();
-  }
+  // const form = document.getElementById('form-action');
+  // function handleClick(type) {
+  //   if(type === 'myAccount'){
+  //      form.action = "/LoginServlet?username=1";
+  //      form.method = 'post';
+  //   }
+  //   else if(type === 'logout'){
+  //     localStorage.removeItem('login');
+  //     form.action = "/LoginServlet?logout=true";
+  //     form.method = 'post';
+  //   }
+  //   form.submit();
+  // }
 </script>
 </body>
 </html>

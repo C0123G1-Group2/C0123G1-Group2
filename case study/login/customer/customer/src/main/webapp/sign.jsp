@@ -15,39 +15,39 @@
 </head>
 <body>
 
-<div class="content" style="background: #0a4275">
-    <h1 style="color:white;">SIGN UP</h1>
+<div class="content" style="background: black">
+    <h1 style="color:gold;">SIGN UP</h1>
     <form action="/sign?action=createUserCustomer" method="post">
         <div class="form-item">
-            <label>User</label>
+            <label style="color: gold">User</label>
             <input class="form-control-sm" type="text" name="user">
         </div>
         <div class="form-item">
-            <label>Password</label>
+            <label style="color: gold" >Password</label>
             <input  class="form-control-sm" type="password" name="password">
         </div>
         <div class="form-item">
-            <label>Confirm Password</label>
+            <label style="color: gold" >Confirm Password</label>
             <input  class="form-control-sm"  type="password" name="password">
         </div>
         <div class="form-item">
-            <label>Name</label>
+            <label style="color: gold" >Name</label>
             <input  class="form-control-sm"  type="text" name="name">
         </div>
         <div class="form-item">
-            <label>Phone Number</label>
+            <label style="color: gold" >Phone Number</label>
             <input   class="form-control-sm" type="text" name="phoneNumber">
         </div>
         <div class="form-item">
-            <label>Address</label>
+            <label style="color: gold" >Address</label>
             <input   class="form-control-sm" type="text" name="address">
         </div>
         <div class="form-item">
-            <label>Email</label>
+            <label style="color: gold" >Email</label>
             <input   class="form-control-sm" type="text" name="email">
         </div>
         <div class="btn-submit" >
-            <button type="submit">Đăng ký</button>
+            <button type="submit" style="background-color: black ; color: gold">Đăng ký</button>
         </div>
     </form>
 </div>
