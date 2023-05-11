@@ -10,10 +10,12 @@
         h5, p {
             color: #FFD700;
         }
-        .container-fluid{
+
+        .container-fluid {
             margin-left: 0px;
             padding-left: 0px;
         }
+
         .left {
             padding-right: 0px;
             background: linear-gradient(35deg, black, white, black);
@@ -94,31 +96,35 @@
         .content {
             background-color: lightgrey;
         }
-        .btn-o{
+
+        .btn-o {
             cursor: pointer;
         }
-        .popup{
+
+        .popup {
             height: 500px;
             width: 500px;
-            background: black ;
+            background: black;
             border-radius: 10%;
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translate(-50%,-50%) scale(0.1);
+            transform: translate(-50%, -50%) scale(0.1);
             text-align: center;
-            padding:0 30px 30px;
+            padding: 0 30px 30px;
             color: white;
             visibility: hidden;
-            transition: transform 0.4s,top 0.4s;
+            transition: transform 0.4s, top 0.4s;
         }
-        .popup button{
+
+        .popup button {
             cursor: pointer;
         }
-        .open-popup{
+
+        .open-popup {
             visibility: visible;
             top: 50%;
-            transform: translate(-50%,-50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
         }
     </style>
 </head>
@@ -165,22 +171,30 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=1'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=1'">
                                     Đặt sân
                                 </button>
                                 <br>
                                 <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px" onclick="openPopup()">Xem chi tiết</button>
-                                    <div class="popup" id="popup" style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
-                                        <span style="color: gold;font-size:30px;margin-top: 20px" class="font-monospace" >Sân số 1</span>
+                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                            onclick="openPopup()">Xem chi tiết
+                                    </button>
+                                    <div class="popup" id="popup"
+                                         style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">Sân số 1</span>
                                         <br>
-                                        <span > Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
+                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
                                         <br>
-                                        <span >Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
+                                        <span>Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
                                         <br>
                                         <span style="font-size: xx-large;">Thank You</span>
                                         <br>
-                                        <button type="button" onclick="closePopup()" class="btn btn-warning" style="margin-top: 30px">ok</button>
+                                        <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                style="margin-top: 30px">ok
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -194,21 +208,29 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px " onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px "
+                                        onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
                                 </button>
                                 <br>
                                 <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px" onclick="openPopup()">Xem chi tiết</button>
-                                    <div class="popup" id="popup1" style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
-                                        <span style="color: gold;font-size:30px;margin-top: 20px" class="font-monospace" >Sân số 1</span>
+                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                            onclick="openPopup()">Xem chi tiết
+                                    </button>
+                                    <div class="popup" id="popup1"
+                                         style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">Sân số 1</span>
                                         <br>
-                                        <span > Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
+                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
                                         <br>
-                                        <span >Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
+                                        <span>Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
                                         <br>
                                         <span style="font-size: xx-large;">Thank You</span>
                                         <br>
-                                        <button type="button" onclick="closePopup()" class="btn btn-warning" style="margin-top: 30px">ok</button>
+                                        <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                style="margin-top: 30px">ok
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -224,11 +246,14 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 3(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=3'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=3'">
                                     Đặt sân
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                        class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -240,11 +265,14 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 4(Sân 5 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=4'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=4'">
                                     Đặt sân
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                        class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -258,15 +286,17 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=5'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=5'">
                                     Đặt sân
                                 </button>
                                 <br>
                                 <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px">Xem chi tiết</button>
+                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px">Xem chi tiết
+                                    </button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
@@ -277,11 +307,14 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 7 người)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=6'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=6'">
                                     Đặt sân
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                        class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -295,11 +328,14 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân Futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=7'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=7'">
                                     Đặt sân
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                        class="fa fa-shopping-cart "></i></button>
                             </div>
 
                         </div>
@@ -312,11 +348,14 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 futsal)</h5>
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px" onclick="window.location.href='/product?action=oder&maDV=8'">
+                                <button type="button" class="btn btn-outline-warning"
+                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
+                                        onclick="window.location.href='/product?action=oder&maDV=8'">
                                     Đặt sân
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
+                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                        class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
                     </div>
@@ -351,8 +390,9 @@
                             <div class="col-md-5 col-12">
                                 <!-- Email input -->
                                 <div class="form-outline form-white mb-4">
-                                    <input type="email" id="form5Example21" class="form-control" />
-                                    <label class="form-label" for="form5Example21" style="color: #FFD700">Email address</label>
+                                    <input type="email" id="form5Example21" class="form-control"/>
+                                    <label class="form-label" for="form5Example21" style="color: #FFD700">Email
+                                        address</label>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -378,7 +418,7 @@
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);color: #FFD700">
                 © 2020 Copyright:
-                <a  href="#" style="color: #FFD700 ">ThreeLions.com</a>
+                <a href="#" style="color: #FFD700 ">ThreeLions.com</a>
             </div>
             <!-- Copyright -->
         </footer>
@@ -387,11 +427,13 @@
 </div>
 
 <script>
-    let popup=document.getElementById("popup","popup1");
-    function  openPopup(){
+    let popup = document.getElementById("popup", "popup1");
+
+    function openPopup() {
         popup.classList.add("open-popup");
     }
-    function closePopup(){
+
+    function closePopup() {
         popup.classList.remove("open-popup")
     }
 </script>
