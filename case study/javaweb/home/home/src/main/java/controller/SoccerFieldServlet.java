@@ -1,5 +1,6 @@
 package controller;
 
+import com.example.util.Helper;
 import model.Order;
 import model.SoccerField;
 import service.ISoccerFieldService;
@@ -16,6 +17,11 @@ public class SoccerFieldServlet extends HttpServlet {
     private ISoccerFieldService productService=new SoccerFieldService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean isLogin = Helper.checkUser(request);
+        if(!isLogin) {
+            request.getRequestDispatcher("/login.jsp").forward(request,response);
+            return;
+        }
         String action = request.getParameter("action");
         if (action==null){
             action="";

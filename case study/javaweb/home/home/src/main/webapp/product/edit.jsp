@@ -37,7 +37,7 @@
         <div>
             <label>Loại sân</label>
             <select class="form-select" aria-label="Default select example" name="tenLoaiSan">
-                <option value="${product.getLoaiSan()}">${product.getLoaiSan()}</option>
+                <option value="${product.getSoccerFieldType()}">${product.getSoccerFieldType()}</option>
                 <option value="Sân 5">Sân 5</option>
                 <option value="Sân 7">Sân 7</option>
                 <option value="Sân futlsan">Sân futlsan</option>
@@ -45,7 +45,7 @@
         </div>
         <div>
             <label>Giá</label>
-            <input  class="form-control"  type="text" name="gia" required value="${product.getGia()}">
+            <input  class="form-control"  type="text" name="gia" required value="${product.getPrice()}">
         </div>
         <div>
             <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>

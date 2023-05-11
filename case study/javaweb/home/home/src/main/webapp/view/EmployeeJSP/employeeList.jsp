@@ -91,48 +91,7 @@
 <%--<jsp:include page="header-admin.jsp"/>--%>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg navbar ">
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <img style="width: 86px ; height: 86px"
-                         src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg?w=1060">
-                </li>
-                <li style="text-align: center">
-                    <button style=" background-color: black;color: gold;">Employee</button>
-
-                </li>
-                <li>
-                    <button style=" background-color: black;color: gold">Customer</button>
-                </li>
-                <li>
-                    <button style=" background-color: black;color: gold">Manger Customer</button>
-
-                </li>
-
-            </ul>
-            <div style="display: flex; align-items: center;justify-content: space-between">
-                <span id="no-auth"><i style="margin-left: 5px;"
-                                      class="fa-sharp fa-solid fa-right-to-bracket"></i> </span>
-                <div id="auth">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <form id="form-action" method="post">
-                                <p class="dropdown-item" onclick="handleClick('myAccount')">My Account</p>
-                                <p class="dropdown-item" onclick="handleClick('logout')">Logout</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-</header>
+<jsp:include page="/header-admin.jsp"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 4vw">
     <div class="container-fluid" style="padding: 0">
         <button
@@ -217,7 +176,7 @@
 
         </tbody>
     </table>
-    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='index.jsp'">Back
+    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='/home.jsp'">Back
         Home
     </button>
 </div>
