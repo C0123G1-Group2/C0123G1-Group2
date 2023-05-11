@@ -13,6 +13,9 @@
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
+<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
 <body>
 <div class="container-fluid" style="margin:50px;margin-right: 50px;padding: 0px;width: 95%">
 
@@ -45,7 +48,7 @@
     <div style="text-align: center">
         <h1>Management Soccer Field</h1>
     </div>
-    <table class="table table-striped">
+    <table class="table table-striped" id="tableSoccer">
         <thead>
         <tr>
             <th>Mã sân</th>
@@ -58,15 +61,15 @@
         <tbody>
         <c:forEach var="product" items="${productList}">
             <tr>
-                <td>${product.getMaSan()}</td>
-                <td>${product.getTenSan()}</td>
-                <td>${product.getLoaiSan()}</td>
-                <td>${product.getGia()} VND</td>
+                <td>${product.getSoccerFieldId()}</td>
+                <td>${product.getSoccerFieldName()}</td>
+                <td>${product.getSoccerFieldType()}</td>
+                <td>${product.getPrice()} VND</td>
                 <td>
                     <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
-                            onclick="window.location.href='/product?action=edit&value=${product.getMaSan()}'">Edit
+                            onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
                     </button>
-                    <button type="button" onclick="infoDelete('${product.getMaSan()}','${product.getTenSan()}')"
+                    <button type="button" onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
                             class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
                             style="background-color: black;color: #FFD700">
                         Delete
@@ -121,5 +124,18 @@
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"></script>
 </div>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('#tableSoccer').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 7
+        } );
+    } );
+</script>
 </body>
 </html>
