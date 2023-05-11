@@ -21,8 +21,8 @@ CREATE TABLE employee (
     employee_id INT PRIMARY KEY AUTO_INCREMENT,
     employee_name VARCHAR(50) NOT NULL,
     day_birth DATE NOT NULL,
-    phone INT NOT NULL UNIQUE,
-    email VARCHAR(50) NOT NULL,
+    phone VARCHAR(20) NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL UNIQUE,
      created_at DATETIME DEFAULT NOW(),
      update_at DATETIME DEFAULT NOW()
 );

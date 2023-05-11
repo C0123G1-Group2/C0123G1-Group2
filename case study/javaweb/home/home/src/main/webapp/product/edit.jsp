@@ -29,10 +29,10 @@
 <body>
 <div class="content">
     <h2>Edit Soccer Field</h2>
-    <form method="post" action="/product?action=edit&value=${product.getMaSan()}">
+    <form method="post" action="/product?action=edit&value=${product.getSoccerFieldId()}">
         <div>
             <label>Tên sân</label>
-            <input  class="form-control" type="text" name="tenSan" required value="${product.getTenSan()}">
+            <input  class="form-control" type="text" name="tenSan" required value="${product.getSoccerFieldName()}">
         </div>
         <div>
             <label>Loại sân</label>
