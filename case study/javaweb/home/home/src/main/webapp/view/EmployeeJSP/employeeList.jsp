@@ -217,6 +217,9 @@
 
         </tbody>
     </table>
+    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='index.jsp'">Back
+        Home
+    </button>
 </div>
 
 <!-- Modal -->
