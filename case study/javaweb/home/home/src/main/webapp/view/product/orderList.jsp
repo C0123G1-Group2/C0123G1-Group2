@@ -11,12 +11,20 @@
 <html>
 <head>
     <title>Management Soccer Field</title>
+
 </head>
+<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
-<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
 <jsp:include page="/header-admin.jsp"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 10px">
@@ -36,68 +44,47 @@
 
             <ul class="navbar-nav mb-2 mb-lg-0">
 
-                <button class="btn " style="background-color: black;color: #FFD700"
-                        onclick="window.location.href='/product?action=add'">Create
-                </button>
+
                 <button type="button" class="btn btn-primary" style="background-color:black ; color: gold ;" onclick="printDiv('contentTable')">
                     Print
                 </button>
             </ul>
-            <form action="/product?action=search" method="post">
-                <div class="d-flex justify-content-end" style="margin-right: 30px">
-                    <div class="mb-3">
-                        <label class="form-label" style="font-weight: 700">Loại sân</label>
-                        <select class="form-select" aria-label="Default select example" name="tenLoaiDV">
-                            <option selected value="">Open this select menu</option>
-                            <option value="Sân 5">Sân 5</option>
-                            <option value="Sân 7">Sân 7</option>
-                            <option value="Sân futlsan">Sân futlsan</option>
-                        </select>
-                    </div>
-                    <div class="mb-3" style="margin-left: 20px">
-                        <label class="form-label" style="font-weight: 700">Tên sân</label>
-                        <input type="text" class="form-control" placeholder="name" name="tenDV">
-                    </div>
-                    <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
-                        <button class="btn" type="submit" style="background-color: black;color: #FFD700;height: 40px">Search
-                        </button>
-                    </div>
-                    <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
-                        <button class="btn"  style="background-color: black;color: #FFD700;height: 40px" onclick="window.location.href='product.jsp'">Back List
-                        </button>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 </nav>
 <div class="container-fluid" style="margin:50px;margin-right: 50px;padding: 0px;width: 95%">
 
     <div style="text-align: center">
-        <h1>Management Soccer Field</h1>
+        <h1>Management Order</h1>
     </div>
     <table class="table table-striped" id="tableSoccer">
         <thead>
         <tr>
-            <th>Mã sân</th>
-            <th>Tên Sân</th>
-            <th>Loại sân</th>
-            <th>Giá Tiền</th>
-            <th>Chức năng</th>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Employee</th>
+            <th>Soccer Field</th>
+            <th>Begin Time</th>
+            <th>Rental Time</th>
+            <th>Total Price</th>
+            <th>Function</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="product" items="${productList}">
+        <c:forEach var="order" items="${orderList}">
             <tr>
-                <td>${product.getSoccerFieldId()}</td>
-                <td>${product.getSoccerFieldName()}</td>
-                <td>${product.getSoccerFieldType()}</td>
-                <td>${product.getPrice()} VND</td>
+                <td>${order.getOrderId()}</td>
+                <td>${order.getCustomerId()}</td>
+                <td>${order.getEmployeeId()}</td>
+                <td>${order.getSoccerFieldId()}</td>
+                <td>${order.getBeginTime()}</td>
+                <td>${order.getRentalTime()}</td>
+                <td>${order.getTotalPrice()}</td>
                 <td>
                     <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
-                            onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
+                            onclick="window.location.href='/product?action=editOrder&value=${order.getOrderId()}'">Edit
                     </button>
-                    <button type="button" onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
+                    <button type="button" onclick="infoDelete('${order.getOrderId()}','${order.getOrderId()}')"
                             class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
                             style="background-color: black;color: #FFD700">
                         Delete
@@ -107,10 +94,7 @@
         </c:forEach>
         </tbody>
     </table>
-    <h1 style="color: #0082ca">${mess}</h1>
-    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='home.jsp'">Back
-        Home
-    </button>
+<%--    <h1 style="color: #0082ca">${mess}</h1>--%>
 
 
 
@@ -122,9 +106,9 @@
                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="/product?action=delete" method="post">
+                <form action="/product?action=deleteOrder" method="post">
                     <div class="modal-body">
-                        <input hidden id="maDV" name="maDV">
+                        <input hidden id="maDV" name="orderId">
                         <span>Ban co muon xoa dich vu: </span><span style="color: #dd4b39" id="tenLoaiDV"></span>
                     </div>
 
@@ -132,8 +116,6 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Save changes</button>
                     </div>
-
-
                 </form>
             </div>
         </div>
@@ -163,6 +145,18 @@
             "pageLength": 7
         } );
     } );
+</script>
+<script>
+    function printDiv(divID) {
+        const divElements = document.getElementById(divID).innerHTML;
+        const oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+            "<html><head><title></title></head><body>" +
+            divElements + "</body>";
+        window.print();
+        window.close();
+        document.body.innerHTML = oldPage;
+    }
 </script>
 </body>
 </html>

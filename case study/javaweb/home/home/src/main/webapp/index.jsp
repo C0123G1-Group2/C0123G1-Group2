@@ -145,7 +145,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=1'">
+                                        onclick="window.location.href='/product?action=order&maDV=1'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -182,7 +182,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px "
-                                        onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=2'">Đặt sân
                                 </button>
                                 <br>
                                 <div>
@@ -220,7 +220,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=3'">
+                                        onclick="window.location.href='/product?action=order&maDV=3'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -239,7 +239,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2020.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=4'">
+                                        onclick="window.location.href='/product?action=order&maDV=4'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -260,7 +260,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=5'">
+                                        onclick="window.location.href='/product?action=order&maDV=5'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -282,7 +282,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2022.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=6'">
+                                        onclick="window.location.href='/product?action=order&maDV=6'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -303,7 +303,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=7'">
+                                        onclick="window.location.href='/product?action=order&maDV=7'">
                                     Đặt sân
                                 </button>
                                 <br>
@@ -323,7 +323,7 @@
                                 <p class="card-text">Sân chất lượng được xây năm 2023.</p>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=8'">
+                                        onclick="window.location.href='/product?action=order&maDV=8'">
                                     Đặt sân
                                 </button>
                                 <br>

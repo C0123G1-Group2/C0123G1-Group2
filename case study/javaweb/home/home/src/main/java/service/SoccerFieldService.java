@@ -43,4 +43,20 @@ public class SoccerFieldService implements ISoccerFieldService {
         List<SoccerField> productList=productRepo.searchProduct(tenDV,tenLoaiDV);
         return productList;
     }
+
+    @Override
+    public List<Order> showListOrder() {
+        List<Order> orderList=productRepo.showListOrder();
+        return orderList;
+    }
+
+    @Override
+    public boolean deleteOrder(int orderId) {
+        return productRepo.deleteOrder(orderId);
+    }
+
+    @Override
+    public boolean editOrder(Order order) {
+        return productRepo.editOrder(order);
+    }
 }

@@ -17,4 +17,10 @@ public interface ISoccerFieldRepo {
     boolean orderProduct(Order order);
 
     List<SoccerField> searchProduct(String tenDV, String tenLoaiDV);
+
+    List<Order> showListOrder();
+
+    boolean deleteOrder(int orderId);
+
+    boolean editOrder(Order order);
 }

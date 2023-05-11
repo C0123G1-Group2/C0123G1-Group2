@@ -45,7 +45,7 @@ text-align: center;
         </div>
         <div>
             <label>Giá</label>
-            <input  class="form-control"  type="text" name="gia" required >
+            <input  class="form-control"  type="number" name="gia" required >
         </div>
         <div>
             <button type="submit"  class="btn " style="width: 65% ; margin-top: 15px  ; margin-right: 5px; background-color: black;color: #FFD700">Add new</button>
