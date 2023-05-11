@@ -158,7 +158,7 @@
         height: 100vh;
     }
     .wrapper > div {
-        background-clip: text;
+        background-clip: border-box;
         -webkit-background-clip: text;
         color: #363833;
         font-family: 'Poppins', sans-serif;
