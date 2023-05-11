@@ -59,14 +59,14 @@
         <input value="${customer.getEmail()}"  class="form-control" type="text" name="email"   required>
     </div>
     <div>
-        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:black ; color: gold ; margin-right: 2%">Edit</button>
+        <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ; margin-right: 2%">Edit</button>
         <br>
         <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>
 
 
 </form>
-    <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:black ; color: gold ;" onclick="window.location.href='/customer?action='">Back</button>
+    <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ;" onclick="window.location.href='/customer?action='">Back</button>
 </div>
 </body>
 </html>

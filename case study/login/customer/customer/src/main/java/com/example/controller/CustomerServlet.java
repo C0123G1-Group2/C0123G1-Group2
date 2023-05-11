@@ -77,9 +77,9 @@ public class CustomerServlet extends HttpServlet {
                 String email = request.getParameter("email");
                 Customer customer = new Customer(name,phoneNumber,address,email);
                 boolean check =   customerService.saveCustomer(customer);
-                String mess = "Thêm mới Thành Công";
+                String mess = "Successfully added";
                 if(!check){
-                    mess="Thêm Mới Không Thành Công";
+                    mess="New add failed";
                 }
                 request.setAttribute("mess",mess);
                 request.getRequestDispatcher("/create.jsp").forward(request,response);
@@ -120,9 +120,9 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("email");
         Customer customer = new Customer(id,name,phoneNumber,address,email);
        boolean check = customerService.edit(customer);
-        String mess ="Sửa Thành Công" ;
+        String mess ="successful fix" ;
        if(!check){
-           mess="Thêm Mới Không Thành Công";
+           mess="fix failed";
        }
        request.setAttribute("mess",mess);
        List<Customer> customerList = customerService.getAll();
