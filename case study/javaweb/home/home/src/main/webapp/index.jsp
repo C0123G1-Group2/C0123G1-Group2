@@ -100,15 +100,15 @@
         .popup{
             height: 500px;
             width: 500px;
-            background: linear-gradient(35deg, white, blue, white) ;
-            border-radius: 6px;
+            background: black ;
+            border-radius: 10%;
             position: absolute;
             top: 0;
             left: 50%;
             transform: translate(-50%,-50%) scale(0.1);
             text-align: center;
             padding:0 30px 30px;
-            color: black;
+            color: white;
             visibility: hidden;
             transition: transform 0.4s,top 0.4s;
         }
@@ -170,13 +170,16 @@
                                 <br>
                                 <div>
                                     <button class="btn btn-outline-warning btn-o" style="font-size:24px" onclick="openPopup()">Xem chi tiết</button>
-                                    <div class="popup" id="popup" style="text-align: center">
-                                        <span style="color: #dd4b39;font-size:30px">Sân số 1</span>
+                                    <div class="popup" id="popup" style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px" class="font-monospace" >Sân số 1</span>
                                         <br>
-                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
+                                        <span > Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
                                         <br>
-                                        <span>Thask You</span>
-                                        <button type="button" onclick="closePopup()">ok</button>
+                                        <span >Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
+                                        <br>
+                                        <span style="font-size: xx-large;">Thank You</span>
+                                        <br>
+                                        <button type="button" onclick="closePopup()" class="btn btn-warning" style="margin-top: 30px">ok</button>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +196,20 @@
                                 <button type="button" class="btn btn-outline-warning" style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px " onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i class="fa fa-shopping-cart "></i></button>
+                                <div>
+                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px" onclick="openPopup()">Xem chi tiết</button>
+                                    <div class="popup" id="popup1" style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px" class="font-monospace" >Sân số 1</span>
+                                        <br>
+                                        <span > Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
+                                        <br>
+                                        <span >Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
+                                        <br>
+                                        <span style="font-size: xx-large;">Thank You</span>
+                                        <br>
+                                        <button type="button" onclick="closePopup()" class="btn btn-warning" style="margin-top: 30px">ok</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -370,7 +386,7 @@
 </div>
 
 <script>
-    let popup=document.getElementById("popup");
+    let popup=document.getElementById("popup","popup1");
     function  openPopup(){
 popup.classList.add("open-popup");
     }
