@@ -83,4 +83,4 @@ INSERT INTO employee (employee_name , day_birth,phone,email) VALUES('Thang','200
 ('Vien','2001-01-22','011232001','vien@gmail.com'),
 ('An','1999-07-19','555666666','an@gmail.com');
 
-SELECT * FROM employee;
+SELECT * FROM orders;
