@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class BaseRepositoryEmployee {
     private static final String URL = "jdbc:mysql://localhost:3306/threelion_management";
     private static final String USER ="root";
-    private static final String PASS ="hotruongan123";
+    private static final String PASS ="hovien2201";
     public static Connection getConnectDB(){
         Connection connection=null;
         try {
