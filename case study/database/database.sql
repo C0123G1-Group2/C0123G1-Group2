@@ -81,6 +81,8 @@ INSERT INTO customer (`name`,phone_number,address,email) VALUES
 INSERT INTO customer (`name`,phone_number,address,email) VALUES ('truongan','090900023','dânng','dannag');
 INSERT INTO employee (employee_name , day_birth,phone,email) VALUES('Thang','2001-09-12','010101001','thang@gmail.com'),
 ('Vien','2001-01-22','011232001','vien@gmail.com'),
-('An','1999-07-19','555666666','an@gmail.com');
+('thangga','1999-07-19','434343434','fsfsf@gmail.com'),
+('khangga','1999-12-19','2324334242','fsfsfhh@gmail.com'),
+('trung thien','1999-11-19','555666666','sfsaaaa@gmail.com');
 
 SELECT * FROM orders;
