@@ -71,13 +71,13 @@
     </div>
 
     <div>
-        <button style=" width: 48% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
-        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:black ; color: gold ;margin-left: 2%"  onclick="window.location.href='/customer?action='">Back</button>
+        <button style=" width: 100% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
         <br>
         <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>
 
 </form>
+    <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ;"  onclick="window.location.href='/customer?action='">Back</button>
 </div>
 <%--<c:if test="${check}">Added successfully</c:if>--%>
 <%--//  oninput="checkName()

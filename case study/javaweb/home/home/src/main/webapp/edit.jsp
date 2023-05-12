@@ -38,6 +38,7 @@
     </style>
 </head>
 <body>
+<jsp:include page="/header-admin.jsp"/>
 <div class="content">
 <h2>Edit Customer</h2>
 <form action="/customer?action=edit&idEdit=${customer.getCustomerId()}" method="post">

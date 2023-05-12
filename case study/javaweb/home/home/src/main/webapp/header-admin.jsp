@@ -87,7 +87,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <form id="form-action" method="post">
                 <div>
-                <span class="dropdown-item">
+                <span class="dropdown-item">acount
                   <%=
                     session.getAttribute("userSession")!=null
                             ? "Hello " + ((User)session.getAttribute("userSession")).getUsername()

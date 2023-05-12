@@ -27,6 +27,7 @@
     </style>
 </head>
 <body>
+<jsp:include page="/header-admin.jsp"/>
 <div class="content">
     <h2>Edit Soccer Field</h2>
     <form method="post" action="/product?action=edit&value=${product.getSoccerFieldId()}">

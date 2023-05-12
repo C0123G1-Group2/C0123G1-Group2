@@ -47,12 +47,10 @@ SELECT * FROM orders;
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_login VARCHAR(50) NOT NULL UNIQUE,
-    password_login VARCHAR(50) NOT NULL,
+    password_login VARCHAR(60) NOT NULL,
     is_cus INT NOT NULL,
     is_admin INT NOT NULL
 );
-INSERT INTO users (user_login , password_login,is_cus,is_admin) VALUES('admin','12345',0,1);
-INSERT INTO users (user_login , password_login,is_cus,is_admin) VALUES('thang','12345',1,0);
 INSERT INTO soccer_field (soccer_field_name,soccer_field_type,price) VALUES ("Sân số 1","sân 5",300000),
 ("Sân số 2","sân 5",300000),
 ("Sân số 3","sân 5",300000),
@@ -102,3 +100,4 @@ INSERT INTO orders (customer_id,employee_id,soccer_field_id,begin_time,rental_ti
 (1,2,3,'18h',1,3000000),
 (2,1,3,'18h',2,6000000);
 SELECT * FROM orders;
+SELECT * FROM users;

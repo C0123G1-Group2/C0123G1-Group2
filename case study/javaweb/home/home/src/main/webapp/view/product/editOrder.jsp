@@ -27,6 +27,7 @@
     </style>
 </head>
 <body>
+<jsp:include page="/header-admin.jsp"/>
 <div class="content">
     <h2>Edit Soccer Field</h2>
     <form method="post" action="/product?action=editOrder&value=${order.getOrderId()}">
@@ -58,7 +59,7 @@
             <button type="submit"  class="btn btn-warning" style="width: 100% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
         </div>
     </form>
-    <h3 style="color: green>${mess}</h3>
+    <h3 style="color: green">${mess}</h3>
     <button   class="btn btn-warning" style="width: 100% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action=orderList'">Back</button>
 </div>
 </body>
