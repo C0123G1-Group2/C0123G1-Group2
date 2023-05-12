@@ -21,11 +21,7 @@
             background: linear-gradient(35deg, black, white, black);
         }
 
-        .card {
-            margin: 25px;
-            height: 820px;
-            background: linear-gradient(35deg, grey, black, white);
-        }
+
 
         card:hover {
             transform: rotate(45deg);
@@ -67,20 +63,24 @@
         .height-card {
             height: 900px;
             padding: 50px;
+            border-radius: 5%;
         }
 
         .height-card .css-center {
             position: relative;
             transition: 0.5s;
+            border-radius: 5%;
         }
 
         .height-card .css-center:hover {
             transform: translateY(-20px);
+            border-radius: 5%;
             /*background: linear-gradient(45deg,#99FF99,white);*/
         }
 
         .height-card .css-center::before {
             position: absolute;
+            border-radius: 5%;
             /*background: linear-gradient(45deg,#99FF99,white);*/
 
         }
@@ -88,13 +88,21 @@
         .height-card .css-center::after {
             position: absolute;
             filter: blur(50px);
+            border-radius: 5%;
             /*background: linear-gradient(45deg,#99FF99,white);*/
         }
 
         .content {
-            background-color: lightgrey;
+            background-image: url(https://tophinhanhdep.com/wp-content/uploads/2021/10/Black-and-Gold-Desktop-Wallpapers.jpg);
+            z-index: -1;
         }
+        .card {
+            margin: 25px;
+            height: 820px;
+            background: linear-gradient(35deg, grey, black, white);
+            border-radius: 5%;
 
+        }
         .btn-o {
             cursor: pointer;
         }
@@ -128,7 +136,7 @@
 </head>
 
 <body>
-<div class="container-fluid">
+<div class="container-fluid ">
     <jsp:include page="/header-admin.jsp"/>
     <div class="content ">
         <div class="row ">
@@ -136,8 +144,8 @@
             <div class="col-sm-12">
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100% ;border-radius: 5%"
                                  src="https://aobongda24h.com/pic/news/images/images/6369336271236010271.jpg"
                                  alt="...">
                             <div class="card-body">
@@ -172,9 +180,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                    <div class="col-sm-6 css-center"  >
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100%;border-radius: 5%"
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/12/13/san-bong-da-ho-chi-minh-1.jpg"
                                  alt="...">
                             <div class="card-body">
@@ -211,8 +219,8 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100%;border-radius: 5%"
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/11/6/tim-hieu-thong-tin-san-bong-da-5-nguoi-2.jpg"
                                  alt="...">
                             <div class="card-body">
@@ -230,8 +238,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100%;border-radius: 5%"
                                  src="https://yousport.vn/Media/Blog/Nh%E1%BB%AFng%20m%E1%BA%B7t%20s%C3%A2n%20b%C3%B3ng%20%C4%91%C3%A1%20ph%E1%BB%95%20bi%E1%BA%BFn%20hi%E1%BB%87n%20nay/nhung-mat-san-bong-da-pho-bien-nhat-hien-nay-2G.jpg"
                                  alt="...">
                             <div class="card-body">
@@ -251,8 +259,8 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100% ;border-radius: 5%"
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
                                  alt="...">
                             <div class="card-body">
@@ -273,8 +281,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100%;border-radius: 5%"
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
                                  alt="...">
                             <div class="card-body">
@@ -294,8 +302,8 @@
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100%;border-radius: 5%"
                                  src="https://trungtambongro.vn/wp-content/uploads/2018/09/ngoisao_san-Q-PN-2.jpg"
                                  alt="...">
                             <div class="card-body">
@@ -314,8 +322,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 5%">
+                            <img style="width: 100%;border-radius: 5%"
                                  src="https://static-images.vnncdn.net/files/publish/2022/8/30/u9-toan-quoc-113.jpg"
                                  alt="...">
                             <div class="card-body">

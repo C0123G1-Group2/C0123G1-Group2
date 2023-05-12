@@ -26,6 +26,7 @@
 
     body {
         background-color: #080710;
+        background-image: url(https://tophinhanhdep.com/wp-content/uploads/2021/10/Black-and-Gold-Desktop-Wallpapers.jpg);
     }
 
     .background {
@@ -35,6 +36,7 @@
         transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;
+
     }
 
     .background .shape {
@@ -44,25 +46,7 @@
         border-radius: 50%;
     }
 
-    .shape:first-child {
-        background-image: repeating-linear-gradient( 105deg,
-        var(--gold) 0% ,
-        var(--dark-shadow) 15%,
-        var(--gold) 85%);
-        );
-        left: -120px;
-        top: -80px;
-    }
 
-    .shape:last-child {
-        background: linear-gradient(
-                to right,
-                #ff512f,
-                #f0be19
-        );
-        right: -30px;
-        bottom: -80px;
-    }
 
     form {
         height: 900px;
@@ -90,7 +74,7 @@
         width: 30vw;
         height: 20vh;
         margin-left: 4vw ;
-        margin-top: 20vw;
+        margin-top: 12vw;
     }
 
     label {
@@ -150,12 +134,14 @@
         margin: 0;
     }
     .wrapper {
-        background: black;
         display: grid;
         grid-template-areas: 'overlap';
         place-content: center;
         text-transform: uppercase;
         height: 100vh;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
     }
     .wrapper > div {
         background-clip: text;
@@ -186,17 +172,27 @@
         color: #1e2127;
         transform: scale(1);
     }
+    a{
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        font-size: 20px;
+        color:#ffb338;
+    }
 </style>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+<a href="/index.jsp">
+    <img style="width: 120px; height:120px" src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg?w=1060">
+</a>
 <div class="background">
     <div class="shape"></div>
     <div class="shape"></div>
 </div>
-<div id="div" class="wrapper">
+<div id="div" class="wrapper" >
     <div class="bg">Sign up</div>
     <div class="fg">Sign up</div>
 </div>
@@ -217,6 +213,8 @@
     <label for="password">Email</label>
     <input  placeholder="Example: abc@gmail.com" id="email" type="text" name="email">
     <button>Submit</button>
+
 </form>
+
 </body>
 </html>
