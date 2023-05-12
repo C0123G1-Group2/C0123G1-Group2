@@ -38,7 +38,7 @@ public class UserRepository implements IUserRepository{
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER_CUSTOMER);
             preparedStatement.setString(1,user.getUsername());
             preparedStatement.setString(2,user.getPassword());
-            return preparedStatement.executeUpdate() >0;
+            return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }

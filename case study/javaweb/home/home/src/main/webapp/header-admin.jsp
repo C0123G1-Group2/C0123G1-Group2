@@ -74,9 +74,12 @@
         <li>
           <a style=" background-color: black;color: gold" class="font-monospace" href="/product">Service</a>
         </li>
+        <li>
+          <a style=" background-color: black;color: gold" class="font-monospace" href="/product?action=orderList">Management Order</a>
+        </li>
       </ul>
-      <div style="display: flex; align-items: center;justify-content: space-between">
 
+      <div style="display: flex; align-items: center;justify-content: space-between">
         <div>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,7 +87,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <form id="form-action" method="post">
                 <div>
-                <span class="dropdown-item">
+                <span class="dropdown-item">acount
                   <%=
                     session.getAttribute("userSession")!=null
                             ? "Hello " + ((User)session.getAttribute("userSession")).getUsername()

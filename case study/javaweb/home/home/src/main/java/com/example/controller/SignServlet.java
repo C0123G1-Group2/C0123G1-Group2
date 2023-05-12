@@ -6,6 +6,7 @@ import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
 import com.example.service.IUserService;
 import com.example.service.UserService;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -47,7 +48,9 @@ public class SignServlet extends HttpServlet {
         String phoneNumber = request.getParameter("phoneNumber");
         String address = request.getParameter("address");
         String email = request.getParameter("email");
-        User user1 = new User(user,password);
+
+        String hashed = BCrypt.hashpw(password, BCrypt.gensalt(10));
+        User user1 = new User(user,hashed);
         Customer customer = new Customer(name,phoneNumber,address,email);
         customerService.saveCustomer(customer);
         userService.saveUserCustomer(user1);

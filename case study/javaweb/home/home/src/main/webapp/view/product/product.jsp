@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.model.User" %><%--
   Created by IntelliJ IDEA.
   User: USER
   Date: 05/08/23
@@ -11,6 +11,19 @@
 <html>
 <head>
     <title>Management Soccer Field</title>
+    <style>
+        #tableSoccer_paginate .page-item.active a{
+            background-color: black !important;
+            color: gold;
+        }
+        #tableSoccer_paginate #tableSoccer_next a{
+            background-color: black !important;
+            color: gold !important;
+        }
+        #tableSoccer_paginate #tableSoccer_previous a{
+            background-color: black !important;
+            color: gold !important ;}
+    </style>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -46,7 +59,7 @@
             <form action="/product?action=search" method="post">
                 <div class="d-flex justify-content-end" style="margin-right: 30px">
                     <div class="mb-3">
-                        <label class="form-label" style="font-weight: 700">Loại sân</label>
+                        <label class="form-label" style="font-weight: 700">Soccer Field Type</label>
                         <select class="form-select" aria-label="Default select example" name="tenLoaiDV">
                             <option selected value="">Open this select menu</option>
                             <option value="Sân 5">Sân 5</option>
@@ -55,15 +68,11 @@
                         </select>
                     </div>
                     <div class="mb-3" style="margin-left: 20px">
-                        <label class="form-label" style="font-weight: 700">Tên sân</label>
+                        <label class="form-label" style="font-weight: 700">Soccer Field Name</label>
                         <input type="text" class="form-control" placeholder="name" name="tenDV">
                     </div>
                     <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
                         <button class="btn" type="submit" style="background-color: black;color: #FFD700;height: 40px">Search
-                        </button>
-                    </div>
-                    <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
-                        <button class="btn"  style="background-color: black;color: #FFD700;height: 40px" onclick="window.location.href='product.jsp'">Back List
                         </button>
                     </div>
                 </div>
@@ -79,11 +88,15 @@
     <table class="table table-striped" id="tableSoccer">
         <thead>
         <tr>
-            <th>Mã sân</th>
-            <th>Tên Sân</th>
-            <th>Loại sân</th>
-            <th>Giá Tiền</th>
-            <th>Chức năng</th>
+            <th>Soccer Field ID</th>
+            <th>Soccer Field Name</th>
+            <th>Soccer Field Type</th>
+            <th>Price</th>
+
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                <th>Function</th>
+            </c:if>
+
         </tr>
         </thead>
         <tbody>
@@ -92,25 +105,29 @@
                 <td>${product.getSoccerFieldId()}</td>
                 <td>${product.getSoccerFieldName()}</td>
                 <td>${product.getSoccerFieldType()}</td>
-                <td>${product.getPrice()} VND</td>
+                <td>${product.getPrice()} $</td>
                 <td>
-                    <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
-                            onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
-                    </button>
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                     <button type="button" onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
                             class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
                             style="background-color: black;color: #FFD700">
                         Delete
                     </button>
+                </c:if>
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+
+                        <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
+                                onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
+                        </button>
+
+
+                </c:if>
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
     <h1 style="color: #0082ca">${mess}</h1>
-    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='home.jsp'">Back
-        Home
-    </button>
 
 
 
@@ -163,6 +180,18 @@
             "pageLength": 7
         } );
     } );
+</script>
+<script>
+    function printDiv(divID) {
+        const divElements = document.getElementById(divID).innerHTML;
+        const oldPage = document.body.innerHTML;
+        document.body.innerHTML =
+            "<html><head><title></title></head><body>" +
+            divElements + "</body>";
+        window.print();
+        window.close();
+        document.body.innerHTML = oldPage;
+    }
 </script>
 </body>
 </html>

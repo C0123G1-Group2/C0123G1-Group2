@@ -25,12 +25,14 @@ text-align: center;
             font-weight: 700;
         }
 
+
     </style>
 </head>
 <body>
+<jsp:include page="/header-admin.jsp"/>
 <div class="content">
     <h2>Add new Soccer Field</h2>
-    <form method="post" action="/product?action=add">
+    <form method="post" action="/product?action=add" name="forms" onsubmit="return validateForm()">
         <div>
             <label>Tên sân</label>
             <input  class="form-control" type="text" name="tenSan" required >
@@ -45,15 +47,29 @@ text-align: center;
         </div>
         <div>
             <label>Giá</label>
-            <input  class="form-control"  type="text" name="gia" required >
+            <input  class="form-control"  type="number" name="gia" required >
         </div>
         <div>
-            <button type="submit"  class="btn " style="width: 65% ; margin-top: 15px  ; margin-right: 5px; background-color: black;color: #FFD700">Add new</button>
+            <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px  ; margin-right: 5px; background-color: black;color: #FFD700" >Add new</button>
             <br>
-            <h3>${mess}</h3>
+            <h3 style="color: green">${mess}</h3>
         </div>
     </form>
-    <button type="submit"  class="btn " style="width: 32% ; margin-top: 15px; background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
+    <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px; background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
 </div>
+
+<script>
+    function validateForm(){
+        let tenSan=document.forms["forms"]["tenSan"].value;
+        let tenLoaiSan=document.forms["forms"]["tenLoaiSan"].value;
+        let gia=document.forms["forms"]["gia"].value;
+        if (tenSan!=null && tenLoaiSan!=null &&gia!= null){
+            alert("Add successfully")
+            return true;
+        }
+       return false;
+    }
+</script>
+
 </body>
 </html>
