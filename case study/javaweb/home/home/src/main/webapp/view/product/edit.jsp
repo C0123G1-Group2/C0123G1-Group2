@@ -48,13 +48,14 @@
             <input  class="form-control"  type="text" name="gia" required value="${product.getPrice()}">
         </div>
         <div>
-            <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
+            <button type="submit"  class="btn btn-warning" style="width: 100% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
             <br>
 
         </div>
     </form>
-    <button   class="btn btn-warning" style="width: 32% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
-    <h3>${mess}</h3>
+    <h3 style="color: green">${mess}</h3>
+    <button   class="btn btn-warning" style="width: 100% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
+
 </div>
 </body>
 </html>

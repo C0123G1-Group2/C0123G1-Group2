@@ -221,7 +221,7 @@
         $('#tableEmployee').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 5
+            "pageLength": 7
         });
     });
     const isLogin = localStorage.getItem("login");

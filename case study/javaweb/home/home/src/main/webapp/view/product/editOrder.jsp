@@ -55,11 +55,11 @@
             <input  class="form-control"  type="number" name="totalPrice" required value="${order.getTotalPrice()}">
         </div>
         <div>
-            <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
+            <button type="submit"  class="btn btn-warning" style="width: 100% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
         </div>
     </form>
-    <button   class="btn btn-warning" style="width: 32% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action=orderList'">Back</button>
-    <h3>${mess}</h3>
+    <h3 style="color: green>${mess}</h3>
+    <button   class="btn btn-warning" style="width: 100% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action=orderList'">Back</button>
 </div>
 </body>
 </html>
