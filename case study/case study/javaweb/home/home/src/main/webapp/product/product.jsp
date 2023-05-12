@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.model.User" %><%--
   Created by IntelliJ IDEA.
   User: USER
   Date: 05/08/23
@@ -11,6 +11,20 @@
 <html>
 <head>
     <title>Management Soccer Field</title>
+    <style>
+        #tableSoccer_paginate .page-item.active a{
+            background-color: black !important;
+            color: gold;
+        }
+        #tableSoccer_paginate #tableSoccer_next a{
+            background-color: black !important;
+            color: gold !important;
+        }
+        #tableSoccer_paginate #tableSoccer_previous a{
+            background-color: black !important;
+            color: gold !important;
+        }
+    </style>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -83,7 +97,11 @@
             <th>Tên Sân</th>
             <th>Loại sân</th>
             <th>Giá Tiền</th>
-            <th>Chức năng</th>
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                <th>Chức năng</th>
+            </c:if>
+
+
         </tr>
         </thead>
         <tbody>
@@ -93,16 +111,18 @@
                 <td>${product.getSoccerFieldName()}</td>
                 <td>${product.getSoccerFieldType()}</td>
                 <td>${product.getPrice()} VND</td>
-                <td>
-                    <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
-                            onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
-                    </button>
-                    <button type="button" onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
-                            class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            style="background-color: black;color: #FFD700">
-                        Delete
-                    </button>
-                </td>
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                    <td>
+                        <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
+                                onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
+                        </button>
+                        <button type="button" onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
+                                class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                style="background-color: black;color: #FFD700">
+                            Delete
+                        </button>
+                    </td>
+                </c:if>
             </tr>
         </c:forEach>
         </tbody>

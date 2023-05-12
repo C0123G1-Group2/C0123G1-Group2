@@ -1,3 +1,4 @@
+<%@ page import="com.example.model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,9 +33,6 @@
             border-radius: 5px !important;
         }
 
-        .btn-search {
-            padding: 0 6px;
-        }
 
         table thead th, table tbody td {
             text-align: center !important;
@@ -69,23 +67,21 @@
             border-radius: 50%;
         }
 
-        .dropdown .dropdown-toggle:after {
-            content: "A" !important;
-            border: none !important;
-            margin-left: 0;
-            position: absolute;
-            top: 2px;
-            left: 35%;
+
+
+         #tableEmployee_wrapper .page-item.active a{
+             background-color: black !important;
+             color: gold;
+         }
+        #tableEmployee_wrapper #tableEmployee_next a{
+            background-color: black !important;
+            color: gold !important;
+        }
+        #tableEmployee_wrapper #tableEmployee_previous a{
+            background-color: black !important;
+            color: gold !important;
         }
 
-        .dropdown-menu.show {
-            right: 0 !important;
-            left: auto !important;
-        }
-
-        .nav-item.active {
-            margin-left: -18px;
-        }
     </style>
 </head>
 <%--<jsp:include page="header-admin.jsp"/>--%>
@@ -142,8 +138,12 @@
             <th>Day of Birth</th>
             <th>Phone Number</th>
             <th>Email</th>
-            <th>Delete</th>
-            <th>Edit</th>
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                <th>Delete</th>
+                <th>Edit</th>
+            </c:if>
+
+
         </tr>
         </thead>
         <tbody>
@@ -154,23 +154,25 @@
                 <td>${employee.getDayOfBirth()}</td>
                 <td>${employee.getPhoneNumber()}</td>
                 <td>${employee.getEmail()}</td>
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                    <td>
+                        <!-- Button trigger modal -->
+                        <button type="button"
+                                onclick="deleteUser('${employee.getEmployeeID()}','${employee.getEmployeeName()}')"
+                                class="btn btn" data-bs-toggle="modal" style="background: black;color: gold"
+                                data-bs-target="#exampleModal">
+                            Delete
+                        </button>
+                    </td>
 
-                <td>
-                    <!-- Button trigger modal -->
-                    <button type="button"
-                            onclick="deleteUser('${employee.getEmployeeID()}','${employee.getEmployeeName()}')"
-                            class="btn btn" data-bs-toggle="modal" style="background: black;color: gold"
-                            data-bs-target="#exampleModal">
-                        Delete
-                    </button>
-                </td>
+                    <td>
+                        <button type="submit" class="btn btn" style="background: black;color: gold"
+                                onclick="window.location.href='/employee?action=edit&id=${employee.getEmployeeID()}'">
+                            Edit
+                        </button>
+                    </td>
+                </c:if>
 
-                <td>
-                    <button type="submit" class="btn btn" style="background: black;color: gold"
-                            onclick="window.location.href='/employee?action=edit&id=${employee.getEmployeeID()}'">
-                        Edit
-                    </button>
-                </td>
             </tr>
         </c:forEach>
 

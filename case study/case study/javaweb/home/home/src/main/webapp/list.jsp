@@ -1,3 +1,4 @@
+<%@ page import="com.example.model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -95,8 +96,12 @@
             <th>Phone Number</th>
             <th>Address</th>
             <th>Email</th>
-            <th>Delete</th>
-            <th>Edit</th>
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                <th>Delete</th>
+            </c:if>
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                <th>Edit</th>
+            </c:if>
         </tr>
         </thead>
         <tbody>
@@ -107,20 +112,23 @@
                 <td>${customer.getPhoneNumber()}</td>
                 <td>${customer.getAddress()}</td>
                 <td>${customer.getEmail()}</td>
+                <!-- Button trigger modal -->
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                 <td>
-                    <!-- Button trigger modal -->
-                    <button type="button" onclick="infoDelete('${customer.customerId}','${customer.name}')"
-                            class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" style="background-color:black ; color: gold ;">
-                        Delete
-                    </button>
+
+                        <button type="button" onclick="infoDelete('${customer.customerId}','${customer.name}')"
+                                class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" style="background-color:black ; color: gold ;">Delete</button>
                 </td>
+                </c:if>
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                 <td>
                     <button type="submit" class="btn btn-primary" style="background-color: black ; color: gold"
                             onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">
                         Edit
                     </button>
                 </td>
+                </c:if>
             </tr>
         </c:forEach>
         </tbody>

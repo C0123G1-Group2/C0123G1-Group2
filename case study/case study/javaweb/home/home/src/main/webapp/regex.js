@@ -18,7 +18,7 @@ function checkDayOfBirth(){
     }
 }
 function checkPhoneNumber(){
-    let phoneNumber = document.getElementById("phone").value;
+    let phoneNumber = document.getElementById("regexPhone").value;
     let reGexPhoneNumb = /^0[1-9]([0-9]){8}$/;
     if (reGexPhoneNumb.test(phoneNumber)) {
         document.getElementById("checkPhone").innerText = "";
@@ -28,7 +28,7 @@ function checkPhoneNumber(){
     }
 }
 function checkEmail() {
-    let email = document.getElementById("email").value;
+    let email = document.getElementById("regexEmail").value;
     let regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (regexEmail.test(email)) {
         document.getElementById("checkEmail").innerText = "";

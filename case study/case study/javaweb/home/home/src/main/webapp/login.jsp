@@ -20,14 +20,8 @@
   <div class="noi-dung">
     <div class="form">
       <div class="div-content">
-<%--        <div style="display: flex ; align-content: center ">--%>
-<%--          <img style="width: 70px ; height: 50px ; margin-left: 50px"  src="https://www.threelions.nl/wp-content/uploads/2020/09/logo-three-lions-rgb.png" >--%>
-<%--          <h1 class="div-header">--%>
-<%--            Three Lions Football</h1>--%>
-<%--        </div>--%>
-
         <div style="text-align: center ; padding: 10px"><h1>Login</h1></div>
-        <h5 style="color: red ;text-align: center ; font-size: x-large">${message}</h5>
+        <h5 style="color: red ;text-align: center ; font-size: x-large">${mess}</h5>
         <div class="div-input">
           <form action="/login" method="post" style="margin:  0 auto">
             <div class="input-form">

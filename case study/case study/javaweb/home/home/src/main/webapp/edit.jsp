@@ -34,6 +34,31 @@
             width: 400px;
 
         }
+        .popup {
+            height: 500px;
+            width: 500px;
+            background: black;
+            border-radius: 10%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: white;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        .popup button {
+            cursor: pointer;
+        }
+
+        .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
 
     </style>
 </head>
@@ -59,14 +84,16 @@
         <input value="${customer.getEmail()}"  class="form-control" type="text" name="email"   required>
     </div>
     <div>
-        <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ; margin-right: 2%">Edit</button>
+        <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ; margin-right: 2%" onclick="openPopup()">Edit</button>
         <br>
-        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
+        <h3 style="text-align: center ; margin-top: 15px ;color: green">${mess}</h3>
     </div>
 
 
 </form>
     <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ;" onclick="window.location.href='/customer?action='">Back</button>
+
 </div>
+
 </body>
 </html>

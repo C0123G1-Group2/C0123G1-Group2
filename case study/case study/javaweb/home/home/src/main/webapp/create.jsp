@@ -59,7 +59,8 @@
     </div>
     <div class="form-input">
         <label>Phone Number</label>
-        <input style="border: 1px solid; " class="form-control" type="number" name="phoneNumber" required>
+        <small  style="color: red" id="checkPhoneNumber" ></small>
+        <input style="border: 1px solid; " oninput="checkPhoneNumber()" class="form-control" type="number" name="phoneNumber" id="regexPhone" required>
     </div>
     <div class="form-input">
         <label>Address</label>
@@ -67,14 +68,15 @@
     </div>
     <div class="form-input">
         <label>Email</label>
-        <input style="border: 1px solid; " class="form-control" type="text" name="email" required>
+        <small  style="color: red" id="checkEmail" ></small>
+        <input style="border: 1px solid; " oninput="checkEmail()" class="form-control" type="text" name="email" id="regexEmail"required>
     </div>
 
     <div>
         <button style=" width: 48% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
         <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:black ; color: gold ;margin-left: 2%"  onclick="window.location.href='/customer?action='">Back</button>
         <br>
-        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
+        <h3 style="text-align: center ; margin-top: 15px ; color: green">${mess}</h3>
     </div>
 
 </form>
@@ -95,6 +97,7 @@
 <%--  }--%>
 
 <%--</script>--%>
+<script src="regex.js"></script>
 
 </body>
 </html>

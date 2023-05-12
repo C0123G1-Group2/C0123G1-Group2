@@ -17,34 +17,34 @@
 
 <div class="content" style="background: black">
     <h1 style="color:gold;">SIGN UP</h1>
-    <form action="/sign?action=createUserCustomer" method="post">
+    <form name="formSignUp" action="/sign?action=createUserCustomer" method="post" onsubmit="return validateForm()">
         <div class="form-item">
             <label style="color: gold">User</label>
             <input class="form-control-sm" type="text" name="user">
         </div>
         <div class="form-item">
             <label style="color: gold" >Password</label>
-            <input  class="form-control-sm" type="password" name="password">
+            <input class="form-control-sm" type="password" name="password">
         </div>
         <div class="form-item">
             <label style="color: gold" >Confirm Password</label>
-            <input  class="form-control-sm"  type="password" name="password">
+            <input class="form-control-sm"  type="password" name="confirmPassword">
         </div>
         <div class="form-item">
             <label style="color: gold" >Name</label>
-            <input  class="form-control-sm"  type="text" name="name">
+            <input class="form-control-sm"  type="text" name="name">
         </div>
         <div class="form-item">
             <label style="color: gold" >Phone Number</label>
-            <input   class="form-control-sm" type="text" name="phoneNumber">
+            <input class="form-control-sm" type="text" name="phoneNumber">
         </div>
         <div class="form-item">
             <label style="color: gold" >Address</label>
-            <input   class="form-control-sm" type="text" name="address">
+            <input class="form-control-sm" type="text" name="address">
         </div>
         <div class="form-item">
             <label style="color: gold" >Email</label>
-            <input   class="form-control-sm" type="text" name="email">
+            <input class="form-control-sm" type="text" name="email">
         </div>
         <div class="btn-submit" >
             <button type="submit" style="background-color: black ; color: gold">Đăng ký</button>
@@ -52,7 +52,27 @@
     </form>
 </div>
 
-
-
+<script>
+    function validateForm() {
+        const form = document.forms["formSignUp"];
+        const user = form["user"].value;
+        const password = form["password"].value;
+        const confirmPassword = form["confirmPassword"].value;
+        const name = form["name"].value;
+        const phoneNumber = form["phoneNumber"].value;
+        const address = form["address"].value;
+        const email = form["email"].value;
+        if (user != "" && password != "" && confirmPassword != "" && name != "" && phoneNumber != "" && address != "" && email != "" ){
+            if (password === confirmPassword){
+                alert('Congratulations, you have successfully registered');
+                return true;
+            }
+            alert('Password does not match')
+            return false
+        }
+        alert('Please enter all the field');
+        return false;
+    }
+</script>
 </body>
 </html>
