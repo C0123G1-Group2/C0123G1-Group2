@@ -120,10 +120,7 @@
             <th>Phone Number</th>
             <th>Email</th>
             <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                <th>Delete</th>
-            </c:if>
-            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                <th>Edit</th>
+                <th>Function</th>
             </c:if>
 
         </tr>
@@ -145,16 +142,13 @@
                                 data-bs-target="#exampleModal">
                             Delete
                         </button>
-                    </td>
-                </c:if>
-                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                    <td>
                         <button type="submit" class="btn btn" style="background: black;color: gold"
                                 onclick="window.location.href='/employee?action=edit&id=${employee.getEmployeeID()}'">
                             Edit
                         </button>
                     </td>
                 </c:if>
+                
             </tr>
         </c:forEach>
 
