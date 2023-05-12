@@ -114,12 +114,32 @@
             visibility: hidden;
             transition: transform 0.4s, top 0.4s;
         }
+        .popup1 {
+            height: 500px;
+            width: 500px;
+            background: black;
+            border-radius: 10%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: white;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
 
         .popup button {
             cursor: pointer;
         }
 
         .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .open-popup1 {
             visibility: visible;
             top: 50%;
             transform: translate(-50%, -50%) scale(1);
@@ -141,31 +161,30 @@
                                  src="https://aobongda24h.com/pic/news/images/images/6369336271236010271.jpg"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 1(5 person soccer field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=1'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=1'">
+                                    Book a football field
                                 </button>
                                 <br>
                                 <div>
                                     <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                            onclick="openPopup()">Xem chi tiết
+                                            onclick="openPopup()">See details
                                     </button>
                                     <div class="popup" id="popup"
                                          style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
-                                              class="font-monospace">Sân số 1</span>
+                                              class="font-monospace">Courtyard 1</span>
                                         <br>
-                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
+                                        <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
                                         <br>
-                                        <span>Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
+                                        <span>The football field is invested by: Nguyen Duc Thang</span>
                                         <br>
                                         <span style="font-size: xx-large;">Thank You</span>
                                         <br>
                                         <button type="button" onclick="closePopup()" class="btn btn-warning"
-                                                style="margin-top: 30px">ok
+                                                style="margin-top: 30px">Ok
                                         </button>
                                     </div>
                                 </div>
@@ -178,25 +197,24 @@
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/12/13/san-bong-da-ho-chi-minh-1.jpg"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 2(5 person soccer field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px "
-                                        onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=2'">Book a football field
                                 </button>
                                 <br>
                                 <div>
                                     <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                            onclick="openPopup()">Xem chi tiết
+                                            onclick="openPopup()">See details
                                     </button>
-                                    <div class="popup" id="popup1"
+                                    <div class="popup1" id="popup1"
                                          style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
-                                              class="font-monospace">Sân số 1</span>
+                                              class="font-monospace">Courtyard 2</span>
                                         <br>
-                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
+                                        <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
                                         <br>
-                                        <span>Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
+                                        <span>The football field is invested by: Nguyen Duc Thang</span>
                                         <br>
                                         <span style="font-size: xx-large;">Thank You</span>
                                         <br>
@@ -216,15 +234,14 @@
                                  src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/11/6/tim-hieu-thong-tin-san-bong-da-5-nguoi-2.jpg"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 3(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 3(5 person soccer field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=3'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=3'">
+                                    Book a football field
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                <button class="btn btn-outline-warning" style="font-size:24px">See details<i
                                         class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
@@ -235,15 +252,14 @@
                                  src="https://yousport.vn/Media/Blog/Nh%E1%BB%AFng%20m%E1%BA%B7t%20s%C3%A2n%20b%C3%B3ng%20%C4%91%C3%A1%20ph%E1%BB%95%20bi%E1%BA%BFn%20hi%E1%BB%87n%20nay/nhung-mat-san-bong-da-pho-bien-nhat-hien-nay-2G.jpg"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 4(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 4 (5 person soccer field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=4'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=4'">
+                                    Book a football field
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                <button class="btn btn-outline-warning" style="font-size:24px">See details<i
                                         class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
@@ -256,16 +272,15 @@
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 7 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2022.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 1 (7 person soccer field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=5'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=5'">
+                                    Book a football field
                                 </button>
                                 <br>
                                 <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px">Xem chi tiết
+                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px">See details
                                     </button>
                                 </div>
                             </div>
@@ -278,15 +293,14 @@
                                  src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 7 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2022.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 2 (7 person soccer field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=6'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=6'">
+                                    Book a football field
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                <button class="btn btn-outline-warning" style="font-size:24px">See details <i
                                         class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
@@ -299,15 +313,14 @@
                                  src="https://trungtambongro.vn/wp-content/uploads/2018/09/ngoisao_san-Q-PN-2.jpg"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân Futsal)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2023.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 1(futsal field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=7'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=7'">
+                                    Book a football field
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                <button class="btn btn-outline-warning" style="font-size:24px">See details <i
                                         class="fa fa-shopping-cart "></i></button>
                             </div>
 
@@ -319,15 +332,14 @@
                                  src="https://static-images.vnncdn.net/files/publish/2022/8/30/u9-toan-quoc-113.jpg"
                                  alt="...">
                             <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 futsal)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2023.</p>
+                                <h5 class="card-title" style="color: #FFD700">Courtyard 2(futsal field)</h5>
                                 <button type="button" class="btn btn-outline-warning"
                                         style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=8'">
-                                    Đặt sân
+                                        onclick="window.location.href='/product?action=order&maDV=8'">
+                                    Book a football field
                                 </button>
                                 <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
+                                <button class="btn btn-outline-warning" style="font-size:24px">See details <i
                                         class="fa fa-shopping-cart "></i></button>
                             </div>
                         </div>
@@ -403,11 +415,11 @@
     let popup = document.getElementById("popup", "popup1");
 
     function openPopup() {
-        popup.classList.add("open-popup");
+        popup.classList.add("open-popup","open-popup1");
     }
 
     function closePopup() {
-        popup.classList.remove("open-popup")
+        popup.classList.remove("open-popup","open-popup1")
     }
 </script>
 </body>

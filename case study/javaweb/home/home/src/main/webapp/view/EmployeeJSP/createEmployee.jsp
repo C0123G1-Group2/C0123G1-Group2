@@ -145,7 +145,7 @@
             <button style=" width: 48% ; margin-top: 15px ;background: black ; color: gold" class="btn btn-outline-dark" type="submit">Create</button>
             <button type="submit"  class="btn btn-outline-dark" style="width: 48% ; margin-top: 15px ;color: white ;margin-left: 2%;background: black"  onclick="window.location.href='/employee?action='">Back</button>
             <br>
-            <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
+            <h3 style=" color:green;text-align: center ; margin-top: 15px">${mess}</h3>
         </div>
 
     </form>

@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <title>Edit</title>
+    <title>Add new Soccer Field</title>
     <style>
         h2{
             text-align: center;
@@ -19,25 +19,26 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 500px;
-            text-align: center;
+text-align: center;
         }
         label{
             font-weight: 700;
         }
+
+
     </style>
 </head>
 <body>
 <div class="content">
-    <h2>Edit Soccer Field</h2>
-    <form method="post" action="/product?action=edit&value=${product.getSoccerFieldId()}">
+    <h2>Add new Soccer Field</h2>
+    <form method="post" action="/product?action=add" name="forms" onsubmit="return validateForm()">
         <div>
             <label>Tên sân</label>
-            <input  class="form-control" type="text" name="tenSan" required value="${product.getSoccerFieldName()}">
+            <input  class="form-control" type="text" name="tenSan" required >
         </div>
         <div>
             <label>Loại sân</label>
             <select class="form-select" aria-label="Default select example" name="tenLoaiSan">
-                <option value="${product.getSoccerFieldType()}">${product.getSoccerFieldType()}</option>
                 <option value="Sân 5">Sân 5</option>
                 <option value="Sân 7">Sân 7</option>
                 <option value="Sân futlsan">Sân futlsan</option>
@@ -45,16 +46,29 @@
         </div>
         <div>
             <label>Giá</label>
-            <input  class="form-control"  type="text" name="gia" required value="${product.getPrice()}">
+            <input  class="form-control"  type="number" name="gia" required >
         </div>
         <div>
-            <button type="submit"  class="btn btn-warning" style="width: 65% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
+            <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px  ; margin-right: 5px; background-color: black;color: #FFD700" >Add new</button>
             <br>
-
+            <h3 style="color: green">${mess}</h3>
         </div>
     </form>
-    <button   class="btn btn-warning" style="width: 32% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
-    <h3>${mess}</h3>
+    <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px; background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
 </div>
+
+<script>
+    function validateForm(){
+        let tenSan=document.forms["forms"]["tenSan"].value;
+        let tenLoaiSan=document.forms["forms"]["tenLoaiSan"].value;
+        let gia=document.forms["forms"]["gia"].value;
+        if (tenSan!=null && tenLoaiSan!=null &&gia!= null){
+            alert("Add successfully")
+            return true;
+        }
+       return false;
+    }
+</script>
+
 </body>
 </html>

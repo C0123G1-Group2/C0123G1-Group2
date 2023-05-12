@@ -39,10 +39,10 @@ CREATE TABLE orders (
         REFERENCES soccer_field (soccer_field_id),
     begin_time VARCHAR(50) NOT NULL,
     rental_time INT,
-    total_price INT,
+    total_price DOUBLE,
     created_at DATETIME DEFAULT NOW()
 );
-
+SELECT * FROM orders;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -78,11 +78,27 @@ INSERT INTO customer (`name`,phone_number,address,email) VALUES
 ('Nguyễn Văn Hùng', '0782990012', 'Hòa Thọ Tây,Cẩm Lệ,Đà Nẵng', 'hungvan123@gmail.com'),
 ( 'Nguyễn Thanh Long', '0782143391', 'Hòa Phát,Cẩm Lệ,Đà Nẵng', 'thanhlongzz@gmail.com')
 ;
-INSERT INTO customer (`name`,phone_number,address,email) VALUES ('truongan','090900023','dânng','dannag');
-INSERT INTO employee (employee_name , day_birth,phone,email) VALUES('Thang','2001-09-12','010101001','thang@gmail.com'),
-('Vien','2001-01-22','011232001','vien@gmail.com'),
-('thangga','1999-07-19','434343434','fsfsf@gmail.com'),
-('khangga','1999-12-19','2324334242','fsfsfhh@gmail.com'),
-('trung thien','1999-11-19','555666666','sfsaaaa@gmail.com');
 
+INSERT INTO employee (employee_name , day_birth,phone,email) VALUES('Duc Thang','2001-09-12','0010101001','thang@gmail.com'),
+('Ho Vien','2001-01-22','0867561009','vien@gmail.com'),
+('Truong An','1999-07-19','0121215543','truongan@gmail.com'),
+('An Khang','1999-12-19','2324334242','ankhang@gmail.com'),
+('Quoc Thien','1991-01-12','0123456789','trungthien@gmail.com'),
+('Quoc Hoa','1999-11-19','0124353689','quochoa@gmail.com'),
+('Thanh Nhan','1992-11-01','0325879945','thanhnhan@gmail.com'),
+('Anh Tuan','1989-06-19','0986754222','anhtuan@gmail.com'),
+('Nam Say','2007-05-21','0258887531','namsay@gmail.com'),
+('Bac Tao','2005-03-30','0987784526','bactao@gmail.com'),
+('Con Ga','2001-09-19','0012548884','conga@gmail.com');
+INSERT INTO orders (customer_id,employee_id,soccer_field_id,begin_time,rental_time,total_price) VALUES(2,1,3,'18h',2,6000000),
+(2,2,3,'16h',1,6000000),
+(1,3,3,'18h',1,4000000),
+(3,1,3,'18h',2,7000000),
+(4,4,3,'18h',2,4000000),
+(5,3,3,'18h',1,6000000),
+(4,5,3,'18h',2,4000000),
+(2,3,3,'18h',1,5000000),
+(1,1,3,'18h',2,3000000),
+(1,2,3,'18h',1,3000000),
+(2,1,3,'18h',2,6000000);
 SELECT * FROM orders;

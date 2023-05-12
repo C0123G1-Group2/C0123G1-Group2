@@ -29,35 +29,35 @@
 <body>
 <div class="content">
   <h2>Order</h2>
-  <form method="post" action="/product?action=oder&value=${maDV}">
+  <form method="post" action="/product?action=order&value=${maDV}">
     <div>
-      <label>Giờ đặt sân</label>
+      <label>pitch booking time</label>
       <select class="form-select" aria-label="Default select example" name="beginTime">
-        <option  value="15h">15h</option>
-        <option  value="16h">16h</option>
-        <option  value="17h">17h</option>
-        <option value="18h">18h</option>
-        <option value="19h">19h</option>
-        <option value="20h">20h</option>
-        <option value="21h">21h</option>
-        <option value="22h">22h</option>
-        <option value="23h">23h</option>
+        <option  value="15h">15:00 hours</option>
+        <option  value="16h">16:00 hours</option>
+        <option  value="17h">17:00 hours</option>
+        <option value="18h">18:00 hours</option>
+        <option value="19h">19:00 hours</option>
+        <option value="20h">20:00 hours</option>
+        <option value="21h">21:00 hours</option>
+        <option value="22h">22:00 hours</option>
+        <option value="23h">23:00 hours</option>
       </select>
     </div>
     <div>
-      <label>Số giờ đặt</label>
+      <label> amount of time you want to set</label>
       <select class="form-select" aria-label="Default select example" name="rentalTime">
-        <option value="1">1h</option>
-        <option value="2">2h</option>
+        <option value="1">1 hour</option>
+        <option value="2">2 hour</option>
       </select>
     </div>
     <div>
-      <button type="submit"  class="btn " style="width: 65% ; margin-top: 15px  ; margin-right: 5px ;background-color: black;color: #FFD700">Đặt sân</button>
+      <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px  ; margin-right: 5px ;background-color: black;color: #FFD700">Book a football field</button>
       <br>
-      <h3>${mess}</h3>
+      <h3 style="color: green">${mess}</h3>
     </div>
   </form>
-  <button  class="btn " style="width: 32% ; margin-top: 15px ;background-color: black;color: #FFD700" onclick="window.location.href='/index.jsp'">Back</button>
+  <button  class="btn " style="width: 100% ; margin-top: 15px ;background-color: black;color: #FFD700" onclick="window.location.href='/index.jsp'">Back</button>
 
 </div>
 </body>
