@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.model.User" %><%--
   Created by IntelliJ IDEA.
   User: USER
   Date: 05/08/23
@@ -11,6 +11,19 @@
 <html>
 <head>
     <title>Management Soccer Field</title>
+    <style>
+        #tableSoccer_paginate .page-item.active a{
+            background-color: black !important;
+            color: gold;
+        }
+        #tableSoccer_paginate #tableSoccer_next a{
+            background-color: black !important;
+            color: gold !important;
+        }
+        #tableSoccer_paginate #tableSoccer_previous a{
+            background-color: black !important;
+            color: gold !important ;}
+    </style>
 
 </head>
 <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
@@ -67,7 +80,9 @@
             <th>Begin Time</th>
             <th>Rental Time</th>
             <th>Total Price</th>
-            <th>Function</th>
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                <th>Function</th>
+            </c:if>
         </tr>
         </thead>
         <tbody>
@@ -79,16 +94,21 @@
                 <td>${order.getSoccerFieldId()}</td>
                 <td>${order.getBeginTime()}</td>
                 <td>${order.getRentalTime()}</td>
-                <td>${order.getTotalPrice()}</td>
+                <td>${order.getTotalPrice()} $</td>
                 <td>
-                    <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
-                            onclick="window.location.href='/product?action=editOrder&value=${order.getOrderId()}'">Edit
-                    </button>
-                    <button type="button" onclick="infoDelete('${order.getOrderId()}','${order.getOrderId()}')"
-                            class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            style="background-color: black;color: #FFD700">
-                        Delete
-                    </button>
+                    <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                        <button type="button" onclick="infoDelete('${order.getOrderId()}','${order.getOrderId()}')"
+                                class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                style="background-color: black;color: #FFD700">
+                            Delete
+                        </button>
+                    </c:if>
+                    <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+
+                        <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
+                                onclick="window.location.href='/product?action=editOrder&value=${order.getOrderId()}'">Edit
+                        </button>
+                    </c:if>
                 </td>
             </tr>
         </c:forEach>

@@ -5,6 +5,7 @@ import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
 import com.example.service.IUserService;
 import com.example.service.UserService;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,13 +43,13 @@ public class LoginServlet extends HttpServlet {
         List<User> userList = userService.getUser();
         User user = null;
         for ( User u: userList) {
-            if(username.equals(u.getUsername())&&password.equals((u.getPassword()))){
+            if(username.equals(u.getUsername())&& BCrypt.checkpw(password,u.getPassword())){
                 user=u;
                 break;
             }
         }
         if(user!=null) {
-            request.setAttribute("mess", "Đăng nhập thành công");
+            request.setAttribute("mess", "Login Successfully");
             HttpSession session1 = request.getSession();
             session1.setAttribute("userSession", user);
 
@@ -63,7 +64,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/index.jsp");
 
         }else {
-            request.setAttribute("mess","Đăng nhập thất bại ");
+            request.setAttribute("mess","Login Failed ");
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }
     }

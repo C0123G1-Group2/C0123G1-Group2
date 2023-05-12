@@ -26,6 +26,7 @@
 
     body {
         background-color: #080710;
+        background-image: url(https://tophinhanhdep.com/wp-content/uploads/2021/10/Black-and-Gold-Desktop-Wallpapers.jpg);
     }
 
     .background {
@@ -35,6 +36,7 @@
         transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;
+
     }
 
     .background .shape {
@@ -44,29 +46,11 @@
         border-radius: 50%;
     }
 
-    .shape:first-child {
-        background-image: repeating-linear-gradient( 105deg,
-        var(--gold) 0% ,
-        var(--dark-shadow) 15%,
-        var(--gold) 85%);
-    );
-        left: -120px;
-        top: -80px;
-    }
 
-    .shape:last-child {
-        background: linear-gradient(
-                to right,
-                #ff512f,
-                #f0be19
-        );
-        right: -30px;
-        bottom: -80px;
-    }
 
     form {
         height: 900px;
-        width: 460px;
+        width: 600px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
         transform: translate(-50%, -50%);
@@ -90,7 +74,7 @@
         width: 30vw;
         height: 20vh;
         margin-left: 4vw ;
-        margin-top: 20vw;
+        margin-top: 12vw;
     }
 
     label {
@@ -150,12 +134,14 @@
         margin: 0;
     }
     .wrapper {
-        background: black;
         display: grid;
         grid-template-areas: 'overlap';
         place-content: center;
         text-transform: uppercase;
         height: 100vh;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
     }
     .wrapper > div {
         background-clip: border-box;
@@ -186,28 +172,34 @@
         color: #1e2127;
         transform: scale(1);
     }
+    a{
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        font-size: 20px;
+        color:#ffb338;
+    }
+    h3{
+        text-align: center;
+    }
 </style>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-</div>
-<div id="div" class="wrapper">
-    <div class="bg">Sign up</div>
-    <div class="fg">Sign up</div>
-</div>
+<a href="/index.jsp">
+    <img style="width: 120px; height:120px" src="https://img.freepik.com/premium-vector/football-lion-team-logo_441059-67.jpg?w=1060">
+</a>
 
-<form action="/sign?action=createUserCustomer" method="post">
-    <label for="username">Username</label>
+<form action="/sign?action=createUserCustomer" method="post" onsubmit="return validateForm()" name="formSignUp">
+    <h3>Sign Up</h3>
+    <label >Username</label>
     <input type="text" placeholder="Example: Jonh123" id="username" type="text" name="user">
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password" type="password" name="password">
     <label for="password"> Confirm Password</label>
-    <input type="password" placeholder="Password" id="confirmPass" type="password" name="password">
+    <input type="password" placeholder="Password" id="confirmPass" type="password" name="confirmPassword">
     <label for="password">Your Name</label>
     <input  placeholder="Your Name" id="customerName" type="text" name="name">
     <label for="password">Phone Number</label>
@@ -216,7 +208,35 @@
     <input  placeholder="Address" id="address" type="text" name="address">
     <label for="password">Email</label>
     <input  placeholder="Example: abc@gmail.com" id="email" type="text" name="email">
-    <button>Submit</button>
+    <button type="submit">Submit</button>
+
 </form>
+<script>
+
+
+
+
+
+    function validateForm() {
+        const form = document.forms["formSignUp"];
+        const user = form["user"].value;
+        const password = form["password"].value;
+        const confirmPassword = form["confirmPassword"].value;
+        const name = form["name"].value;
+        const phoneNumber = form["phoneNumber"].value;
+        const address = form["address"].value;
+        const email = form["email"].value;
+        if (user != "" && password != "" && confirmPassword != "" && name != "" && phoneNumber != "" && address != "" && email != "" ){
+            if (password === confirmPassword){
+                alert('Congratulations, you have successfully registered');
+                return true;
+            }
+            alert('Password does not match')
+            return false
+        }
+        alert('Please enter all the field');
+        return false;
+    }
+</script>
 </body>
 </html>

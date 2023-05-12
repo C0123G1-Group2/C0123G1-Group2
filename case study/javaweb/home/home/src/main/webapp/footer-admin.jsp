@@ -12,7 +12,7 @@
 </head>
 <body>
 <footer>
-<section class="footer">
+<section class="footer" >
   <!-- Footer -->
   <footer class="text-center text-white" style="background-color: black;">
     <!-- Grid container -->
