@@ -1,5 +1,6 @@
 package controller;
 
+import com.example.model.User;
 import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
 import com.example.util.Helper;
@@ -66,7 +67,12 @@ public class SoccerFieldServlet extends HttpServlet {
                 request.getRequestDispatcher("/view/product/order.jsp").forward(request, response);
                 break;
             case "orderList":
-                showListOrder(request, response);
+                User userLogin = Helper.getUserLogin(request);
+                if (userLogin.getRole().equals("customer")) {
+                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                } else {
+                    showListOrder(request, response);
+                }
                 break;
             default:
                 showListSoccerField(request, response);
