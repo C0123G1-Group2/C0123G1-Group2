@@ -29,6 +29,7 @@
         flex-direction: column;
         align-items: start;
         text-align: center;
+        margin-top: 1.1vw;
 
 
     }
@@ -49,6 +50,8 @@
 
 <div class="content">
 <h2>Create Customer</h2>
+    <h3 style="text-align: center ; margin-top: 15px;color: green;font-size: medium">${mess}</h3>
+    <h3 style="text-align: center ; margin-top: 15px;color: red;font-size: medium">${messF}</h3>
 <form action="/customer?action=create" method="post">
 
     <div class="form-input">
@@ -71,9 +74,8 @@
     </div>
 
     <div>
-        <button style=" width: 100% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
+        <button style=" width: 100% ; margin-top: 15px ;background-color:black ; color: gold ;" class="btn btn-outline-primary" type="submit">Create</button>
         <br>
-        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>
 
 </form>
