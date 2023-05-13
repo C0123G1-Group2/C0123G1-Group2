@@ -1,6 +1,5 @@
 package controller;
 
-import com.example.model.Customer;
 import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
 import com.example.util.Helper;
@@ -74,8 +73,6 @@ public class SoccerFieldServlet extends HttpServlet {
                 break;
         }
     }
-
-
 
 
     @Override
@@ -216,33 +213,22 @@ public class SoccerFieldServlet extends HttpServlet {
         String mess = "Edit Soccer Field success!";
         if (!check) {
             mess = "Edit Soccer Field fail!";
-        String message = null;
-        String messageF = null;
-        if(check){
-            message = "Edit Soccer Field Succeed !";
-        }else{
-            messageF = "Edit Fail !";
         }
-        request.setAttribute("mess",message);
-        request.setAttribute("messF",messageF);
-        request.getRequestDispatcher("/view/product/edit.jsp").forward(request,response);
+        request.setAttribute("mess", mess);
+        request.getRequestDispatcher("/view/product/edit.jsp").forward(request, response);
     }
 
     private void addSoccerField(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String tenSan=request.getParameter("tenSan");
-        String tenLoaiSan=request.getParameter("tenLoaiSan");
-        double gia= Double.parseDouble(request.getParameter("gia"));
-        boolean check=productService.addProduct(tenSan,tenLoaiSan,gia);
-        String message = null;
-        String messageF = null;
-        if(check){
-            message = "Create new Soccer Field Succeed !";
-        }else{
-            messageF = "Create Fail !";
+        String tenSan = request.getParameter("tenSan");
+        String tenLoaiSan = request.getParameter("tenLoaiSan");
+        double gia = Double.parseDouble(request.getParameter("gia"));
+        boolean check = productService.addProduct(tenSan, tenLoaiSan, gia);
+        String mess = "Add new Soccer Field success!";
+        if (!check) {
+            mess = "Add new Soccer Field fail!";
         }
-        request.setAttribute("mess",message);
-        request.setAttribute("messF",messageF);
-        request.getRequestDispatcher("/view/product/add.jsp").forward(request,response);
+        request.setAttribute("mess", mess);
+        request.getRequestDispatcher("/view/product/add.jsp").forward(request, response);
     }
 
 

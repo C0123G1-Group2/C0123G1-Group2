@@ -1,4 +1,4 @@
-x1<%@ page import="com.example.model.User" %><%--
+<%@ page import="com.example.model.User" %><%--
   Created by IntelliJ IDEA.
   User: USER
   Date: 05/08/23

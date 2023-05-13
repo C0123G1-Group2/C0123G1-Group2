@@ -99,4 +99,4 @@ INSERT INTO orders (customer_id,employee_id,soccer_field_id,begin_time,rental_ti
 (1,1,3,'18h',2,50),
 (1,2,3,'18h',1,80),
 (2,1,3,'18h',2,100);
-SELECT * FROM customer;
+SELECT * FROM orders;
