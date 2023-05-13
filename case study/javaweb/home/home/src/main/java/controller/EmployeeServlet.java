@@ -80,13 +80,15 @@ public class EmployeeServlet extends HttpServlet {
                 email = request.getParameter("email");
                 employee = new Employee(name,dayOfBirth,phoneNumber,email);
                 boolean checkCreate = employeeService.createEmployee(employee);
-                String mess ;
+                String mess = null;
+                String messFalse = null;
                 if(checkCreate){
                     mess = "ADD NEW EMPLOYEE SUCCEED !";
                 }else {
-                    mess = " ADD NEW FAIL ! Phone number OR Email already exists  !";
+                    messFalse = " ADD NEW FAIL ! Phone number OR Email already exists  !";
                 }
                 request.setAttribute("mess",mess);
+                request.setAttribute("messF",messFalse);
                 request.getRequestDispatcher("/view/EmployeeJSP/createEmployee.jsp").forward(request,response);
                 break;
             case "edit":
@@ -97,11 +99,15 @@ public class EmployeeServlet extends HttpServlet {
                 phoneNumber = request.getParameter("phoneNumber");
                 employee = new Employee(id,name,dayOfBirth,phoneNumber,email);
                 boolean checkEdit = employeeService.edit(employee);
-                String message = " Edit succeed !";
-                if(!checkEdit){
-                    message = "Edit Fail";
+                String message = null;
+                String messageF = null;
+                if(checkEdit){
+                    message = "Edit Succeed !";
+                }else{
+                    messageF = "Edit Fail ! Phone number or email exists !";
                 }
                 request.setAttribute("mess",message);
+                request.setAttribute("messF",messageF);
                 request.getRequestDispatcher("/view/EmployeeJSP/editEmployee.jsp").forward(request,response);
                 break;
             case "delete":
