@@ -29,9 +29,11 @@
 <body>
 <div class="content">
   <h2>Order</h2>
-  <form method="post" action="/product?action=order&value=${maDV}">
+  <h3 style="color: green;font-size: medium">${mess}</h3>
+  <h3 style="color: red;font-size: medium">${messF}</h3>
+  <form method="post" style="margin-top: 1.5vw" action="/product?action=order&value=${maDV}">
     <div>
-      <label>pitch booking time</label>
+      <label>Pitch booking time</label>
       <select class="form-select" aria-label="Default select example" name="beginTime">
         <option  value="7">07:00 hours</option>
         <option  value="8">08:00 hours</option>
@@ -53,7 +55,7 @@
       </select>
     </div>
     <div>
-      <label> amount of time you want to set</label>
+      <label> Amount of time you want to set</label>
       <select class="form-select" aria-label="Default select example" name="rentalTime">
         <option value="1">1 hour</option>
         <option value="2">2 hour</option>
@@ -62,7 +64,6 @@
     <div>
       <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px  ; margin-right: 5px ;background-color: black;color: #FFD700">Book a football field</button>
       <br>
-      <h3 style="color: green">${mess}</h3>
     </div>
   </form>
   <button  class="btn " style="width: 100% ; margin-top: 15px ;background-color: black;color: #FFD700" onclick="window.location.href='/index.jsp'">Back</button>

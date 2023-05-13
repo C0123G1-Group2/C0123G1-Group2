@@ -23,6 +23,7 @@
             align-items: start;
             text-align: center;
             display: flex;
+            margin-top: 1.1vw;
 
 
         }
@@ -41,6 +42,8 @@
 <jsp:include page="/header-admin.jsp"/>
 <div class="content">
 <h2>Edit Customer</h2>
+    <h3 style="text-align: center ; margin-top: 15px;color: green;font-size: medium">${mess}</h3>
+    <h3 style="text-align: center ; margin-top: 15px;color: red;font-size: medium">${messF}</h3>
 <form action="/customer?action=edit&idEdit=${customer.getCustomerId()}" method="post">
 
     <div class="form-input">
@@ -61,8 +64,6 @@
     </div>
     <div>
         <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ; margin-right: 2%">Edit</button>
-        <br>
-        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>
 
 
