@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <title>Editx</title>
+    <title>Edit</title>
     <style>
         h2{
             text-align: center;
