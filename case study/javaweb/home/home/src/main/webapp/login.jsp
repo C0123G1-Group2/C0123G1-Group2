@@ -150,7 +150,7 @@
     <div class="col-sm-2">
       <input type="checkbox" name="rememberMe" value="true">
     </div>
-    <div class="col-sm-10">
+    <div class="col-sm-10" style="margin-left: -30px;">
       <label id="remember">Remember me</label>
     </div>
   </div>

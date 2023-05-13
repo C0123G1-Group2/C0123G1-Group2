@@ -92,7 +92,7 @@
                 <td>${order.getCustomerId()}</td>
                 <td>${order.getEmployeeId()}</td>
                 <td>${order.getSoccerFieldId()}</td>
-                <td>${order.getBeginTime()}</td>
+                <td>${order.getBeginTime()}:00 hours</td>
                 <td>${order.getRentalTime()}</td>
                 <td>${order.getTotalPrice()} $</td>
                 <td>

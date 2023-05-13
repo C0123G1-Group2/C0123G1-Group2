@@ -98,7 +98,7 @@ public class SoccerFieldRepo implements ISoccerFieldRepo {
             preparedStatement.setInt(1, 1);
             preparedStatement.setInt(2, 1);
             preparedStatement.setInt(3, order.getSoccerFieldId());
-            preparedStatement.setString(4, order.getBeginTime());
+            preparedStatement.setInt(4, order.getBeginTime());
             preparedStatement.setInt(5, order.getRentalTime());
             preparedStatement.setDouble(6, order.getTotalPrice());
             return preparedStatement.executeUpdate() > 0;
@@ -142,7 +142,7 @@ public class SoccerFieldRepo implements ISoccerFieldRepo {
                 int customerId = resultSet.getInt("customer_id");
                 int employeeId = resultSet.getInt("employee_id");
                 int soccerFieldId = resultSet.getInt("soccer_field_id");
-                String beginTime = resultSet.getString("begin_time");
+                int beginTime = resultSet.getInt("begin_time");
                 int rentalTime = resultSet.getInt("rental_time");
                 int totalPrice = resultSet.getInt("total_price");
                 Order order =new Order(orderId,customerId,employeeId,soccerFieldId,beginTime,rentalTime,totalPrice);
@@ -175,7 +175,7 @@ public class SoccerFieldRepo implements ISoccerFieldRepo {
             preparedStatement.setInt(1, order.getCustomerId());
             preparedStatement.setInt(2,order.getEmployeeId() );
             preparedStatement.setInt(3,order.getSoccerFieldId() );
-            preparedStatement.setString(4,order.getBeginTime() );
+            preparedStatement.setInt(4,order.getBeginTime() );
             preparedStatement.setInt(5,order.getRentalTime() );
             preparedStatement.setDouble(6,  order.getTotalPrice());
             preparedStatement.setInt(7,order.getOrderId() );

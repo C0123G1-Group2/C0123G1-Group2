@@ -148,7 +148,6 @@
                         </button>
                     </td>
                 </c:if>
-                
             </tr>
         </c:forEach>
 

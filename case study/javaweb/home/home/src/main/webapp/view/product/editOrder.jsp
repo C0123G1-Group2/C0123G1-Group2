@@ -45,11 +45,34 @@
         </div>
         <div>
             <label>Begin Time</label>
-            <input  class="form-control"  type="text" name="beginTime" required value="${order.getBeginTime()}">
+            <select class="form-select" aria-label="Default select example" name="beginTime">
+                <option  value="${order.getBeginTime()}">${order.getBeginTime()}:00 hours</option>
+                <option  value="7">07:00 hours</option>
+                <option  value="8">08:00 hours</option>
+                <option  value="9">09:00 hours</option>
+                <option  value="10">10:00 hours</option>
+                <option  value="11">11:00 hours</option>
+                <option  value="12">12:00 hours</option>
+                <option  value="13">13:00 hours</option>
+                <option  value="14">14:00 hours</option>
+                <option  value="15">15:00 hours</option>
+                <option  value="16">16:00 hours</option>
+                <option  value="17">17:00 hours</option>
+                <option value="18">18:00 hours</option>
+                <option value="19">19:00 hours</option>
+                <option value="20">20:00 hours</option>
+                <option value="21">21:00 hours</option>
+                <option value="22">22:00 hours</option>
+                <option value="23">23:00 hours</option>
+            </select>
         </div>
         <div>
             <label>Rental Time</label>
-            <input  class="form-control"  type="number" name="rentalTime" required value="${order.getRentalTime()}">
+            <select class="form-select" aria-label="Default select example" name="rentalTime">
+                <option value="${order.getRentalTime()}">${order.getRentalTime()} hour</option>
+                <option value="1">1 hour</option>
+                <option value="2">2 hour</option>
+            </select>
         </div>
         <div>
             <label>Total Price</label>

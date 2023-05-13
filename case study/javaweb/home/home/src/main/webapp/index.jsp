@@ -113,37 +113,10 @@
             transition: transform 0.4s, top 0.4s;
         }
 
-        .popup1 {
-            height: 500px;
-            width: 500px;
-            background: black;
-            border-radius: 10%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.1);
-            text-align: center;
-            padding: 0 30px 30px;
-            color: white;
-            visibility: hidden;
-            transition: transform 0.4s, top 0.4s;
-        }
-
         .popup button {
             cursor: pointer;
         }
 
-        .open-popup {
-            visibility: visible;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .open-popup1 {
-            visibility: visible;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(1);
-        }
     </style>
 </head>
 
@@ -169,7 +142,7 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 1</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field (number 1)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=1'">
@@ -214,10 +187,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 2</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field (number 2)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=2'">
                                             Book for rental
                                         </button>
                                         <br>
@@ -261,10 +234,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 3</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field (number 3)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=3'">
                                             Book for rental
                                         </button>
                                         <br>
@@ -306,10 +279,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 4</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field (number 4)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=4'">
                                             Book for rental
                                         </button>
                                         <br>
@@ -353,10 +326,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 1</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field (number 5)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=5'">
                                             Book for rental
                                         </button>
                                         <br>
@@ -398,10 +371,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 2</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field (number 6)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=6'">
                                             Book for rental
                                         </button>
                                         <br>
@@ -445,10 +418,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700">  Futsal stadium number 1</h5>
+                                        <h5 class="card-title" style="color: #FFD700">  Futsal stadium (number 7)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=7'">
                                             Book for rental
                                         </button>
                                         <br>
@@ -490,10 +463,10 @@
                                 </div>
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
-                                        <h5 class="card-title" style="color: #FFD700"> Futsal stadium number 2</h5>
+                                        <h5 class="card-title" style="color: #FFD700"> Futsal stadium (number 8)</h5>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
-                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                                onclick="window.location.href='/product?action=order&maDV=8'">
                                             Book for rental
                                         </button>
                                         <br>

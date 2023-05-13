@@ -49,7 +49,7 @@
 
 
     form {
-        height: 900px;
+        height: 950px;
         width: 600px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -60,7 +60,7 @@
         backdrop-filter: blur(10px);
         border: 2px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-        padding: 50px 35px;
+        padding: 30px 35px;
     }
 
     form * {
@@ -101,7 +101,7 @@
     }
 
     button {
-        margin-top: 50px;
+        margin-top: 30px;
         width: 100%;
         background-color: #ffffff;
         color: #080710;
@@ -185,7 +185,7 @@
 </style>
 <html>
 <head>
-    <title>Title</title>
+    <title>Sign up</title>
 </head>
 <body>
 <a href="/index.jsp">
