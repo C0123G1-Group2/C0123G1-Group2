@@ -97,7 +97,7 @@
             <form class="d-flex input-group w-auto" method="post" action="/employee?action=find"
                   style="margin-block-end: 0; gap: 10px;">
                 <button type="submit" class="btn " onclick="window.location.href='/employee?action='"
-                        style="background: black ; color: gold">Return List
+                        style="background: black ; color: gold">Reset
                 </button>
                 <input type="search" class="form-control" placeholder="Name" aria-label="Search" name="name"/>
                 <input type="search" class="form-control" placeholder="Phone Number" name="phoneNumber"/>
@@ -128,7 +128,7 @@
         <tbody>
         <c:forEach var="employee" items="${employeeList}">
             <tr>
-                <td>DN-${employee.getEmployeeID()}</td>
+                <td>${employee.getEmployeeID()}</td>
                 <td>${employee.getEmployeeName()}</td>
                 <td>${employee.getDayOfBirth()}</td>
                 <td>${employee.getPhoneNumber()}</td>

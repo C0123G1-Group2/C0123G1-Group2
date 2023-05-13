@@ -17,6 +17,7 @@
             align-items: start;
             text-align: center;
             display: flex;
+            margin-top: 1.1vw;
 
 
         }
@@ -66,6 +67,8 @@
 
 <div class="content">
     <h2>Edit Employee</h2>
+    <h3 style="text-align: center ; margin-top: 15px;font-size: medium;color: green">${mess}</h3>
+    <h3 style="text-align: center ; margin-top: 15px;font-size: medium;color: red">${messF}</h3>
     <form action="/employee?action=edit&id=${id}" method="post">
 
         <div class="form-input">
@@ -90,8 +93,6 @@
         </div>
         <div>
             <button type="submit"  class="btn btn-outline-dark" style="width: 100% ; margin-top: 15px ;background: black ; color: gold">Save</button>
-            <br>
-            <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
         </div>
 
 

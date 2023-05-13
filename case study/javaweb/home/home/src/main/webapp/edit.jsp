@@ -16,13 +16,13 @@
         h2{
             text-align: center;
             margin-bottom: 20px;
-            margin-top: 20px;
         }
         .form-input{
+            display: flex;
             flex-direction: column;
             align-items: start;
             text-align: center;
-            display: flex;
+            margin-top: 1.1vw;
 
 
         }
@@ -32,7 +32,10 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 400px;
-
+            margin-top: 1.1vw
+        }
+        label{
+            margin-top: 1.1vw;
         }
 
     </style>
@@ -41,15 +44,18 @@
 <jsp:include page="/header-admin.jsp"/>
 <div class="content">
 <h2>Edit Customer</h2>
+    <h3 style="text-align: center ; margin-top: 15px;color: green;font-size: medium">${mess}</h3>
+    <h3 style="text-align: center ; margin-top: 15px;color: red;font-size: medium">${messF}</h3>
 <form action="/customer?action=edit&idEdit=${customer.getCustomerId()}" method="post">
-
     <div class="form-input">
         <label>Name Customer</label>
-        <input value="${customer.getName()}" class="form-control" type="text" name="name"  required>
+        <input value="${customer.getName()}" class="form-control" type="text" name="name" id="regexName" oninput="checkName()"  required>
+        <small  style="color: red" id="checkName" ></small>
     </div>
     <div>
         <label>Phone Number</label>
-        <input  value="${customer.getPhoneNumber()}"   class="form-control" type="number" name="phoneNumber"     required>
+        <input  value="${customer.getPhoneNumber()}"   class="form-control" type="text" name="phoneNumber" id="phone" oninput="checkPhoneNumber()"     required>
+        <small  style="color: red" id="checkPhone" ></small>
     </div>
     <div>
         <label>Address</label>
@@ -57,17 +63,17 @@
     </div>
     <div>
         <label>Email</label>
-        <input value="${customer.getEmail()}"  class="form-control" type="text" name="email"   required>
+        <input value="${customer.getEmail()}"  class="form-control" type="text" name="email" id="email" oninput="checkEmail()"  required>
+        <small  style="color: red" id="checkEmail" ></small>
     </div>
     <div>
         <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ; margin-right: 2%">Edit</button>
-        <br>
-        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>
 
 
 </form>
     <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ;" onclick="window.location.href='/customer?action='">Back</button>
 </div>
+<script src="regex.js"></script>
 </body>
 </html>

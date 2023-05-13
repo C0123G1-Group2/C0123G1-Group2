@@ -50,7 +50,7 @@ public class SignServlet extends HttpServlet {
         String email = request.getParameter("email");
 
         String hashed = BCrypt.hashpw(password, BCrypt.gensalt(10));
-        User user1 = new User(user,hashed);
+        User user1 = new User(user,hashed, "customer");
         Customer customer = new Customer(name,phoneNumber,address,email);
         customerService.saveCustomer(customer);
         userService.saveUserCustomer(user1);

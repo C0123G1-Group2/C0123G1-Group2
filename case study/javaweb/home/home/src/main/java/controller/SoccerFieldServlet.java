@@ -1,5 +1,6 @@
 package controller;
 
+import com.example.model.User;
 import com.example.service.CustomerService;
 import com.example.service.ICustomerService;
 import com.example.util.Helper;
@@ -66,7 +67,12 @@ public class SoccerFieldServlet extends HttpServlet {
                 request.getRequestDispatcher("/view/product/order.jsp").forward(request, response);
                 break;
             case "orderList":
-                showListOrder(request, response);
+                User userLogin = Helper.getUserLogin(request);
+                if (userLogin.getRole().equals("customer")) {
+                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                } else {
+                    showListOrder(request, response);
+                }
                 break;
             default:
                 showListSoccerField(request, response);
@@ -119,7 +125,8 @@ public class SoccerFieldServlet extends HttpServlet {
         int rentalTime = Integer.parseInt(request.getParameter("rentalTime"));
         double totalPrice = Double.parseDouble((request.getParameter("totalPrice")));
         Order order = new Order(orderId, customerId, employeeId, soccerFieldId, beginTime, rentalTime, totalPrice);
-        String mess = "Edit Soccer Field success!";
+        String mess = "Edit  Customer Order success!";
+        String messF= "Time has been order ";
         List<Order> orderList = productService.showListOrder();
         boolean check1 = true;
         for (int i = 0; i < orderList.size(); i++) {
@@ -135,9 +142,8 @@ public class SoccerFieldServlet extends HttpServlet {
                         }
                     }
                     request.setAttribute("order", order1);
-                    mess = "Time has been order!";
                     check1 = false;
-                    request.setAttribute("mess", mess);
+                    request.setAttribute("messF", messF);
                     request.getRequestDispatcher("/view/product/editOrder.jsp").forward(request, response);
                     break;
                 }
@@ -147,9 +153,12 @@ public class SoccerFieldServlet extends HttpServlet {
             boolean check = productService.editOrder(order);
             if (!check) {
                 mess = "Edit Soccer Field fail!";
+                request.setAttribute("mess", mess);
+                request.getRequestDispatcher("/view/product/editOrder.jsp").forward(request, response);
+            }else {
+                request.setAttribute("mess", mess);
+                request.getRequestDispatcher("/view/product/editOrder.jsp").forward(request, response);
             }
-            request.setAttribute("mess", mess);
-            request.getRequestDispatcher("/view/product/editOrder.jsp").forward(request, response);
         }
     }
 
@@ -178,14 +187,13 @@ public class SoccerFieldServlet extends HttpServlet {
         Order order = new Order(1, 1, maDV, beginTime, rentalTime, gia);
 
         String mess = "Oder success!";
-
+        String messF = "Time has been order!";
         List<Order> orderList = productService.showListOrder();
         boolean check1 = true;
         for (int i = 0; i < orderList.size(); i++) {
             if (((beginTime>orderList.get(i).getBeginTime()&&orderList.get(i).getBeginTime()+orderList.get(i).getRentalTime()>beginTime)||(beginTime==orderList.get(i).getBeginTime() )|| (beginTime<orderList.get(i).getBeginTime()&&beginTime+rentalTime>orderList.get(i).getBeginTime() ))&& orderList.get(i).getSoccerFieldId() == maDV ) {
-                mess = "Time has been order!";
                 check1 = false;
-                request.setAttribute("mess", mess);
+                request.setAttribute("messF", messF);
                 request.setAttribute("maDV", maDV);
                 request.getRequestDispatcher("/view/product/order.jsp").forward(request, response);
                 break;
@@ -195,10 +203,14 @@ public class SoccerFieldServlet extends HttpServlet {
             boolean check = productService.orderProduct(order);
             if (!check) {
                 mess = "Oder fail!";
+                request.setAttribute("maDV", maDV);
+                request.setAttribute("mess", mess);
+                request.getRequestDispatcher("/view/product/order.jsp").forward(request, response);
+            }else {
+                request.setAttribute("maDV", maDV);
+                request.setAttribute("mess", mess);
+                request.getRequestDispatcher("/view/product/order.jsp").forward(request, response);
             }
-            request.setAttribute("maDV", maDV);
-            request.setAttribute("mess", mess);
-            request.getRequestDispatcher("/view/product/order.jsp").forward(request, response);
         }
 
     }
@@ -210,11 +222,15 @@ public class SoccerFieldServlet extends HttpServlet {
         double gia = Double.parseDouble(request.getParameter("gia"));
         SoccerField soccerField = new SoccerField(maSan, tenSan, tenLoaiSan, gia);
         boolean check = productService.editProduct(soccerField);
-        String mess = "Edit Soccer Field success!";
-        if (!check) {
-            mess = "Edit Soccer Field fail!";
+        String mess = null;
+        String messF = null;
+        if (check) {
+            mess = " EDIT SOCCER FIELD  SUCCEED !";
+        } else {
+            messF = " EDIT SOCCER FIELD  FAIL !";
         }
         request.setAttribute("mess", mess);
+        request.setAttribute("messF",messF);
         request.getRequestDispatcher("/view/product/edit.jsp").forward(request, response);
     }
 
@@ -223,11 +239,15 @@ public class SoccerFieldServlet extends HttpServlet {
         String tenLoaiSan = request.getParameter("tenLoaiSan");
         double gia = Double.parseDouble(request.getParameter("gia"));
         boolean check = productService.addProduct(tenSan, tenLoaiSan, gia);
-        String mess = "Add new Soccer Field success!";
-        if (!check) {
-            mess = "Add new Soccer Field fail!";
+        String mess = null;
+        String messF = null;
+        if (check) {
+            mess = " ADD SOCCER FIELD  SUCCEED !";
+        } else {
+            messF = " ADD SOCCER FIELD  FAIL !";
         }
         request.setAttribute("mess", mess);
+        request.setAttribute("messF",messF);
         request.getRequestDispatcher("/view/product/add.jsp").forward(request, response);
     }
 

@@ -23,13 +23,16 @@
         }
         label{
             font-weight: 700;
+            margin-top: 1.1vw;
         }
     </style>
 </head>
 <body>
 <jsp:include page="/header-admin.jsp"/>
 <div class="content">
-    <h2>Edit Soccer Field</h2>
+    <h2>Edit Order</h2>
+    <h3 style="text-align: center ; margin-top: 15px;color: green;font-size: medium">${mess}</h3>
+    <h3 style="text-align: center ; margin-top: 15px;color: red;font-size: medium">${messF}</h3>
     <form method="post" action="/product?action=editOrder&value=${order.getOrderId()}">
         <div>
             <label>Customer ID</label>
@@ -82,7 +85,6 @@
             <button type="submit"  class="btn btn-warning" style="width: 100% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
         </div>
     </form>
-    <h3 style="color: green">${mess}</h3>
     <button   class="btn btn-warning" style="width: 100% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action=orderList'">Back</button>
 </div>
 </body>
