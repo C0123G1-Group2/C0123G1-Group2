@@ -29,8 +29,7 @@
             flex-direction: column;
             align-items: start;
             text-align: center;
-
-
+            margin-top: 1.1vw;
         }
         .content{
             position: absolute;
@@ -79,6 +78,8 @@
 <jsp:include page="/header-admin.jsp"/>
 <div class="content">
     <h2>Create Employee</h2>
+    <h3 style=" color:green;text-align: center ; margin-top: 15px;font-size: medium">${mess}</h3>
+    <h3 style=" color:red;text-align: center ; margin-top: 15px;font-size: medium">${messF}</h3>
     <form action="/employee?action=create" method="post">
         <div class="form-input">
             <label>Name Employee</label>
@@ -103,8 +104,6 @@
 
         <div>
             <button style=" width: 100% ; margin-top: 15px ;background: black ; color: gold" class="btn btn-outline-dark" type="submit">Create</button>
-            <br>
-            <h3 style=" color:green;text-align: center ; margin-top: 15px">${mess}</h3>
         </div>
 
     </form>

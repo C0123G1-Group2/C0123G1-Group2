@@ -84,11 +84,15 @@ public class CustomerServlet extends HttpServlet {
                 String email = request.getParameter("email");
                 Customer customer = new Customer(name, phoneNumber, address, email);
                 boolean check = customerService.saveCustomer(customer);
-                String mess = "Successfully added";
-                if (!check) {
-                    mess = "New add failed";
+                String mess = null;
+                String messF = null;
+                if (check) {
+                    mess = "ADD NEW CUSTOMER SUCCEED !";
+                } else {
+                    messF = " ADD NEW CUSTOMER FAIL ! Phone number OR Email already exists  !";
                 }
                 request.setAttribute("mess", mess);
+                request.setAttribute("messF",messF);
                 request.getRequestDispatcher("/create.jsp").forward(request, response);
                 break;
             case "edit":
@@ -127,11 +131,15 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("email");
         Customer customer = new Customer(id, name, phoneNumber, address, email);
         boolean check = customerService.edit(customer);
-        String mess = "successful fix";
-        if (!check) {
-            mess = "fix failed";
+        String mess = null;
+        String messF = null;
+        if (check) {
+            mess = "EDIT CUSTOMER SUCCEED !";
+        } else {
+            messF = " EDIT CUSTOMER FAIL ! Phone number OR Email already exists  !";
         }
         request.setAttribute("mess", mess);
+        request.setAttribute("messF",messF);
         List<Customer> customerList = customerService.getAll();
         for (int i = 0; i < customerList.size(); i++) {
             if (id == customerList.get(i).getCustomerId()) {
