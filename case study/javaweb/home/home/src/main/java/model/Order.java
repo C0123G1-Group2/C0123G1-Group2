@@ -1,6 +1,7 @@
 package model;
 
 public class Order {
+    private  int orderId;
     private int customerId;
     private int employeeId;
     private int soccerFieldId;
@@ -11,7 +12,15 @@ public class Order {
     public Order() {
     }
 
-
+    public Order(int orderId, int customerId, int employeeId, int soccerFieldId, String beginTime, int rentalTime, double totalPrice) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.employeeId = employeeId;
+        this.soccerFieldId = soccerFieldId;
+        this.beginTime = beginTime;
+        this.rentalTime = rentalTime;
+        this.totalPrice = totalPrice;
+    }
 
     public Order(int customerId, int employeeId, int soccerFieldId, String beginTime, int rentalTime, double totalPrice) {
         this.customerId = customerId;
@@ -20,6 +29,14 @@ public class Order {
         this.beginTime = beginTime;
         this.rentalTime = rentalTime;
         this.totalPrice = totalPrice;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public int getCustomerId() {

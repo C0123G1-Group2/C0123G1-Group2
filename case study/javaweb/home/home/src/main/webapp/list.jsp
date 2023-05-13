@@ -19,34 +19,41 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <html>
 <head>
     <title>List</title>
     <style>
-        #contentTable{
+        #contentTable {
             padding: 20px 40px;
         }
-        input.form-control, .btn-search{
+
+        input.form-control, .btn-search {
             height: 30px;
             border-radius: 5px !important;
         }
+
         .btn-search {
             padding: 0 6px;
         }
+
         table thead th, table tbody td {
             text-align: center !important;
             vertical-align: middle !important;
         }
-        #tableCustomer_paginate .page-item.active a{
+
+        #tableCustomer_paginate .page-item.active a {
             background-color: black !important;
             color: gold;
         }
-        #tableCustomer_paginate #tableCustomer_next a{
+
+        #tableCustomer_paginate #tableCustomer_next a {
             background-color: black !important;
             color: gold !important;
         }
-        #tableCustomer_paginate #tableCustomer_previous a{
+
+        #tableCustomer_paginate #tableCustomer_previous a {
             background-color: black !important;
             color: gold !important;
         }
@@ -71,21 +78,30 @@
 
             <ul class="navbar-nav mb-2 mb-lg-0">
 
-                <button class="btn btn-primary" type="submit" style="background-color:black ; color: gold ;" onclick="window.location.href='/customer?action=create'">Create</button>
-                <button type="button" class="btn btn-primary" style="background-color:black ; color: gold ;" onclick="printDiv('contentTable')">
+                <button class="btn btn-primary" type="submit" style="background-color:black ; color: gold ;"
+                        onclick="window.location.href='/customer?action=create'">Create
+                </button>
+                <button type="button" class="btn btn-primary" style="background-color:black ; color: gold ;"
+                        onclick="printDiv('contentTable')">
                     Print
                 </button>
             </ul>
-            <form class="d-flex input-group w-auto"  method="post"  action="/customer?action=find" style="margin-block-end: 0; gap: 10px;" >
-                <input type="search" style="flex: none ;width: 170px"   class="form-control" placeholder="Name" aria-label="Search" name="name" />
-                <input type="search"  style="flex: none ;width: 125px"  class="form-control"  placeholder="Phone Number" name="phoneNumber"/>
-                <input type="search" style="flex: none ;width: 170px"   class="form-control"  placeholder="Address" name="address"/>
-                <button class="btn btn-primary btn-search" style="background-color: black; color: gold;padding: 0 15px" type="submit" data-mdb-ripple-color="dark">Search</button>
+            <form class="d-flex input-group w-auto" method="post" action="/customer?action=find"
+                  style="margin-block-end: 0; gap: 10px;">
+                <input type="search" style="flex: none ;width: 170px" class="form-control" placeholder="Name"
+                       aria-label="Search" name="name"/>
+                <input type="search" style="flex: none ;width: 125px" class="form-control" placeholder="Phone Number"
+                       name="phoneNumber"/>
+                <input type="search" style="flex: none ;width: 170px" class="form-control" placeholder="Address"
+                       name="address"/>
+                <button class="btn btn-primary btn-search" style="background-color: black; color: gold;padding: 0 15px"
+                        type="submit" data-mdb-ripple-color="dark">Search
+                </button>
             </form>
         </div>
     </div>
 </nav>
-<div id="contentTable" >
+<div id="contentTable" style=" min-height: calc(100vh - 300px);">
     <h1 style="text-align: center">List Of Customer</h1>
 
     <table class="table table-striped table-bordered" id="tableCustomer">
@@ -102,6 +118,7 @@
             <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                 <th>Edit</th>
             </c:if>
+
         </tr>
         </thead>
         <tbody>
@@ -112,30 +129,30 @@
                 <td>${customer.getPhoneNumber()}</td>
                 <td>${customer.getAddress()}</td>
                 <td>${customer.getEmail()}</td>
-                <!-- Button trigger modal -->
                 <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                <td>
-
+                    <td>
                         <button type="button" onclick="infoDelete('${customer.customerId}','${customer.name}')"
                                 class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" style="background-color:black ; color: gold ;">Delete</button>
-                </td>
+                                data-bs-target="#exampleModal" style="background-color:black ; color: gold ;">
+                            Delete
+                        </button>
+
+                    </td>
                 </c:if>
                 <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                <td>
-                    <button type="submit" class="btn btn-primary" style="background-color: black ; color: gold"
-                            onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">
-                        Edit
-                    </button>
-                </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" style="background-color: black ; color: gold"
+                                onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">
+                            Edit
+                        </button>
+                    </td>
                 </c:if>
+
             </tr>
         </c:forEach>
         </tbody>
     </table>
-    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='/home.jsp'">Back
-        Home
-    </button>
+
 </div>
 
 <!-- Modal -->
@@ -151,7 +168,8 @@
             <form action="/customer?action=delete" method="post">
                 <div class="modal-body">
                     <input hidden id="deleteId" name="deleteId">
-                    <span>Do you want to delete customer </span><span style="color: #b91515" id="deleteName"></span><span>??</span>
+                    <span>Do you want to delete customer </span><span style="color: #b91515"
+                                                                      id="deleteName"></span><span>??</span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

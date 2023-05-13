@@ -1,5 +1,8 @@
 package controller;
 
+import com.example.model.Customer;
+import com.example.service.CustomerService;
+import com.example.service.ICustomerService;
 import com.example.util.Helper;
 import model.Order;
 import model.SoccerField;
@@ -14,6 +17,7 @@ import java.util.List;
 
 @WebServlet(name = "SoccerFieldServlet", value = "/product")
 public class SoccerFieldServlet extends HttpServlet {
+    private ICustomerService customerService=new CustomerService();
     private ISoccerFieldService productService=new SoccerFieldService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,7 +32,7 @@ public class SoccerFieldServlet extends HttpServlet {
         }
         switch (action){
             case "add":
-                request.getRequestDispatcher("/product/add.jsp").forward(request,response);
+                request.getRequestDispatcher("/view/product/add.jsp").forward(request,response);
                 break;
             case "edit":
                 int maSan= Integer.parseInt(request.getParameter("value"));
@@ -41,12 +45,28 @@ public class SoccerFieldServlet extends HttpServlet {
                     }
                 }
                 request.setAttribute("product",product);
-                request.getRequestDispatcher("product/edit.jsp").forward(request,response);
+                request.getRequestDispatcher("/view/product/edit.jsp").forward(request,response);
                 break;
-            case "oder":
+            case "editOrder":
+                int orderId= Integer.parseInt(request.getParameter("value"));
+                List<Order> orderList=productService.showListOrder();
+                Order order =new Order();
+                for (int i = 0; i < orderList.size(); i++) {
+                    if (orderList.get(i).getOrderId()==orderId){
+                        order=orderList.get(i);
+                        break;
+                    }
+                }
+                request.setAttribute("order",order);
+                request.getRequestDispatcher("/view/product/editOrder.jsp").forward(request,response);
+                break;
+            case "order":
                 int maDV= Integer.parseInt(request.getParameter("maDV"));
                 request.setAttribute("maDV",maDV);
-                request.getRequestDispatcher("product/oder.jsp").forward(request,response);
+                request.getRequestDispatcher("/view/product/order.jsp").forward(request,response);
+                break;
+            case "orderList":
+                showListOrder(request,response);
                 break;
             default:
                 showListSoccerField(request,response);
@@ -54,7 +74,7 @@ public class SoccerFieldServlet extends HttpServlet {
         }
     }
 
-   
+
 
 
     @Override
@@ -73,12 +93,18 @@ public class SoccerFieldServlet extends HttpServlet {
             case "edit":
                 editSoccerField(request,response);
                 break;
-            case "oder":
+            case "editOrder":
+                editOrder(request,response);
+                break;
+            case "order":
                 orderSoccerField(request,response);
                 break;
             case "search":
                 searchSoccerField(request,response);
                     break;
+            case "deleteOrder":
+                deleteOrder(request,response);
+                break;
             default:
                 showListSoccerField(request,response);
                 break;
@@ -86,12 +112,31 @@ public class SoccerFieldServlet extends HttpServlet {
 
     }
 
+    private void editOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int orderId= Integer.parseInt(request.getParameter("value"));
+        int customerId= Integer.parseInt(request.getParameter("customerId"));
+        int employeeId= Integer.parseInt(request.getParameter("employeeId"));
+        int soccerFieldId= Integer.parseInt(request.getParameter("soccerFieldId"));
+        String beginTime=request.getParameter("beginTime");
+        int rentalTime= Integer.parseInt(request.getParameter("rentalTime"));
+        double totalPrice= Double.parseDouble((request.getParameter("totalPrice")));
+        Order order =new Order(orderId,customerId,employeeId,soccerFieldId,beginTime,rentalTime,totalPrice);
+       boolean check=productService.editOrder(order);
+        String mess= "Edit Soccer Field success!";
+        if(!check){
+            mess="Edit Soccer Field fail!";
+        }
+        request.setAttribute("mess",mess);
+        request.getRequestDispatcher("/view/product/editOrder.jsp").forward(request,response);
+    }
+
+
     private void searchSoccerField(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tenDV=request.getParameter("tenDV");
         String tenLoaiDV=request.getParameter("tenLoaiDV");
         List<SoccerField> productList=productService.searchProduct(tenDV,tenLoaiDV);
         request.setAttribute("productList",productList);
-        request.getRequestDispatcher("product/product.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/product/product.jsp").forward(request,response);
     }
 
     private void orderSoccerField(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -114,7 +159,7 @@ public class SoccerFieldServlet extends HttpServlet {
             mess="Oder fail!";
         }
         request.setAttribute("mess",mess);
-        request.getRequestDispatcher("product/oder.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/product/order.jsp").forward(request,response);
     }
 
     private void editSoccerField(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -129,7 +174,7 @@ public class SoccerFieldServlet extends HttpServlet {
             mess="Edit Soccer Field fail!";
         }
         request.setAttribute("mess",mess);
-        request.getRequestDispatcher("product/edit.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/product/edit.jsp").forward(request,response);
     }
 
     private void addSoccerField(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -142,7 +187,7 @@ public class SoccerFieldServlet extends HttpServlet {
             mess="Add new Soccer Field fail!";
         }
         request.setAttribute("mess",mess);
-        request.getRequestDispatcher("product/add.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/product/add.jsp").forward(request,response);
     }
 
 
@@ -156,12 +201,28 @@ public class SoccerFieldServlet extends HttpServlet {
         request.setAttribute("mess",mess);
         List<SoccerField> productList=productService.showListProduct();
         request.setAttribute("productList",productList);
-        request.getRequestDispatcher("product/product.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/product/product.jsp").forward(request,response);
     }
-
+    private void deleteOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int orderId=Integer.parseInt(request.getParameter("orderId"));
+        boolean check=productService.deleteOrder(orderId);
+        String mess="Delete Soccer Field success ";
+        if (!check){
+            mess="Delete Soccer Field fail";
+        }
+        request.setAttribute("mess",mess);
+        List<Order> orderList=productService.showListOrder();
+        request.setAttribute("orderList",orderList);
+        request.getRequestDispatcher("/view/product/orderList.jsp").forward(request,response);
+    }
     private void showListSoccerField(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<SoccerField> productList=productService.showListProduct();
         request.setAttribute("productList",productList);
-        request.getRequestDispatcher("product/product.jsp").forward(request,response);
+        request.getRequestDispatcher("/view/product/product.jsp").forward(request,response);
+    }
+    private void showListOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Order> orderList =productService.showListOrder();
+        request.setAttribute("orderList",orderList);
+        request.getRequestDispatcher("view/product/orderList.jsp").forward(request,response);
     }
 }

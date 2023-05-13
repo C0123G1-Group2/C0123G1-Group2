@@ -1,5 +1,6 @@
 package controller;
 
+import com.example.model.User;
 import com.example.util.Helper;
 import model.Employee;
 import service.IEmployeeService;
@@ -22,6 +23,10 @@ public class EmployeeServlet extends HttpServlet {
         if(!isLogin) {
             request.getRequestDispatcher("/login.jsp").forward(request,response);
             return;
+        }
+        User userLogin = Helper.getUserLogin(request);
+        if(userLogin.getRole().equals("customer")){
+            request.getRequestDispatcher("/index.jsp").forward(request,response);
         }
         String action = request.getParameter("action");
         int id;

@@ -120,9 +120,9 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("email");
         Customer customer = new Customer(id,name,phoneNumber,address,email);
        boolean check = customerService.edit(customer);
-        String mess =" Edited Successfully " ;
+        String mess ="successful fix" ;
        if(!check){
-           mess="Edited Failed";
+           mess="fix failed";
        }
        request.setAttribute("mess",mess);
        List<Customer> customerList = customerService.getAll();

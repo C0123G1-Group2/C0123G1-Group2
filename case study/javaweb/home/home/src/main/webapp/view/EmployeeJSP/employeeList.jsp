@@ -1,6 +1,8 @@
 <%@ page import="com.example.model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -9,83 +11,62 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <html>
 <head>
     <title>Employee List</title>
     <style>
-        #contentTable {
-            padding: 20px 40px;
 
-        }
-
-        .navbar-nav {
-            gap: 10px;
-        }
-
-        .navbar-collapse {
-            justify-content: space-between;
-        }
-
-        input.form-control, .btn-search {
-            height: 30px;
-            border-radius: 5px !important;
-        }
-
-
-        table thead th, table tbody td {
-            text-align: center !important;
-            vertical-align: middle;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
-        a:hover {
-            font-size: larger;
-            color: gold;
-            text-underline: gold;
-        }
-
-        .navbar {
-            height: 7vw;
+        .navbar{
+            height: 86px ;
             background-color: black;
             padding: 0 40px;
         }
-
         .navbar-nav {
             display: flex;
             align-items: center;
+            gap: 10px;
         }
-
-        .dropdown .dropdown-toggle {
+        .navbar-collapse {
+            justify-content: space-between;
+        }
+        .dropdown .dropdown-toggle{
             width: 30px;
             height: 30px;
             border-radius: 50%;
         }
+        .dropdown .dropdown-toggle:after{
+            /*content: "A" !important;*/
+            border: none !important;
+            /*margin-left: 0;*/
+            /*position: absolute;*/
+            /*top: 2px;*/
+            /*left: 35%;*/
+        }
 
-
-
-         #tableEmployee_wrapper .page-item.active a{
+        .dropdown-menu.show {
+            right: 0 !important;
+            left: auto !important;
+        }
+        .nav-item.active {
+            margin-left: -18px;
+        }
+         #tableEmployee_paginate .page-item.active a{
              background-color: black !important;
              color: gold;
          }
-        #tableEmployee_wrapper #tableEmployee_next a{
+        #tableEmployee_paginate #tableEmployee_next a{
             background-color: black !important;
             color: gold !important;
         }
-        #tableEmployee_wrapper #tableEmployee_previous a{
+        #tableEmployee_paginate #tableEmployee_previous a{
             background-color: black !important;
-            color: gold !important;
-        }
+            color: gold !important ;}
 
     </style>
-</head>
-<%--<jsp:include page="header-admin.jsp"/>--%>
-</head>
+
 <body>
 <jsp:include page="/header-admin.jsp"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 4vw">
@@ -140,9 +121,10 @@
             <th>Email</th>
             <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                 <th>Delete</th>
+            </c:if>
+            <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                 <th>Edit</th>
             </c:if>
-
 
         </tr>
         </thead>
@@ -164,7 +146,8 @@
                             Delete
                         </button>
                     </td>
-
+                </c:if>
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                     <td>
                         <button type="submit" class="btn btn" style="background: black;color: gold"
                                 onclick="window.location.href='/employee?action=edit&id=${employee.getEmployeeID()}'">
@@ -172,15 +155,12 @@
                         </button>
                     </td>
                 </c:if>
-
             </tr>
         </c:forEach>
 
         </tbody>
     </table>
-    <button class="btn" style="background-color: black;color: #FFD700" onclick="window.location.href='/home.jsp'">Back
-        Home
-    </button>
+
 </div>
 
 <!-- Modal -->
@@ -223,19 +203,10 @@
         $('#tableEmployee').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 5
+            "pageLength": 7
         });
     });
-    const isLogin = localStorage.getItem("login");
-    if (isLogin && isLogin === "true") {
-        document.getElementById("no-auth").style.display = "none";
-        document.getElementById("auth").style.display = "flex";
 
-    } else {
-        document.getElementById("no-auth").style.display = "block";
-        document.getElementById("auth").style.display = "none";
-
-    }
 </script>
 <script>
     function printDiv(divID) {
@@ -249,15 +220,15 @@
         document.body.innerHTML = oldPage;
     }
 </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+<%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"--%>
+<%--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"--%>
+<%--        crossorigin="anonymous"></script>--%>
+<%--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"--%>
+<%--        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"--%>
+<%--        crossorigin="anonymous"></script>--%>
+<%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"--%>
+<%--        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"--%>
+<%--        crossorigin="anonymous"></script>--%>
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>

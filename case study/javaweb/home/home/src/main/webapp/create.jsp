@@ -59,8 +59,7 @@
     </div>
     <div class="form-input">
         <label>Phone Number</label>
-        <small  style="color: red" id="checkPhoneNumber" ></small>
-        <input style="border: 1px solid; " oninput="checkPhoneNumber()" class="form-control" type="number" name="phoneNumber" id="regexPhone" required>
+        <input style="border: 1px solid; " class="form-control" type="number" name="phoneNumber" required>
     </div>
     <div class="form-input">
         <label>Address</label>
@@ -68,36 +67,19 @@
     </div>
     <div class="form-input">
         <label>Email</label>
-        <small  style="color: red" id="checkEmail" ></small>
-        <input style="border: 1px solid; " oninput="checkEmail()" class="form-control" type="text" name="email" id="regexEmail"required>
+        <input style="border: 1px solid; " class="form-control" type="text" name="email" required>
     </div>
 
     <div>
-        <button style=" width: 48% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
-        <button type="submit"  class="btn btn-outline-primary" style="width: 48% ; margin-top: 15px ;background-color:black ; color: gold ;margin-left: 2%"  onclick="window.location.href='/customer?action='">Back</button>
+        <button style=" width: 100% ; margin-top: 15px ;background-color:black ; color: yellow ;" class="btn btn-outline-primary" type="submit">Create</button>
         <br>
-        <h3 style="text-align: center ; margin-top: 15px ; color: green">${mess}</h3>
+        <h3 style="text-align: center ; margin-top: 15px">${mess}</h3>
     </div>
 
 </form>
+    <button type="submit"  class="btn btn-outline-primary" style="width: 100% ; margin-top: 15px ;background-color:black ; color: gold ;"  onclick="window.location.href='/customer?action='">Back</button>
 </div>
-<%--<c:if test="${check}">Added successfully</c:if>--%>
-<%--//  oninput="checkName()
---%>
-<%--<script>--%>
-<%--  function checkName(){--%>
-<%--    let name = document.getElementById("name").value;--%>
-<%--    let regexName=//;--%>
-<%--    if(regexName.test(name)){--%>
-<%--      document.getElementById("nameError").innerText="";--%>
-<%--    }else {--%>
-<%--      document.getElementById("nameError").innerText="The name is not in the correct format";--%>
-<%--    }--%>
 
-<%--  }--%>
-
-<%--</script>--%>
-<script src="regex.js"></script>
 
 </body>
 </html>

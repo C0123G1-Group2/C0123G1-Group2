@@ -62,8 +62,6 @@
         }
 
 
-
-
         .height-card {
             height: 900px;
             padding: 50px;
@@ -92,7 +90,7 @@
         }
 
         .content {
-            background-color: lightgrey;
+            background-image: url(https://tophinhanhdep.com/wp-content/uploads/2021/10/Black-and-Gold-Desktop-Wallpapers.jpg);
         }
 
         .btn-o {
@@ -100,6 +98,22 @@
         }
 
         .popup {
+            height: 500px;
+            width: 500px;
+            background: black;
+            border-radius: 10%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: white;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+
+        .popup1 {
             height: 500px;
             width: 500px;
             background: black;
@@ -124,6 +138,12 @@
             top: 50%;
             transform: translate(-50%, -50%) scale(1);
         }
+
+        .open-popup1 {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
     </style>
 </head>
 
@@ -136,199 +156,370 @@
             <div class="col-sm-12">
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100%;border-radius: 3%"
                                  src="https://aobongda24h.com/pic/news/images/images/6369336271236010271.jpg"
                                  alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=1'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                            onclick="openPopup()">Xem chi tiết
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: xxx-large;color: #FFD700">5</div>
                                     </button>
-                                    <div class="popup" id="popup"
-                                         style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
-                                        <span style="color: gold;font-size:30px;margin-top: 20px"
-                                              class="font-monospace">Sân số 1</span>
-                                        <br>
-                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
-                                        <br>
-                                        <span>Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
-                                        <br>
-                                        <span style="font-size: xx-large;">Thank You</span>
-                                        <br>
-                                        <button type="button" onclick="closePopup()" class="btn btn-warning"
-                                                style="margin-top: 30px">ok
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 1</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/12/13/san-bong-da-ho-chi-minh-1.jpg"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px "
-                                        onclick="window.location.href='/product?action=oder&maDV=2'">Đặt sân
-                                </button>
-                                <br>
-                                <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                            onclick="openPopup()">Xem chi tiết
-                                    </button>
-                                    <div class="popup" id="popup1"
-                                         style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup" id="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
-                                              class="font-monospace">Sân số 1</span>
-                                        <br>
-                                        <span> Vị trí nằm ngoài lề gần với căn tin , được thiết kế vào 2020 và được nhiều cầu thủ ưa chuộng</span>
-                                        <br>
-                                        <span>Sân được đầu tư bởi: Nguyễn Đức Thắng</span>
-                                        <br>
-                                        <span style="font-size: xx-large;">Thank You</span>
-                                        <br>
-                                        <button type="button" onclick="closePopup()" class="btn btn-warning"
-                                                style="margin-top: 30px">ok
-                                        </button>
+                                              class="font-monospace">field number 1 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/11/6/tim-hieu-thong-tin-san-bong-da-5-nguoi-2.jpg"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 3(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=3'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
-                                        class="fa fa-shopping-cart "></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://yousport.vn/Media/Blog/Nh%E1%BB%AFng%20m%E1%BA%B7t%20s%C3%A2n%20b%C3%B3ng%20%C4%91%C3%A1%20ph%E1%BB%95%20bi%E1%BA%BFn%20hi%E1%BB%87n%20nay/nhung-mat-san-bong-da-pho-bien-nhat-hien-nay-2G.jpg"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 4(Sân 5 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2020.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=4'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
-                                        class="fa fa-shopping-cart "></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row height-card">
-                    <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân 7 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=5'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <div>
-                                    <button class="btn btn-outline-warning btn-o" style="font-size:24px">Xem chi tiết
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100%;border-radius: 3%" src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/12/13/san-bong-da-ho-chi-minh-1.jpg" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: xxx-large;color: #FFD700">5</div>
                                     </button>
                                 </div>
-                            </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 2</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 2 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        </div>
-                    </div>
-                    <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 7 người)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2022.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=6'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
-                                        class="fa fa-shopping-cart "></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row height-card">
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://trungtambongro.vn/wp-content/uploads/2018/09/ngoisao_san-Q-PN-2.jpg"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 1(Sân Futsal)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=7'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
-                                        class="fa fa-shopping-cart "></i></button>
-                            </div>
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100%;border-radius: 3%" src="https://images.elipsport.vn/anh-seo-tin-tuc/2020/11/6/tim-hieu-thong-tin-san-bong-da-5-nguoi-2.jpg" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: xxx-large;color: #FFD700">5</div>
+                                    </button>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 3</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 3 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6 css-center">
-                        <div class="card " style="width: 90%;">
-                            <img style="width: 100%"
-                                 src="https://static-images.vnncdn.net/files/publish/2022/8/30/u9-toan-quoc-113.jpg"
-                                 alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: #FFD700">Sân sô 2(Sân 5 futsal)</h5>
-                                <p class="card-text">Sân chất lượng được xây năm 2023.</p>
-                                <button type="button" class="btn btn-outline-warning"
-                                        style="font-size: xx-large;margin-bottom: 50px;margin-top: 20px"
-                                        onclick="window.location.href='/product?action=oder&maDV=8'">
-                                    Đặt sân
-                                </button>
-                                <br>
-                                <button class="btn btn-outline-warning" style="font-size:24px">Thêm vào giỏ hàng <i
-                                        class="fa fa-shopping-cart "></i></button>
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100%;border-radius: 3%" src="https://yousport.vn/Media/Blog/Nh%E1%BB%AFng%20m%E1%BA%B7t%20s%C3%A2n%20b%C3%B3ng%20%C4%91%C3%A1%20ph%E1%BB%95%20bi%E1%BA%BFn%20hi%E1%BB%87n%20nay/nhung-mat-san-bong-da-pho-bien-nhat-hien-nay-2G.jpg" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: xxx-large;color: #FFD700">5</div>
+                                    </button>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 4</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 4 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row height-card">
+                    <div class="col-sm-6 css-center">
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100% ;border-radius: 3%" src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: xxx-large;color: #FFD700">7</div>
+                                    </button>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 1</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 1 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 css-center">
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100% ;border-radius: 3%" src="https://vecgroup.vn/upload_images/images/2021/12/09/kich-thuoc-san-bong-11-nguoi(1).png" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: xxx-large;color: #FFD700">7</div>
+                                    </button>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Soccer field number 2</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 1 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row height-card">
+                    <div class="col-sm-6 css-center">
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100%;border-radius: 3%" src="https://trungtambongro.vn/wp-content/uploads/2018/09/ngoisao_san-Q-PN-2.jpg" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: x-large;color: #FFD700">Futsal</div>
+                                    </button>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700">  Futsal stadium number 1</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 1 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 css-center">
+                        <div class="card " style="width: 90%;border-radius: 3%">
+                            <img style="width: 100%;border-radius: 3%" src="https://static-images.vnncdn.net/files/publish/2022/8/30/u9-toan-quoc-113.jpg" alt="...">
+                            <div class="card-body row">
+                                <div class="col-sm-1" style="justify-content: center">
+                                    <button class="btn btn-outline-warning"
+                                            style="width: 100px;height: 100px;margin-top: 200%">
+                                        <div style="font-size: x-large;color: #FFD700">Futsal</div>
+                                    </button>
+                                </div>
+                                <div class="col-sm-11">
+                                    <div style="margin-left: 20px;width: 30vw">
+                                        <h5 class="card-title" style="color: #FFD700"> Futsal stadium number 2</h5>
+                                        <button type="button" class="btn btn-outline-warning"
+                                                style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
+                                                onclick="window.location.href='/product?action=order&maDV=1'">
+                                            Book for rental
+                                        </button>
+                                        <br>
+                                        <div>
+                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
+                                                    onclick="openPopup()">See details
+                                            </button>
+                                            <div class="popup"
+                                                 style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
+                                        <span style="color: gold;font-size:30px;margin-top: 20px"
+                                              class="font-monospace">field number 1 </span>
+                                                <br>
+                                                <span> The location is on the sidelines close to the canteen, designed in 2020 and popular with many players</span>
+                                                <br>
+                                                <span>The football field is invested by: Nguyen Duc Thang</span>
+                                                <br>
+                                                <span style="font-size: xx-large;">Thank You</span>
+                                                <br>
+                                                <button type="button" onclick="closePopup()" class="btn btn-warning"
+                                                        style="margin-top: 30px">Ok
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -403,11 +594,11 @@
     let popup = document.getElementById("popup", "popup1");
 
     function openPopup() {
-        popup.classList.add("open-popup");
+        popup.classList.add("open-popup", "open-popup1");
     }
 
     function closePopup() {
-        popup.classList.remove("open-popup")
+        popup.classList.remove("open-popup", "open-popup1")
     }
 </script>
 </body>

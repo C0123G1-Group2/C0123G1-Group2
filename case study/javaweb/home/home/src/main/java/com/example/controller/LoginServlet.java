@@ -1,8 +1,12 @@
 package com.example.controller;
 
 import com.example.model.User;
+import com.example.service.CustomerService;
+import com.example.service.ICustomerService;
 import com.example.service.IUserService;
 import com.example.service.UserService;
+import org.mindrot.jbcrypt.BCrypt;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -34,17 +38,18 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String rememberMe = request.getParameter("rememberMe");
         boolean isRemember = Boolean.parseBoolean(rememberMe);
+
         // tao rememberME
         List<User> userList = userService.getUser();
         User user = null;
         for ( User u: userList) {
-            if(username.equals(u.getUsername())&&password.equals(u.getPassword())){
+            if(username.equals(u.getUsername())&& BCrypt.checkpw(password,u.getPassword())){
                 user=u;
                 break;
             }
         }
         if(user!=null) {
-            request.setAttribute("mess", "Login successfully");
+            request.setAttribute("mess", "Login Successfully");
             HttpSession session1 = request.getSession();
             session1.setAttribute("userSession", user);
 
@@ -59,7 +64,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("/index.jsp");
 
         }else {
-            request.setAttribute("mess","Login failed ");
+            request.setAttribute("mess","Login Failed ");
             request.getRequestDispatcher("/login.jsp").forward(request,response);
         }
     }
