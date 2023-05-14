@@ -167,6 +167,8 @@ public class SoccerFieldServlet extends HttpServlet {
         String tenDV = request.getParameter("tenDV");
         String tenLoaiDV = request.getParameter("tenLoaiDV");
         List<SoccerField> productList = productService.searchProduct(tenDV, tenLoaiDV);
+        request.setAttribute("tenDV",tenDV);
+        request.setAttribute("tenLoaiDV",tenLoaiDV);
         request.setAttribute("productList", productList);
         request.getRequestDispatcher("/view/product/product.jsp").forward(request, response);
     }
