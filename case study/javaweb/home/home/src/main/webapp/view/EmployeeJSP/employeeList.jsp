@@ -97,7 +97,7 @@
             <form class="d-flex input-group w-auto" method="post" action="/employee?action=find"
                   style="margin-block-end: 0; gap: 10px;">
                 <button type="submit" class="btn " onclick="window.location.href='/employee?action='"
-                        style="background: black ; color: gold">Reset
+                        style="background: black ; color: gold">Return List
                 </button>
                 <input type="search" class="form-control" placeholder="Name" aria-label="Search" name="name"/>
                 <input type="search" class="form-control" placeholder="Phone Number" name="phoneNumber"/>
@@ -120,8 +120,9 @@
             <th>Phone Number</th>
             <th>Email</th>
             <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                <th>Action</th>
+                <th>Function</th>
             </c:if>
+
         </tr>
         </thead>
         <tbody>
@@ -224,6 +225,8 @@
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+
+
 
 </body>
 </html>

@@ -37,8 +37,8 @@ CREATE TABLE orders (
     soccer_field_id INT,
     FOREIGN KEY (soccer_field_id)
         REFERENCES soccer_field (soccer_field_id),
-    begin_time VARCHAR(50) NOT NULL,
-    rental_time INT,
+    begin_time INT NOT NULL,
+    rental_time INT NOT NULL,
     total_price DOUBLE,
     created_at DATETIME DEFAULT NOW()
 );
@@ -88,15 +88,9 @@ INSERT INTO employee (employee_name , day_birth,phone,email) VALUES('Duc Thang',
 ('Nam Say','2007-05-21','0258887531','namsay@gmail.com'),
 ('Bac Tao','2005-03-30','0987784526','bactao@gmail.com'),
 ('Con Ga','2001-09-19','0012548884','conga@gmail.com');
-INSERT INTO orders (customer_id,employee_id,soccer_field_id,begin_time,rental_time,total_price) VALUES(2,1,3,'18h',2,100),
-(2,2,3,'16h',1,50),
-(1,3,3,'18h',1,50),
-(3,1,4,'18h',2,100),
-(4,4,6,'18h',2,200),
-(5,3,6,'18h',1,100),
-(4,5,7,'18h',2,160),
-(2,3,3,'18h',1,50),
-(1,1,3,'18h',2,50),
-(1,2,3,'18h',1,80),
-(2,1,3,'18h',2,100);
-SELECT * FROM customer;
+INSERT INTO orders (customer_id,employee_id,soccer_field_id,begin_time,rental_time,total_price) VALUES(2,1,3,17,2,100),
+(2,2,3,16,1,50),
+(1,3,3,21,1,50),
+(3,1,4,23,2,100),
+(4,4,6,20,1,200);
+SELECT * FROM orders;

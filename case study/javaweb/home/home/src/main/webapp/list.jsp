@@ -115,6 +115,8 @@
             <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
                 <th>Function</th>
             </c:if>
+
+
         </tr>
         </thead>
         <tbody>
@@ -136,8 +138,11 @@
                                 onclick="window.location.href='/customer?action=edit&idEdit=${customer.getCustomerId()}' ">
                             Edit
                         </button>
+
                     </td>
                 </c:if>
+
+
             </tr>
         </c:forEach>
         </tbody>

@@ -5,14 +5,14 @@ public class Order {
     private int customerId;
     private int employeeId;
     private int soccerFieldId;
-    private String beginTime;
+    private int beginTime;
     private int rentalTime;
     private double totalPrice;
 
     public Order() {
     }
 
-    public Order(int orderId, int customerId, int employeeId, int soccerFieldId, String beginTime, int rentalTime, double totalPrice) {
+    public Order(int orderId, int customerId, int employeeId, int soccerFieldId, int beginTime, int rentalTime, double totalPrice) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.employeeId = employeeId;
@@ -22,7 +22,7 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
-    public Order(int customerId, int employeeId, int soccerFieldId, String beginTime, int rentalTime, double totalPrice) {
+    public Order(int customerId, int employeeId, int soccerFieldId, int beginTime, int rentalTime, double totalPrice) {
         this.customerId = customerId;
         this.employeeId = employeeId;
         this.soccerFieldId = soccerFieldId;
@@ -71,11 +71,11 @@ public class Order {
         this.soccerFieldId = soccerFieldId;
     }
 
-    public String getBeginTime() {
+    public int getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(String beginTime) {
+    public void setBeginTime(int beginTime) {
         this.beginTime = beginTime;
     }
 

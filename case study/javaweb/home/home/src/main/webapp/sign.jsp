@@ -49,7 +49,7 @@
 
 
     form {
-        height: 900px;
+        height: 950px;
         width: 600px;
         background-color: rgba(255, 255, 255, 0.13);
         position: absolute;
@@ -60,7 +60,7 @@
         backdrop-filter: blur(10px);
         border: 2px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-        padding: 50px 35px;
+        padding: 30px 35px;
     }
 
     form * {
@@ -101,7 +101,7 @@
     }
 
     button {
-        margin-top: 50px;
+        margin-top: 30px;
         width: 100%;
         background-color: #ffffff;
         color: #080710;
@@ -185,7 +185,7 @@
 </style>
 <html>
 <head>
-    <title>Title</title>
+    <title>Sign up</title>
 </head>
 <body>
 <a href="/index.jsp">
@@ -195,19 +195,19 @@
 <form action="/sign?action=createUserCustomer" method="post" onsubmit="return validateForm()" name="formSignUp">
     <h3>Sign Up</h3>
     <label >Username</label>
-    <input type="text" placeholder="Example: Jonh123" id="username" type="text" name="user">
+    <input type="text" placeholder="Example: Jonh123" id="username" type="text" name="user" required>
     <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password" type="password" name="password">
+    <input type="password" placeholder="Password" id="password" type="password" pattern=".{8}" name="password" required>
     <label for="password"> Confirm Password</label>
-    <input type="password" placeholder="Password" id="confirmPass" type="password" name="confirmPassword">
+    <input type="password" placeholder="Password" id="confirmPass" type="password" pattern=".{8}" name="confirmPassword" required>
     <label for="password">Your Name</label>
-    <input  placeholder="Your Name" id="customerName" type="text" name="name">
+    <input  placeholder="Your Name" id="customerName" type="text" name="name" required>
     <label for="password">Phone Number</label>
-    <input  placeholder="Your phone number" id="phoneNumber" type="text" name="phoneNumber">
+    <input  placeholder="Your phone number" id="phoneNumber" type="text" name="phoneNumber" required>
     <label for="password">Address</label>
-    <input  placeholder="Address" id="address" type="text" name="address">
+    <input  placeholder="Address" id="address" type="text" name="address" required>
     <label for="password">Email</label>
-    <input  placeholder="Example: abc@gmail.com" id="email" type="text" name="email">
+    <input  placeholder="Example: abc@gmail.com" id="email" type="text" name="email" required>
     <button type="submit">Submit</button>
 
 </form>
@@ -235,6 +235,34 @@
             return false
         }
         alert('Please enter all the field');
+        return false;
+    }
+
+</script>
+<script>
+    function validateForm() {
+        const form = document.forms["formSignUp"];
+        const user = form["user"].value;
+        const password = form["password"].value;
+        const confirmPassword = form["confirmPassword"].value;
+        const name = form["name"].value;
+        const phoneNumber = form["phoneNumber"].value;
+        const address = form["address"].value;
+        const email = form["email"].value;
+
+        const modal = new bootstrap.Modal(document.getElementById('modalNotification'));
+        const messageModal = document.getElementById('messageModal');
+
+        if (user != "" && password != "" && confirmPassword != "" && name != "" && phoneNumber != "" && address != "" && email != "" ){
+            if (password === confirmPassword){
+                return true;
+            }
+            messageModal.innerText = 'Password does not match';
+            modal.show();
+            return false
+        }
+        messageModal.innerText =  'Please enter all the field';
+        modal.show();
         return false;
     }
 </script>

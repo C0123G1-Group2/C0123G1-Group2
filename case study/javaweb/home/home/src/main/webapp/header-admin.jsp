@@ -90,7 +90,7 @@
                 <span class="dropdown-item">acount
                   <%=
                     session.getAttribute("userSession")!=null
-                            ? "Welcome " + ((User)session.getAttribute("userSession")).getUsername()
+                            ? "Hello " + ((User)session.getAttribute("userSession")).getUsername()
                             :""
                   %>
                 </span>

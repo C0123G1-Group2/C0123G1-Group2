@@ -29,25 +29,31 @@
 <body>
 <div class="content">
   <h2>Order</h2>
-  <h3 style="color: green;font-size: medium">${mess}</h3>
-  <h3 style="color: red;font-size: medium">${messF}</h3>
-  <form method="post" style="margin-top: 1.5vw" action="/product?action=order&value=${maDV}">
+  <form method="post" action="/product?action=order&value=${maDV}">
     <div>
-      <label>Pitch booking time</label>
+      <label>pitch booking time</label>
       <select class="form-select" aria-label="Default select example" name="beginTime">
-        <option  value="15h">15:00 hours</option>
-        <option  value="16h">16:00 hours</option>
-        <option  value="17h">17:00 hours</option>
-        <option value="18h">18:00 hours</option>
-        <option value="19h">19:00 hours</option>
-        <option value="20h">20:00 hours</option>
-        <option value="21h">21:00 hours</option>
-        <option value="22h">22:00 hours</option>
-        <option value="23h">23:00 hours</option>
+        <option  value="7">07:00 hours</option>
+        <option  value="8">08:00 hours</option>
+        <option  value="9">09:00 hours</option>
+        <option  value="10">10:00 hours</option>
+        <option  value="11">11:00 hours</option>
+        <option  value="12">12:00 hours</option>
+        <option  value="13">13:00 hours</option>
+        <option  value="14">14:00 hours</option>
+        <option  value="15">15:00 hours</option>
+        <option  value="16">16:00 hours</option>
+        <option  value="17">17:00 hours</option>
+        <option value="18">18:00 hours</option>
+        <option value="19">19:00 hours</option>
+        <option value="20">20:00 hours</option>
+        <option value="21">21:00 hours</option>
+        <option value="22">22:00 hours</option>
+        <option value="23">23:00 hours</option>
       </select>
     </div>
     <div>
-      <label> Amount of time you want to set</label>
+      <label> amount of time you want to set</label>
       <select class="form-select" aria-label="Default select example" name="rentalTime">
         <option value="1">1 hour</option>
         <option value="2">2 hour</option>
@@ -56,6 +62,7 @@
     <div>
       <button type="submit"  class="btn " style="width: 100% ; margin-top: 15px  ; margin-right: 5px ;background-color: black;color: #FFD700">Book a football field</button>
       <br>
+      <h3 style="color: green">${mess}</h3>
     </div>
   </form>
   <button  class="btn " style="width: 100% ; margin-top: 15px ;background-color: black;color: #FFD700" onclick="window.location.href='/index.jsp'">Back</button>

@@ -10,7 +10,7 @@
         h2{
             text-align: center;
             margin-bottom: 20px;
-            margin-top: 1.5vw;
+            margin-top: 20px;
         }
 
         .content{
@@ -29,16 +29,14 @@
 <body>
 <jsp:include page="/header-admin.jsp"/>
 <div class="content">
-    <h2 style="margin-top: 1.5vw">Edit Soccer Field</h2>
-    <h3 style="color: green;font-size: medium">${mess}</h3>
-    <h3 style="color: red;font-size: medium">${messF}</h3>
-    <form style="margin-top: 1.1vw" method="post" action="/product?action=edit&value=${product.getSoccerFieldId()}">
+    <h2>Edit Soccer Field</h2>
+    <form method="post" action="/product?action=edit&value=${product.getSoccerFieldId()}">
         <div>
-            <label>Field Name</label>
+            <label>Tên sân</label>
             <input  class="form-control" type="text" name="tenSan" required value="${product.getSoccerFieldName()}">
         </div>
         <div>
-            <label>Type of Field</label>
+            <label>Loại sân</label>
             <select class="form-select" aria-label="Default select example" name="tenLoaiSan">
                 <option value="${product.getSoccerFieldType()}">${product.getSoccerFieldType()}</option>
                 <option value="Sân 5">Sân 5</option>
@@ -47,15 +45,16 @@
             </select>
         </div>
         <div>
-            <label>Price</label>
+            <label>Giá</label>
             <input  class="form-control"  type="text" name="gia" required value="${product.getPrice()}">
         </div>
         <div>
-            <button type="submit"  class="btn btn-warning" style="width: 100% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Save</button>
+            <button type="submit"  class="btn btn-warning" style="width: 100% ; margin-top: 15px  ; margin-right: 5px;background-color: black;color: #FFD700 ">Edit</button>
             <br>
 
         </div>
     </form>
+    <h3 style="color: green">${mess}</h3>
     <button   class="btn btn-warning" style="width: 100% ; margin-top: 15px;background-color: black;color: #FFD700 " onclick="window.location.href='/product?action='">Back</button>
 
 </div>

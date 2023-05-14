@@ -1,4 +1,4 @@
-x1<%@ page import="com.example.model.User" %><%--
+<%@ page import="com.example.model.User" %><%--
   Created by IntelliJ IDEA.
   User: USER
   Date: 05/08/23
@@ -92,7 +92,7 @@ x1<%@ page import="com.example.model.User" %><%--
                 <td>${order.getCustomerId()}</td>
                 <td>${order.getEmployeeId()}</td>
                 <td>${order.getSoccerFieldId()}</td>
-                <td>${order.getBeginTime()}</td>
+                <td>${order.getBeginTime()}:00 hours</td>
                 <td>${order.getRentalTime()}</td>
                 <td>${order.getTotalPrice()} $</td>
                 <td>
