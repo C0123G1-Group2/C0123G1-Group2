@@ -12,24 +12,27 @@
 <head>
     <title>Management Soccer Field</title>
     <style>
-        #tableSoccer_paginate .page-item.active a{
+        #tableSoccer_paginate .page-item.active a {
             background-color: black !important;
             color: gold;
         }
-        #tableSoccer_paginate #tableSoccer_next a{
+
+        #tableSoccer_paginate #tableSoccer_next a {
             background-color: black !important;
             color: gold !important;
         }
-        #tableSoccer_paginate #tableSoccer_previous a{
+
+        #tableSoccer_paginate #tableSoccer_previous a {
             background-color: black !important;
-            color: gold !important ;}
+            color: gold !important;
+        }
     </style>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
-<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
+<link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
 <body>
 <jsp:include page="/header-admin.jsp"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 10px">
@@ -48,11 +51,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
             <ul class="navbar-nav mb-2 mb-lg-0">
-
-                <button class="btn " style="background-color: black;color: #FFD700"
-                        onclick="window.location.href='/product?action=add'">Create
-                </button>
-                <button type="button" class="btn btn-primary" style="background-color:black ; color: gold ;" onclick="printDiv('contentTable')">
+                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                    <button class="btn " style="background-color: black;color: #FFD700"
+                            onclick="window.location.href='/product?action=add'">Create
+                    </button>
+                </c:if>
+                <button type="button" class="btn btn-primary" style="background-color:black ; color: gold ;"
+                        onclick="printDiv('contentTable')">
                     Print
                 </button>
             </ul>
@@ -75,7 +80,8 @@
                         <input type="text" class="form-control" placeholder="name" name="tenDV" value="${tenDV}">
                     </div>
                     <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
-                        <button class="btn" type="submit" style="background-color: black;color: #FFD700;height: 40px">Search
+                        <button class="btn" type="submit" style="background-color: black;color: #FFD700;height: 40px">
+                            Search
                         </button>
                     </div>
                 </div>
@@ -110,28 +116,30 @@
                 <td>${product.getSoccerFieldType()}</td>
                 <td>${product.getPrice()} $</td>
                 <td>
-                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
-                    <button type="button" onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
-                            class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            style="background-color: black;color: #FFD700">
-                        Delete
-                    </button>
-                </c:if>
-                <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                    <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
+                        <button type="button"
+                                onclick="infoDelete('${product.getSoccerFieldId()}','${product.getSoccerFieldName()}')"
+                                class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                style="background-color: black;color: #FFD700">
+                            Delete
+                        </button>
+                    </c:if>
+                    <c:if test='<%= ((User)session.getAttribute("userSession")).getUsername().equals("admin") %>'>
 
-                        <button type="button" class="btn " style="margin-right: 20px;background-color: black;color: #FFD700"
-                                onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">Edit
+                        <button type="button" class="btn "
+                                style="margin-right: 20px;background-color: black;color: #FFD700"
+                                onclick="window.location.href='/product?action=edit&value=${product.getSoccerFieldId()}'">
+                            Edit
                         </button>
 
 
-                </c:if>
+                    </c:if>
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
     <h1 style="color: #0082ca">${mess}</h1>
-
 
 
     <!-- Modal -->
@@ -176,13 +184,13 @@
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 <script>
 
-    $(document).ready(function() {
-        $('#tableSoccer').dataTable( {
+    $(document).ready(function () {
+        $('#tableSoccer').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
             "pageLength": 7
-        } );
-    } );
+        });
+    });
 </script>
 <script>
     function printDiv(divID) {
