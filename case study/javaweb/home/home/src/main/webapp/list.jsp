@@ -86,14 +86,17 @@
                     Print
                 </button>
             </ul>
+            <button type="submit" class="btn " onclick="window.location.href='/customer?action='"
+                    style="background: black ; color: gold;margin-left: 55%;">Reset
+            </button>
             <form class="d-flex input-group w-auto" method="post" action="/customer?action=find"
                   style="margin-block-end: 0; gap: 10px;">
                 <input type="search" style="flex: none ;width: 170px" class="form-control" placeholder="Name"
-                       aria-label="Search" name="name"/>
+                       aria-label="Search" name="name" value="name"/>
                 <input type="search" style="flex: none ;width: 125px" class="form-control" placeholder="Phone Number"
-                       name="phoneNumber"/>
+                       name="phoneNumber" value="phone"/>
                 <input type="search" style="flex: none ;width: 170px" class="form-control" placeholder="Address"
-                       name="address"/>
+                       name="address" value="address"/>
                 <button class="btn btn-primary btn-search" style="background-color: black; color: gold;padding: 0 15px"
                         type="submit" data-mdb-ripple-color="dark">Search
                 </button>

@@ -56,12 +56,15 @@
                     Print
                 </button>
             </ul>
+            <button type="submit" class="btn " onclick="window.location.href='/product?action='"
+                    style="background: black ; color: gold;margin-left: 60%;">Reset
+            </button>
             <form action="/product?action=search" method="post">
                 <div class="d-flex justify-content-end" style="margin-right: 30px">
                     <div class="mb-3">
                         <label class="form-label" style="font-weight: 700">Soccer Field Type</label>
                         <select class="form-select" aria-label="Default select example" name="tenLoaiDV">
-                            <option selected value="">Open this select menu</option>
+                            <option selected value="${tenLoaiDV}">${tenLoaiDV}</option>
                             <option value="Sân 5">Sân 5</option>
                             <option value="Sân 7">Sân 7</option>
                             <option value="Sân futlsan">Sân futlsan</option>
@@ -69,7 +72,7 @@
                     </div>
                     <div class="mb-3" style="margin-left: 20px">
                         <label class="form-label" style="font-weight: 700">Soccer Field Name</label>
-                        <input type="text" class="form-control" placeholder="name" name="tenDV">
+                        <input type="text" class="form-control" placeholder="name" name="tenDV" value="${tenDV}">
                     </div>
                     <div style="justify-content: center;padding-top: 30px;margin-left: 20px">
                         <button class="btn" type="submit" style="background-color: black;color: #FFD700;height: 40px">Search

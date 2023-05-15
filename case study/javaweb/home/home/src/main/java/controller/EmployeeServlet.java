@@ -132,6 +132,8 @@ public class EmployeeServlet extends HttpServlet {
         String nameFind = request.getParameter("name");
         String phoneNumberFind = request.getParameter("phoneNumber");
         List<Employee> employeeList = employeeService.findEmployee(nameFind, phoneNumberFind);
+        request.setAttribute("name",nameFind);
+        request.setAttribute("phone",phoneNumberFind);
         request.setAttribute("employeeList", employeeList);
         request.getRequestDispatcher("/view/EmployeeJSP/employeeList.jsp").forward(request, response);
     }

@@ -117,6 +117,9 @@ public class CustomerServlet extends HttpServlet {
         String phoneNumberFind = request.getParameter("phoneNumber");
         String addressFind = request.getParameter("address");
         List<Customer> customerList = customerService.findCustomer(nameFind, phoneNumberFind, addressFind);
+        request.setAttribute("name",nameFind);
+        request.setAttribute("phone",phoneNumberFind);
+        request.setAttribute("address",addressFind);
         request.setAttribute("customerList", customerList);
         request.getRequestDispatcher("/list.jsp").forward(request, response);
     }
