@@ -143,6 +143,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Soccer field (number 1)</h5>
+                                        <h2 style="color: gold">50$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=1'">
@@ -150,9 +151,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup" id="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -188,6 +186,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Soccer field (number 2)</h5>
+                                        <h2 style="color: gold">50$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=2'">
@@ -195,9 +194,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -235,6 +231,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Soccer field (number 3)</h5>
+                                        <h2 style="color: gold">50$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=3'">
@@ -242,9 +239,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -280,6 +274,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Soccer field (number 4)</h5>
+                                        <h2 style="color: gold">50$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=4'">
@@ -287,9 +282,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -327,6 +319,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Soccer field (number 5)</h5>
+                                        <h2 style="color: gold">80$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=5'">
@@ -334,9 +327,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -372,6 +362,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Soccer field (number 6)</h5>
+                                        <h2 style="color: gold">80$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=6'">
@@ -379,9 +370,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -419,6 +407,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700">  Futsal stadium (number 7)</h5>
+                                        <h2 style="color: gold">100$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=7'">
@@ -426,9 +415,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
@@ -464,6 +450,7 @@
                                 <div class="col-sm-11">
                                     <div style="margin-left: 20px;width: 30vw">
                                         <h5 class="card-title" style="color: #FFD700"> Futsal stadium (number 8)</h5>
+                                        <h2 style="color: gold">100$</h2>
                                         <button type="button" class="btn btn-outline-warning"
                                                 style="font-size: xx-large;margin-bottom: 50px;margin-top: 15px"
                                                 onclick="window.location.href='/product?action=order&maDV=8'">
@@ -471,9 +458,6 @@
                                         </button>
                                         <br>
                                         <div>
-                                            <button class="btn btn-outline-warning btn-o" style="font-size:24px"
-                                                    onclick="openPopup()">See details
-                                            </button>
                                             <div class="popup"
                                                  style="text-align: center;padding-top: 100px;padding-left: 100px;padding-right: 100px">
                                         <span style="color: gold;font-size:30px;margin-top: 20px"
