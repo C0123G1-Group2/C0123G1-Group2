@@ -83,7 +83,7 @@
         </div>
         <div class="form-input">
             <label>Phone Number</label>
-            <input  value="${phoneNumber}" class="form-control"  type="text" name="phoneNumber" oninput="checkPhoneNumber()" style="border: 1px solid; " required>
+            <input  value="${phoneNumber}" class="form-control" id="phone" type="text" name="phoneNumber" oninput="checkPhoneNumber()" style="border: 1px solid; " required>
             <small style="color: red" id="checkPhone"></small>
         </div>
         <div class="form-input">
